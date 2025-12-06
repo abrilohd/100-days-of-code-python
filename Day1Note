@@ -1,0 +1,17 @@
+print and \n        
+sting concatenation =>  merging String in 1
+indentation => spacing in python 
+Debbugging => Finding error and Fix the error
+Commenting => in python using # sign
+     short cut in code edditer (ctrl+/) to comment a line of code
+
+len()  => to count the number of string
+
+variables => Used to store anything
+swapping     A = input()
+             B = input()
+             C = A     # or use any word like temp
+             A = B 
+             B = C 
+
+variables naming Quis
