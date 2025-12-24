@@ -1,0 +1,21 @@
+# Day 2 Notes — BMI Calculator & Type Conversion
+
+### Key Concepts
+- `input()` always gives a **string** → convert using:
+  - `int()` → whole numbers
+  - `float()` → decimal numbers
+
+- Mathematical operations:
+  - `**` → power (height²)
+  - `/` → division
+
+### Rounding
+- `round(number, digits)` reduces decimal places.
+
+data types
+Numbers    float(123)   int(12344.40)   str("123412")
+complex Numbers     z = 3 + 2j
+mathematical operation ()
+
+type convesion 
+
