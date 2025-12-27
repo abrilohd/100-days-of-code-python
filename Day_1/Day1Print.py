@@ -6,6 +6,3 @@ Name_of_people = input("What is your Father name? ")
 print(Name_of_people)
 num1 = int(input("give me your first number"))
 print(num1)
-
-
-
