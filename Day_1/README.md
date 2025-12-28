@@ -6,7 +6,7 @@ A tiny Python script that prints greetings, shows string concatenation, and read
 How to run:
 1. Open terminal in repository root.
 2. Run:
-    python day-001/day1print.py
+    python day-001/Day1print.py
 
 What you’ll see:
 - Three hello messages printed.
