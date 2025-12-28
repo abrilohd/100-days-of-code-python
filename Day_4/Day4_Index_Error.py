@@ -15,3 +15,4 @@ foods = [fruits, vegetables]
 print("Nested list:", foods)
 
 # print(fruits[3])  # IndexError: list index out of range
+# because index start form 0
