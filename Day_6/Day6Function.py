@@ -53,7 +53,7 @@ def main():
         pyperclip.copy(password)
         print("📋 Password copied to clipboard!")
     except ImportError:
-        print("ℹ️ Install 'pyperclip' to enable clipboard support: pip install pyperclip")
+        print("ℹ Install 'pyperclip' to enable clipboard support: pip install pyperclip")
 
 
 if __name__ == "__main__":
