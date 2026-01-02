@@ -24,3 +24,15 @@ A program that lets users encrypt and decrypt messages using different cipher me
 - Add password-protected encryption  
 - Save encrypted messages to a file  
 - Create a simple GUI version
+
+
+
+## Day 9 – Dictionaries & Nesting
+**Idea:** Student Record Manager  
+**Description:**  
+A program that stores student information (name, age, scores, grades) using nested dictionaries and allows viewing or updating records.
+
+**Future Upgrade:**  
+- Save data to a file (JSON)
+- Add search by student name
+- Build a simple menu-based interface
