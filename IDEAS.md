@@ -36,3 +36,14 @@ A program that stores student information (name, age, scores, grades) using nest
 - Save data to a file (JSON)
 - Add search by student name
 - Build a simple menu-based interface
+
+
+## Day 10 – Calculator Using Functions
+**Idea:** Smart Calculator App  
+**Description:**  
+A calculator that supports basic and advanced operations and remembers calculation history.
+
+**Future Upgrade:**  
+- Add power, square root, and modulus
+- Save calculation history to a file
+- Create a simple GUI or CLI menu
