@@ -47,3 +47,15 @@ A calculator that supports basic and advanced operations and remembers calculati
 - Add power, square root, and modulus
 - Save calculation history to a file
 - Create a simple GUI or CLI menu
+
+
+## Day 11 – Blackjack Game
+**Idea:** Casino Games Hub  
+**Description:**  
+A terminal-based casino app that includes Blackjack, Dice, and Card Guessing games, all sharing a common player profile.
+
+**Future Upgrade:**  
+- Add betting and virtual money
+- Track wins and losses
+- Save player progress
+- Build a GUI version
