@@ -66,3 +66,10 @@ Build a small Python program that shows broken code snippets and asks the user t
 1. Identify the type of error
 2. Predict the output or error message
 3. Fix the code to continue to the next level
+
+
+### 🔥 Social Media Comparison Engine
+Turn the game into a reusable engine where users can:
+- Choose categories (followers, likes, views)
+- Load different datasets (YouTube, TikTok, sports)
+- Play endless rounds with difficulty levels
