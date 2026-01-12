@@ -73,3 +73,11 @@ Turn the game into a reusable engine where users can:
 - Choose categories (followers, likes, views)
 - Load different datasets (YouTube, TikTok, sports)
 - Play endless rounds with difficulty levels
+
+
+###  Branching Story Engine
+Convert this game into a reusable engine where:
+- Stories are loaded from JSON
+- Choices dynamically change outcomes
+- Multiple endings exist
+- Progress is saved between sessions
