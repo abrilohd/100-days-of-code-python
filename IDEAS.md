@@ -61,14 +61,14 @@ A terminal-based casino app that includes Blackjack, Dice, and Card Guessing gam
 - Build a GUI version
 
 
-### 🧠 Debug Trainer Game
+###  Debug Trainer Game
 Build a small Python program that shows broken code snippets and asks the user to:
 1. Identify the type of error
 2. Predict the output or error message
 3. Fix the code to continue to the next level
 
 
-### 🔥 Social Media Comparison Engine
+###  Social Media Comparison Engine
 Turn the game into a reusable engine where users can:
 - Choose categories (followers, likes, views)
 - Load different datasets (YouTube, TikTok, sports)
