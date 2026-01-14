@@ -81,3 +81,6 @@ Convert this game into a reusable engine where:
 - Choices dynamically change outcomes
 - Multiple endings exist
 - Progress is saved between sessions
+
+### Day 16 Idea – Smart Course Enrollment System
+Build a system where students can enroll in multiple courses, each course has a capacity limit, and the program prevents over-enrollment. Later, add instructors and grades using separate classes.
