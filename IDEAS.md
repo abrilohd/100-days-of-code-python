@@ -84,3 +84,8 @@ Convert this game into a reusable engine where:
 
 ### Day 16 Idea – Smart Course Enrollment System
 Build a system where students can enroll in multiple courses, each course has a capacity limit, and the program prevents over-enrollment. Later, add instructors and grades using separate classes.
+
+### Day 17 Idea – Wallet Tracker
+Build a `Wallet` class that tracks income and expenses.
+Each transaction is saved, and the user can see total balance,
+total income, and total spending.
