@@ -89,3 +89,7 @@ Build a system where students can enroll in multiple courses, each course has a 
 Build a `Wallet` class that tracks income and expenses.
 Each transaction is saved, and the user can see total balance,
 total income, and total spending.
+
+### Day 18 Idea – Space Dodger Game
+Create a turtle-based space game where the player avoids falling meteors.
+Each level increases speed, and the score is based on survival time.
