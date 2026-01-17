@@ -93,3 +93,7 @@ total income, and total spending.
 ### Day 18 Idea – Space Dodger Game
 Create a turtle-based space game where the player avoids falling meteors.
 Each level increases speed, and the score is based on survival time.
+
+### Day 19 Idea – Turtle Drawing Controller
+Build a drawing app where users draw shapes using the keyboard.
+Add color change keys, pen up/down, and save the drawing as an image.
