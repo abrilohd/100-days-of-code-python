@@ -97,3 +97,8 @@ Each level increases speed, and the score is based on survival time.
 ### Day 19 Idea – Turtle Drawing Controller
 Build a drawing app where users draw shapes using the keyboard.
 Add color change keys, pen up/down, and save the drawing as an image.
+
+### Day 20 Idea – Snake Evolution Mode
+Add levels where the snake speeds up over time,
+walls appear dynamically, and special food gives powers
+(e.g. slow motion, double score, shrink tail).
