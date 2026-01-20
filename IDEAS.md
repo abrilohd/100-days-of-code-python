@@ -102,3 +102,13 @@ Add color change keys, pen up/down, and save the drawing as an image.
 Add levels where the snake speeds up over time,
 walls appear dynamically, and special food gives powers
 (e.g. slow motion, double score, shrink tail).
+
+### 🎮 Idea: Smart Pong (AI + Levels)
+
+Upgrade the Pong game into a smart system:
+- Add an AI paddle with adjustable difficulty
+- Introduce levels where ball speed and paddle size change
+- Track best scores and fastest wins
+- Add pause, restart, and difficulty selection
+
+This can evolve into a full arcade-style game.
