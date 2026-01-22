@@ -112,3 +112,13 @@ Upgrade the Pong game into a smart system:
 - Add pause, restart, and difficulty selection
 
 This can evolve into a full arcade-style game.
+
+### 🐢 Idea: Turtle Crossing – Story Mode
+
+Turn the game into a story-based experience:
+- Add lives instead of instant game over
+- Introduce different maps (city, highway, night mode)
+- Add power-ups (slow cars, shield, extra life)
+- Save highest level reached
+
+This could evolve into a full mobile-style arcade game.
