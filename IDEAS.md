@@ -122,3 +122,20 @@ Turn the game into a story-based experience:
 - Save highest level reached
 
 This could evolve into a full mobile-style arcade game.
+
+
+### Idea: Smart Daily Converter App
+A desktop app that remembers the user’s
+most-used conversions and shows them
+first the next day.
+
+Future upgrade:
+- Save history to file
+- Auto-suggest common conversions
+- Dark / light mode toggle
+
+
+Password Vault 2.0:
+Upgrade this app to store passwords in JSON,
+add search functionality,
+and protect access with a master password.
