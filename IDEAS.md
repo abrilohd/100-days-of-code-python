@@ -139,3 +139,9 @@ Password Vault 2.0:
 Upgrade this app to store passwords in JSON,
 add search functionality,
 and protect access with a master password.
+
+Password Manager Pro:
+- Encrypt passwords before saving
+- Add master password authentication
+- Auto-copy password to clipboard on search
+- Implement password strength indicator
