@@ -2,9 +2,9 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 import smtplib
 
-sender = "abrsh067@gmail.com"
-receiver = "natawase27@gmail.com"
-password = "fwai mkro gomk bpyi"
+sender = "senderEmail@gmail.com"
+receiver = "revivEremail@gmail.com"
+password = "your password"
 
 msg = MIMEMultipart("alternative")
 msg["Subject"] = "HTML Email Test"

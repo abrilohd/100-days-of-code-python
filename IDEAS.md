@@ -145,3 +145,26 @@ Password Manager Pro:
 - Add master password authentication
 - Auto-copy password to clipboard on search
 - Implement password strength indicator
+
+Idea #001 – Life Event Automation Engine (AI-powered)
+What it is:
+A system that automatically detects life events (birthdays, deadlines, renewals, exams, job applications) and triggers actions:
+Emails
+WhatsApp messages
+Calendar blocks
+AI-generated messages
+Tech Stack (Future):
+Python backend (FastAPI)
+AI (LLMs for message writing)
+Mobile app (Flutter / React Native)
+Web dashboard
+Email + SMS + WhatsApp APIs
+Who it helps:
+Busy professionals
+Students
+Businesses (CRM-lite)
+Families
+Money Path:
+Freemium personal use
+Paid automation packs
+Business subscriptions
