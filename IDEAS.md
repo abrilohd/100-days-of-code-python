@@ -168,3 +168,71 @@ Money Path:
 Freemium personal use
 Paid automation packs
 Business subscriptions
+
+
+
+
+
+# 💡 Project Ideas Vault
+
+This file contains original, future-ready project ideas collected during my daily developer journey.
+Each idea is designed to be:
+- Valuable to real people
+- Extendable into web, mobile, or AI products
+- Monetizable or impactful as a free public service
+
+---
+
+## Idea #001 – (Reserved for earlier days)
+_To be filled or backfilled later_
+
+---
+
+## Idea #002 – SkySignal 🌌  
+**(Day 33 – APIs & Automation)**
+
+### Problem
+Most people miss amazing sky events like:
+- ISS flyovers
+- Visible satellites
+- Meteor showers
+- Rocket launches
+
+There is no simple, location-based alert system for the public.
+
+### Solution
+**SkySignal** is a mobile + web platform that alerts users when something interesting is visible in the sky above them.
+
+### Core Features
+- 📍 Location-based sky alerts
+- 🛰 ISS & satellite pass notifications
+- 🌠 Meteor shower reminders
+- 🚀 Rocket launch visibility alerts
+- 🤖 AI explanation: “What are you seeing in the sky right now?”
+
+### Tech Stack (Future)
+- Backend: Python (FastAPI)
+- APIs: NASA, ISS tracker, satellite APIs
+- Mobile: Flutter or React Native
+- Web: React / Next.js
+- AI: LLM explanations for astronomy events
+
+### Monetization / Impact
+- Free tier for public education
+- Premium alerts for enthusiasts
+- School & university educational edition
+- Sponsored space-agency content
+
+### Why This Is Powerful
+- Educational
+- Globally useful
+- Low hardware requirement
+- High curiosity factor
+- Scales worldwide
+
+---
+
+## Idea #003 – (Coming Soon)
+
+
+
