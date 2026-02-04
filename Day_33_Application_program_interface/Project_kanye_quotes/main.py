@@ -1,4 +1,3 @@
-from sys import exception
 from tkinter import *
 import requests
 
