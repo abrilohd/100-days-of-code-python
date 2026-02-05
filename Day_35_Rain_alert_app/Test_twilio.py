@@ -1,13 +1,18 @@
+import os
 from twilio.rest import Client
+from dotenv import load_dotenv
 
-account_sid = "AC08094a6199957c58cd393a409ed5cad2"
-auth_token = "1c88b246a2435ce16791c632a6eb0ace"
-client = Client(account_sid, auth_token)
+load_dotenv()
+
+client = Client(
+    os.getenv("TWILIO_ACCOUNT_SID"),
+    os.getenv("TWILIO_AUTH_TOKEN")
+)
 
 message = client.messages.create(
-    body="Test message from Python Twilio 🚀",
-    from_="+15076195903",      # Your Twilio number
-    to="+251905747674"         # Your verified phone number
+    body=" Twilio test message from Python",
+    from_=os.getenv("TWILIO_FROM_NUMBER"),
+    to=os.getenv("TWILIO_TO_NUMBER")
 )
 
 print(message.sid)
