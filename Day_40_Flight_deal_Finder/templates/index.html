@@ -1,0 +1,37 @@
+<!-- templates/index.html -->
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Flight Deals Dashboard</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    table { border-collapse: collapse; width: 100%; }
+    th, td { padding: 10px; border: 1px solid #ddd; text-align: left; }
+    th { background: #f4f4f4; }
+  </style>
+</head>
+<body>
+  <h1>Flight Deals Dashboard</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>City</th>
+        <th>IATA</th>
+        <th>Lowest Price</th>
+        <th>Sheet ID</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for row in flights %}
+      <tr>
+        <td>{{ row.city }}</td>
+        <td>{{ row.iataCode }}</td>
+        <td>£{{ row.lowestPrice }}</td>
+        <td>{{ row.id }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</body>
+</html>
