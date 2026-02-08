@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Flexbox Example</title>
+    <style>
+        /* Target both containers */
+        .container,
+        .container2 {
+            display: flex;
+        }
+
+        /* .container: vertical, spaced, aligned right */
+        .container {
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: flex-end;
+
+            /* Visual only */
+            height: 400px;
+            border: 2px dashed #007bff;
+            margin-bottom: 20px;
+        }
+
+        /* .container2: reversed vertical direction */
+        .container2 {
+            flex-direction: column-reverse;
+
+            /* Visual only */
+            height: 400px;
+            border: 2px dashed #ff5733;
+        }
+
+        /* Flex items */
+        .item1,
+        .item2,
+        .item3 {
+            color: white;
+            font-weight: bold;
+            text-align: center;
+            width: 100px;
+        }
+
+        .item1 {
+            background-color: #4CAF50;
+            /* Green */
+            padding: 20px;
+        }
+
+        .item2 {
+            background-color: #2196F3;
+            /* Blue */
+            padding: 30px;
+        }
+
+        .item3 {
+            background-color: #f44336;
+            /* Red */
+            padding: 40px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>.container (flex-direction: column, justify-content: space-between, align-items: flex-end)</h2>
+    <div class="container">
+        <div class="item1">Item 1</div>
+        <div class="item2">Item 2</div>
+        <div class="item3">Item 3</div>
+    </div>
+
+    <h2>.container2 (flex-direction: column-reverse)</h2>
+    <div class="container2">
+        <div class="item1">Item 1</div>
+        <div class="item2">Item 2</div>
+        <div class="item3">Item 3</div>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Starter JSON — Day 41</title>
+  <style>body{font-family:Arial,Helvetica,sans-serif;padding:24px}</style>
+</head>
+<body>
+  <h1>Starter JSON demo</h1>
+  <p>This page attempts to load <code>KnowJSON/data.json</code> using fetch and prints a short preview.</p>
+  <pre id="out">Loading…</pre>
+  <script>
+    fetch('KnowJSON/data.json').then(r=>r.json()).then(data=>{
+      document.getElementById('out').textContent = JSON.stringify(data,null,2);
+    }).catch(e=>{
+      document.getElementById('out').textContent = 'Could not load KnowJSON/data.json — check file exists.';
+    })
+  </script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+[
+    {
+        "name": "Abrham",
+        "corporation": "Appfactory",
+        "numberOfEmploy": 100,
+        "ceo": "Mister Jhon",
+        "rating": 3.7
+    },
+    {
+        "name": "Big",
+        "corporation": "Appfactory",
+        "numberOfEmploy": 100,
+        "ceo": "Mister golf",
+        "rating": 3.9
+    }
+]

@@ -5,7 +5,7 @@ __pycache__/
 env/
 venv/
 .venv/
-
+./git status
 # dotenv
 .env
 

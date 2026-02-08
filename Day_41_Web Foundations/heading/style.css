@@ -1,0 +1,76 @@
+body {
+    background-color: rgb(201, 216, 162);
+}
+
+#box {
+    width: 250px;
+    height: 250px;
+    background-color: rgb(179, 179, 255);
+    font-size: 13em;
+    text-align: center;
+
+}
+
+#box:hover {
+    animation-name: fadeIn;
+    animation-duration: 2s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes slideLeft {
+    from {
+        transform: translateX(100px)
+    }
+}
+
+@keyframes slideRight {
+    to {
+        transform: translateX(-100px)
+    }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(100px)
+    }
+}
+
+@keyframes slideDown {
+    to {
+        transform: translateY(-100px)
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes shrink {
+    to {
+        transform: scale(0.5);
+    }
+}
+
+@keyframes colorchange {
+    from {
+        background-color: rgb(179, 179, 255);
+    }
+
+    to {
+        background-color: rgb(255, 179, 179);
+    }
+}

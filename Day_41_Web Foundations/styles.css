@@ -1,0 +1,25 @@
+/* Simple, readable styles for the Day 41 index */
+:root{
+  --bg:#f7fafc;
+  --card:#ffffff;
+  --accent:#2563eb;
+  --muted:#6b7280;
+}
+html,body{height:100%;}
+body{
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  margin:0;
+  background:var(--bg);
+  color:#111827;
+  -webkit-font-smoothing:antialiased;
+}
+header{padding:48px 24px 12px;background:linear-gradient(90deg,#fff,#f1f5f9);box-shadow:0 1px 0 rgba(0,0,0,0.04)}
+header h1{margin:0;font-size:1.6rem}
+.subtitle{margin:6px 0 0;color:var(--muted)}
+main{padding:24px;max-width:960px;margin:0 auto}
+.projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px;padding:0;margin:12px 0;list-style:none}
+.projects li{background:var(--card);padding:12px;border-radius:8px;border:1px solid rgba(0,0,0,0.04)}
+.projects a{color:var(--accent);text-decoration:none;font-weight:600}
+footer{padding:18px;text-align:center;color:var(--muted);font-size:0.9rem}
+
+.starter{border:1px dashed rgba(0,0,0,0.06);padding:10px;border-radius:6px;background:#fff}
