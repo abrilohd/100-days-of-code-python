@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Contact Abrilo Hd for web projects, audits, and training">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Contact | Abrilo Hd</title>
+</head>
+<body>
+    <header>
+        <h1>Abrilo Hd</h1>
+        <p>Web Developer & HTML specialist</p>
+        
+        <nav aria-label="Main navigation">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="contact">
+        <header>
+            <h1>Get in Touch</h1>
+            <p>Ready to talk about your project or learn more about HTML?</p>
+        </header>
+
+        <!-- Contact Form -->
+        <section aria-labelledby="form-heading">
+            <h2 id="form-heading">Send a Message</h2>
+            <p>Fields marked with <abbr title="required">*</abbr> are required.</p>
+            
+            <form action="https://httpbin.org/post" method="post" id="contact-form">
+                <fieldset>
+                    <legend>Personal Information</legend>
+                    
+                    <div>
+                        <label for="name">Full name <abbr title="required">*</abbr></label>
+                        <input type="text" id="name" name="name" required minlength="2" maxlength="100" 
+                               aria-required="true" placeholder="Enter your full name">
+                    </div>
+                    
+                    <div>
+                        <label for="email">Email address <abbr title="required">*</abbr></label>
+                        <input type="email" id="email" name="email" required 
+                               aria-required="true" placeholder="your.email@example.com">
+                    </div>
+                    
+                    <div>
+                        <label for="company">Company or organization</label>
+                        <input type="text" id="company" name="company" placeholder="Optional">
+                    </div>
+                </fieldset>
+                
+                <fieldset>
+                    <legend>Project Details</legend>
+                    
+                    <div>
+                        <label for="project-type">Project type</label>
+                        <select id="project-type" name="project-type">
+                            <option value="">Select a project type</option>
+                            <option value="website">Website Development</option>
+                            <option value="audit">Accessibility Audit</option>
+                            <option value="training">HTML Training</option>
+                            <option value="consultation">Technical Consultation</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    
+                    <div>
+                        <label for="budget">Estimated budget</label>
+                        <input type="range" id="budget" name="budget" min="1000" max="50000" step="1000" value="10000">
+                        <output for="budget" id="budget-output">$10,000</output>
+                    </div>
+                    
+                    <div>
+                        <label for="timeline">Desired timeline <abbr title="required">*</abbr></label>
+                        <input type="date" id="timeline" name="timeline" required aria-required="true" min="2026-02-11">
+                    </div>
+                </fieldset>
+                
+                <fieldset>
+                    <legend>Your Message</legend>
+                    
+                    <div>
+                        <label for="subject">Subject <abbr title="required">*</abbr></label>
+                        <input type="text" id="subject" name="subject" required 
+                               aria-required="true" placeholder="Brief description of your inquiry">
+                    </div>
+                    
+                    <div>
+                        <label for="message">Message <abbr title="required">*</abbr></label>
+                        <textarea id="message" name="message" required aria-required="true" 
+                                  rows="10" cols="50" minlength="20" maxlength="2000"
+                                  placeholder="Please describe your project or question in detail..."></textarea>
+                    </div>
+                    
+                    <div>
+                        <label for="attachment">Attach file (optional)</label>
+                        <input type="file" id="attachment" name="attachment" accept=".pdf,.doc,.docx,.txt">
+                    </div>
+                    
+                    <div>
+                        <label for="newsletter">
+                            <input type="checkbox" id="newsletter" name="newsletter" checked>
+                            Subscribe to HTML tips newsletter
+                        </label>
+                    </div>
+                    
+                    <div>
+                        <label for="contact-method">Preferred contact method</label>
+                        <input list="contact-options" id="contact-method" name="contact-method">
+                        <datalist id="contact-options">
+                            <option value="Email">
+                            <option value="Phone">
+                            <option value="Video Call">
+                            <option value="In Person">
+                        </datalist>
+                    </div>
+                </fieldset>
+                
+                <div>
+                    <button type="submit">Send message</button>
+                    <button type="reset">Clear form</button>
+                    <button type="button" id="save-draft">Save draft</button>
+                </div>
+            </form>
+        </section>
+
+        <!-- Contact Information -->
+        <section aria-labelledby="contact-info-heading">
+            <h2 id="contact-info-heading">Alternative Contact Methods</h2>
+            
+            <address>
+                <h3>Direct contact</h3>
+                <p><strong>Email:</strong> <a href="mailto:abrilo@gmail.com">abrilo@gmail.com</a></p>
+                <p><strong>Phone:</strong> <a href="tel:+251909876543">+251 909 876 543</a></p>
+                <p><strong>Office hours:</strong> Monday–Friday, 9AM–5PM PST</p>
+                
+                <h3>Business address</h3>
+                <p>
+                    123 Semantic Street<br>
+                    San Francisco, CA 94107<br>
+                    United States
+                </p>
+            </address>
+            
+            <aside aria-label="Response time notice">
+                <h3>Response time</h3>
+                <p>I usually reply within <time datetime="P1D">24 hours</time> on business days.</p>
+                <p>For urgent matters, write "URGENT" in the subject line.</p>
+            </aside>
+        </section>
+
+        <!-- FAQ Section -->
+        <section aria-labelledby="faq-heading">
+            <h2 id="faq-heading">Frequently asked questions</h2>
+            
+            <dl>
+                <dt>What types of projects do you accept?</dt>
+                <dd>I focus on semantic HTML, accessibility reviews, and frontend patterns. I prefer projects that value clear code and good user experience.</dd>
+                
+                <dt>Do you work with teams outside the US?</dt>
+                <dd>Yes, I work with teams worldwide and can schedule meetings across time zones.</dd>
+                
+                <dt>What is your typical project timeline?</dt>
+                <dd>Small sites usually take 2–4 weeks. Larger projects can take 2–3 months depending on scope.</dd>
+                
+                <dt>Do you provide ongoing maintenance?</dt>
+                <dd>Yes, I offer ongoing support and maintenance plans.</dd>
+            </dl>
+        </section>
+
+        <!-- Embedded Content Example -->
+        <section aria-labelledby="embed-heading">
+            <h2 id="embed-heading">My development philosophy</h2>
+            
+            <figure>
+                <figcaption>Watch a short talk on semantic HTML:</figcaption>
+                <!-- YouTube embed placeholder -->
+                <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
+                        title="Semantic HTML best practices presentation" 
+                        width="560" height="315" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                    <p>Your browser doesn't support iframes. <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Watch the video on YouTube</a>.</p>
+                </iframe>
+            </figure>
+            
+            <audio controls>
+                <source src="html-philosophy.mp3" type="audio/mpeg">
+                <source src="html-philosophy.ogg" type="audio/ogg">
+                <p>Your browser doesn't support HTML5 audio. <a href="html-philosophy.mp3">Download the audio file</a>.</p>
+            </audio>
+        </section>
+    </main>
+
+    <footer>
+        <address>
+            <h2>Connect further</h2>
+            <p>For talks or workshops, please note that in your message.</p>
+        </address>
+        
+        <p>&copy; <time datetime="2026">2026</time> Abrilo Hd. All rights reserved.</p>
+        <p><a href="index.html">Return to homepage</a> | <a href="#contact-form">Back to form</a></p>
+        
+        <p><small>This form shows HTML form features. In a live site it would send data to a server.</small></p>
+    </footer>
+</body>
+</html>
