@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Portfolio projects showcasing semantic HTML and web development skills">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects | Abrilo Hd</title>
+</head>
+<body>
+    <header>
+        <h1>Abrilo Hd</h1>
+        <p>Web Developer & HTML specialist</p>
+        
+        <nav aria-label="Main navigation">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="projects">
+        <header>
+            <h1>Project Portfolio</h1>
+            <p>A collection of projects showing practical semantic HTML work</p>
+        </header>
+
+        <!-- Project 1 -->
+        <article aria-labelledby="project1-heading">
+            <header>
+                <h2 id="project1-heading">Accessible Government Portal</h2>
+                <p><time datetime="2025-11">November 2025</time> - Present</p>
+            </header>
+            
+            <section>
+                <h3>Project Description</h3>
+                <p>Redesigned a government website to meet WCAG 2.1 AA standards using clear headings, semantic structure, and ARIA landmarks. The site works without CSS or JavaScript.</p>
+                
+                <figure>
+                    <img src="gov-portal.jpg" alt="Screenshot of accessible government portal website showing clean structure" width="600">
+                    <figcaption>Government portal with semantic markup and keyboard navigation</figcaption>
+                </figure>
+                
+                <h3>Technical Implementation</h3>
+                <ul>
+                    <li>Used semantic elements like <code>&lt;main&gt;</code>, <code>&lt;nav&gt;</code>, and <code>&lt;article&gt;</code></li>
+                    <li>Added skip links and clear focus order for keyboard users</li>
+                    <li>Built accessible forms with correctly associated labels</li>
+                    <li>Structured data tables with proper scope attributes</li>
+                </ul>
+                
+                <h3>Tools & Technologies</h3>
+                <ol>
+                    <li>HTML5 Semantic Elements</li>
+                    <li>WAI-ARIA</li>
+                    <li>NVDA Screen Reader Testing</li>
+                    <li>Lighthouse Auditing</li>
+                </ol>
+            </section>
+            
+            <footer>
+                <p><strong>Achievement:</strong> High accessibility results from testing</p>
+            </footer>
+        </article>
+
+        <!-- Project 2 -->
+        <article aria-labelledby="project2-heading">
+            <header>
+                <h2 id="project2-heading">E-commerce Product Catalog</h2>
+                <p><time datetime="2025-08">August 2025</time> - <time datetime="2025-10">October 2025</time></p>
+            </header>
+            
+            <section>
+                <h3>Project Description</h3>
+                <p>Built a product catalog focused on clear semantics and SEO. Each product uses simple, meaningful HTML for content and pricing.</p>
+                
+                <figure>
+                    <img src="ecommerce-catalog.jpg" alt="Product catalog showing items with descriptions and prices" width="600">
+                    <figcaption>Semantic product catalog with microdata for SEO</figcaption>
+                </figure>
+                
+                <h3>Technical Implementation</h3>
+                <ul>
+                    <li>Used <code>&lt;article&gt;</code> for individual products</li>
+                    <li>Implemented Schema.org microdata for rich search results</li>
+                    <li>Created accessible product filters using <code>&lt;fieldset&gt;</code> and <code>&lt;legend&gt;</code></li>
+                    <li>Used <code>&lt;figure&gt;</code> and <code>&lt;figcaption&gt;</code> for product images</li>
+                </ul>
+                
+                <h3>Tools & Technologies</h3>
+                <ol>
+                    <li>HTML5 Microdata</li>
+                    <li>Schema.org Vocabulary</li>
+                    <li>Google Search Console</li>
+                    <li>Structured Data Testing Tool</li>
+                </ol>
+            </section>
+            
+            <footer>
+                <p><strong>Achievement:</strong> Improved organic search visibility</p>
+            </footer>
+        </article>
+
+        <!-- Project 3 -->
+        <article aria-labelledby="project3-heading">
+            <header>
+                <h2 id="project3-heading">Interactive Learning Platform</h2>
+                <p><time datetime="2025-03">March 2025</time> - <time datetime="2025-07">July 2025</time></p>
+            </header>
+            
+            <section>
+                <h3>Project Description</h3>
+                <p>Built a learning site that uses HTML-first patterns to teach web development. Interactive examples use native HTML features where possible.</p>
+                
+                <figure>
+                    <img src="learning-platform.jpg" alt="Educational platform showing code examples and explanations" width="600">
+                    <figcaption>Learning platform with interactive HTML examples</figcaption>
+                </figure>
+                
+                <h3>Technical Implementation</h3>
+                <ul>
+                    <li>Used <code>&lt;details&gt;</code> and <code>&lt;summary&gt;</code> for expandable content</li>
+                    <li>Implemented <code>&lt;dialog&gt;</code> element for modal windows</li>
+                    <li>Created accessible code examples with <code>&lt;pre&gt;</code> and <code>&lt;code&gt;</code></li>
+                    <li>Used <code>&lt;meter&gt;</code> and <code>&lt;progress&gt;</code> for visual indicators</li>
+                </ul>
+                
+                <h3>Tools & Technologies</h3>
+                <ol>
+                    <li>HTML5 Interactive Elements</li>
+                    <li>Progressive Enhancement</li>
+                    <li>Browser Native Features</li>
+                    <li>Form Validation API</li>
+                </ol>
+            </section>
+            
+            <footer>
+                <p><strong>Achievement:</strong> Platform is usable without JavaScript</p>
+            </footer>
+        </article>
+
+        <!-- Project Gallery -->
+        <section aria-labelledby="gallery-heading">
+            <h2 id="gallery-heading">Additional Projects</h2>
+            
+            <table>
+                <caption>Smaller projects and experiments</caption>
+                <thead>
+                    <tr>
+                        <th scope="col">Project Name</th>
+                        <th scope="col">Year</th>
+                        <th scope="col">Focus Area</th>
+                        <th scope="col">Key Feature</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">Semantic News Article</th>
+                        <td>2024</td>
+                        <td>Content Structure</td>
+                        <td><code>&lt;time&gt;</code> and <code>&lt;address&gt;</code> usage</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Accessible Data Table</th>
+                        <td>2024</td>
+                        <td>Data Presentation</td>
+                        <td>Proper scope attributes</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">HTML-Only Resume</th>
+                        <td>2023</td>
+                        <td>Document Semantics</td>
+                        <td>Semantic sectioning</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Multimedia Portfolio</th>
+                        <td>2023</td>
+                        <td>Media Embeds</td>
+                        <td><code>&lt;video&gt;</code> and <code>&lt;audio&gt;</code> with captions</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <footer>
+        <address>
+            <h2>Interested in My Work?</h2>
+            <p>View the <a href="contact.html">contact page</a> to get in touch about project collaborations.</p>
+        </address>
+        
+        <p>&copy; <time datetime="2026">2026</time> Abrilo Hd. All rights reserved.</p>
+        <p><a href="index.html">Return to homepage</a></p>
+    </footer>
+</body>
+</html>
