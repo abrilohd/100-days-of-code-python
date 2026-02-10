@@ -545,3 +545,31 @@ An autonomous AI travel agent that:
 - Fully automated
 - High user trust
 - Massive global demand
+
+
+
+## Idea: WebSignal – Real-Time Web Change Detector
+
+### Concept
+A service that continuously scrapes selected websites (news, prices, jobs, scholarships, events) and alerts users when something important changes.
+
+### Features
+- Track specific pages or keywords
+- Detect content changes (price drops, new posts, updates)
+- Email / SMS / WhatsApp alerts
+- Dashboard with history of changes
+
+### Tech Stack (Future)
+- Python (BeautifulSoup, Requests, Playwright)
+- FastAPI backend
+- React / Next.js frontend
+- PostgreSQL / Supabase
+- AI summarizer for detected changes
+
+### Value
+- Useful for students, investors, researchers, job seekers
+- Can be free (basic) + paid (advanced alerts)
+- Not commonly done well by beginners
+
+### Why It’s Powerful
+Turns passive websites into active notifications.
