@@ -1,4 +1,5 @@
 # Python
+.cache/
 __pycache__/
 *.py[cod]
 *.pyo
@@ -9,8 +10,10 @@ git_status.txt
 # dotenv
 .env
 
+token.txt
 # VS Code
 .vscode/
+IDEAS.md
 
 # system
 .DS_Store
