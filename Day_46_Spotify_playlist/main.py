@@ -3,6 +3,10 @@ from spotipy.oauth2 import SpotifyOAuth, SpotifyClientCredentials
 from bs4 import BeautifulSoup
 from pprint import pprint
 import requests
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 date = input("Which year do you want to travel to? Type the date in this format YYYY-MM-DD: ")
 response = requests.get("https://www.billboard.com/charts/hot-100/" + date)
@@ -13,8 +17,8 @@ song_names = [song.getText().strip() for song in song_names_spans]
 print(f"✅ Found {len(song_names)} songs from Billboard {date}")
 
 sp = spotipy.Spotify(auth_manager=SpotifyOAuth(
-    client_id="878d838b2ac1496eae6097355900ac13",
-    client_secret="1754b61e39e0496aaff67f7c544c1917",
+    client_id = os.getenv("CLIENT_ID"),
+    client_secret = os.getenv("CLIENT_SECRET"),
     redirect_uri="http://127.0.0.1:8888/callback",  # must match your Spotify Dashboard setting
     scope="playlist-modify-private",
     show_dialog=True,
