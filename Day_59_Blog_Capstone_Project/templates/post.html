@@ -1,0 +1,39 @@
+{% include 'header.html' %}
+
+<!-- Page Header -->
+<header class="masthead" style="background-image: url('{{ post.image if post and post.image else url_for('static', filename='assets/img/post-bg.jpg') }}')">
+    <div class="container position-relative px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class="col-md-10 col-lg-8 col-xl-7">
+                <div class="post-heading">
+                    {% if post %}
+                        <h1>{{ post.title }}</h1>
+                        {% if post.subtitle %}<h2 class="subheading">{{ post.subtitle }}</h2>{% endif %}
+                        <span class="meta">Posted by <a href="#">{{ post.author }}</a> on {{ post.date }}</span>
+                    {% else %}
+                        <h1>Post not found</h1>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article class="mb-4">
+    <div class="container px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class="col-md-10 col-lg-8 col-xl-7">
+                {% if post and post.body %}
+                    {{ post.body | safe }}
+                {% elif not post %}
+                    <p>The post you requested could not be found.</p>
+                {% else %}
+                    <p>No content available for this post.</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</article>
+
+{% include 'footer.html' %}
