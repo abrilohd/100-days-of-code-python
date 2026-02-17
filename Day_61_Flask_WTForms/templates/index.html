@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<div class="text-center">
+    <h1>Welcome</h1>
+    <a href="{{ url_for('login') }}" class="btn btn-outline-primary mt-3">
+        Go to Login
+    </a>
+</div>
+{% endblock %}
