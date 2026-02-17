@@ -1,0 +1,6 @@
+flask
+flask-bootstrap
+flask-wtf
+flask-sqlalchemy
+wtforms
+python-dotenv

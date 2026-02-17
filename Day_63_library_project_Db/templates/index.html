@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block title %}Library{% endblock %}
+
+{% block content %}
+
+<ul class="list-group">
+    {% for book in books %}
+    <li class="list-group-item d-flex justify-content-between align-items-center">
+        {{ book.title }} — {{ book.author }} (⭐ {{ book.rating }})
+        <span>
+            <a href="{{ url_for('edit', book_id=book.id) }}" class="btn btn-sm btn-warning">Edit</a>
+            <a href="{{ url_for('delete', book_id=book.id) }}" class="btn btn-sm btn-danger">Delete</a>
+        </span>
+    </li>
+    {% endfor %}
+</ul>
+
+<a href="{{ url_for('add') }}" class="btn btn-primary mt-3">Add New Book</a>
+{% endblock %}

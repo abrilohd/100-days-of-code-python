@@ -1,0 +1,25 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f6f8;
+}
+
+.container {
+    width: 600px;
+    margin: auto;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.btn {
+    display: inline-block;
+    margin-bottom: 15px;
+}
+
+.book-list li {
+    margin: 10px 0;
+}
+
+.empty {
+    color: gray;
+}
