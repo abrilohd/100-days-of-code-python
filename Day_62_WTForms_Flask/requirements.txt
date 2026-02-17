@@ -1,0 +1,8 @@
+Bootstrap_Flask
+flask
+flask-bootstrap
+flask-wtf
+WTForms
+python-dotenv
+email-validator
+Werkzeug
