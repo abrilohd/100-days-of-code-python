@@ -1,0 +1,10 @@
+Bootstrap-Flask==2.5.0
+Flask-CKEditor==1.0.0
+Flask-Login==0.6.3
+Flask-Gravatar==0.5.0
+Flask-WTF==1.2.2
+WTForms==3.2.1
+Werkzeug==3.1.5
+Flask==3.1.2
+Flask-SQLAlchemy==3.1.1
+SQLAlchemy==2.0.38
