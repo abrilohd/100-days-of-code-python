@@ -1,0 +1,15 @@
+
+002 Git-for-Windows-incl.Bash-
+https://gitforwindows.org/
+
+004 Command-Line-Lesson-from-Day-54
+https://www.udemy.com/course/100-days-of-code/learn/lecture/21928134#overview
+
+006 Useful.gitignore-templates
+https://github.com/github/gitignore
+
+007 Beginner-friendly-repos
+https://github.com/MunGell/awesome-for-beginners
+
+007 Wordle-Game-in-Python-ritik48-
+https://github.com/ritik48/Wordle-Game
