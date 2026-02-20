@@ -1,0 +1,126 @@
+
+{% block content %}
+<div class="page-header">
+    <h1 class="page-title">Understanding Databases & ORM</h1>
+    <p class="page-description">From relational databases to object-oriented mapping</p>
+</div>
+
+<div class="content-grid">
+    <div class="concept-card">
+        <h2 class="concept-title">📊 What is a Database?</h2>
+        <p class="concept-text">
+            A database is an organized collection of structured information, or data, typically stored 
+            electronically in a computer system. Databases are designed to efficiently store, retrieve, 
+            and manage large amounts of information. In web applications, databases persist user data, 
+            application state, and business logic information.
+        </p>
+        <div class="concept-highlight">
+            <strong>Key Properties:</strong> Persistence, ACID compliance, Scalability, Data integrity
+        </div>
+    </div>
+
+    <div class="concept-card">
+        <h2 class="concept-title">🔄 What is ORM?</h2>
+        <p class="concept-text">
+            Object-Relational Mapping (ORM) is a programming technique that converts data between 
+            incompatible type systems in object-oriented programming languages and relational databases. 
+            SQLAlchemy, our ORM of choice, creates a "virtual object database" that can be used from 
+            within Python code.
+        </p>
+        <div class="concept-highlight">
+            <strong>Benefits:</strong> Write Python instead of SQL, Automatic query generation, 
+            Relationship handling, Database abstraction
+        </div>
+    </div>
+
+    <div class="comparison-section">
+        <h2 class="comparison-title">Database vs Object-Oriented Concepts</h2>
+        
+        <div class="comparison-grid">
+            <div class="comparison-card">
+                <div class="comparison-header database-header">
+                    <h3>Relational Database</h3>
+                </div>
+                <div class="comparison-body">
+                    <div class="comparison-item">
+                        <span class="term">Table</span>
+                        <span class="definition">A collection of related data organized in rows and columns</span>
+                    </div>
+                    <div class="comparison-item">
+                        <span class="term">Row</span>
+                        <span class="definition">A single record in a table containing all columns defined</span>
+                    </div>
+                    <div class="comparison-item">
+                        <span class="term">Column</span>
+                        <span class="definition">A field type that stores a specific attribute of data</span>
+                    </div>
+                    <div class="comparison-item">
+                        <span class="term">Primary Key</span>
+                        <span class="definition">Unique identifier for each row in the table</span>
+                    </div>
+                    <div class="comparison-item">
+                        <span class="term">Foreign Key</span>
+                        <span class="definition">Links tables together through shared columns</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="comparison-card">
+                <div class="comparison-header orm-header">
+                    <h3>SQLAlchemy ORM</h3>
+                </div>
+                <div class="comparison-body">
+                    <div class="comparison-item">
+                        <span class="term">Class</span>
+                        <span class="definition">Python class that defines the structure of database table</span>
+                    </div>
+                    <div class="comparison-item">
+                        <span class="term">Object</span>
+                        <span class="definition">Instance of a class representing one row of data</span>
+                    </div>
+                    <div class="comparison-item">
+                        <span class="term">Attribute</span>
+                        <span class="definition">Class property mapping to database column</span>
+                    </div>
+                    <div class="comparison-item">
+                        <span class="term">Identity Map</span>
+                        <span class="definition">Ensures each object is unique and tracked</span>
+                    </div>
+                    <div class="comparison-item">
+                        <span class="term">Relationship</span>
+                        <span class="definition">Defines links between different model classes</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="code-example">
+        <h3 class="code-example-title">SQLAlchemy Model Example</h3>
+        <div class="code-block">
+            <pre><code>from flask_sqlalchemy import SQLAlchemy
+
+db = SQLAlchemy()
+
+class User(db.Model):
+    __tablename__ = 'users'
+    
+    id = db.Column(db.Integer, primary_key=True)
+    username = db.Column(db.String(80), unique=True, nullable=False)
+    email = db.Column(db.String(120), unique=True, nullable=False)
+    posts = db.relationship('Post', backref='author')
+    
+    def __repr__(self):
+        return f'&lt;User {self.username}&gt;'
+
+class Post(db.Model):
+    __tablename__ = 'posts'
+    
+    id = db.Column(db.Integer, primary_key=True)
+    title = db.Column(db.String(200), nullable=False)
+    content = db.Column(db.Text, nullable=False)
+    user_id = db.Column(db.Integer, db.ForeignKey('users.id'))</code></pre>
+        </div>
+    </div>
+</div>
+{% endblock %}

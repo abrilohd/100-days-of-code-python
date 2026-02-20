@@ -1,0 +1,120 @@
+
+
+{% block content %}
+<div class="page-header">
+    <h1 class="page-title">CRUD Operations</h1>
+    <p class="page-description">Create, Read, Update, Delete - The four pillars of persistent storage</p>
+</div>
+
+<div class="crud-grid">
+    <div class="crud-card create">
+        <div class="crud-icon">➕</div>
+        <h2 class="crud-operation">Create</h2>
+        <p class="crud-description">Add new records to the database. In SQLAlchemy, this involves creating a new model instance and adding it to the session.</p>
+        <div class="crud-code">
+            <code>new_user = User(username='john', email='john@example.com')<br>db.session.add(new_user)<br>db.session.commit()</code>
+        </div>
+    </div>
+
+    <div class="crud-card read">
+        <div class="crud-icon">📖</div>
+        <h2 class="crud-operation">Read</h2>
+        <p class="crud-description">Query and retrieve data from the database. SQLAlchemy provides a powerful query interface.</p>
+        <div class="crud-code">
+            <code>users = User.query.all()<br>user = User.query.get(1)<br>admins = User.query.filter_by(role='admin').first()</code>
+        </div>
+    </div>
+
+    <div class="crud-card update">
+        <div class="crud-icon">✏️</div>
+        <h2 class="crud-operation">Update</h2>
+        <p class="crud-description">Modify existing records. Simply update object attributes and commit.</p>
+        <div class="crud-code">
+            <code>user = User.query.get(1)<br>user.email = 'newemail@example.com'<br>db.session.commit()</code>
+        </div>
+    </div>
+
+    <div class="crud-card delete">
+        <div class="crud-icon">🗑️</div>
+        <h2 class="crud-operation">Delete</h2>
+        <p class="crud-description">Remove records from the database. Delete the object and commit.</p>
+        <div class="crud-code">
+            <code>user = User.query.get(1)<br>db.session.delete(user)<br>db.session.commit()</code>
+        </div>
+    </div>
+</div>
+
+<div class="table-section">
+    <h2 class="table-section-title">CRUD in REST APIs</h2>
+    <p class="table-section-description">How CRUD operations map to HTTP methods and routes in a Flask REST API</p>
+    
+    <div class="table-container">
+        <table class="styled-table">
+            <thead>
+                <tr>
+                    <th>Operation</th>
+                    <th>HTTP Method</th>
+                    <th>Example Route</th>
+                    <th>SQLAlchemy Method</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><span class="operation-badge create-badge">Create</span></td>
+                    <td><code class="http-method post">POST</code></td>
+                    <td><code class="route-example">/api/users</code></td>
+                    <td><code>db.session.add()</code></td>
+                </tr>
+                <tr>
+                    <td><span class="operation-badge read-badge">Read (All)</span></td>
+                    <td><code class="http-method get">GET</code></td>
+                    <td><code class="route-example">/api/users</code></td>
+                    <td><code>User.query.all()</code></td>
+                </tr>
+                <tr>
+                    <td><span class="operation-badge read-badge">Read (One)</span></td>
+                    <td><code class="http-method get">GET</code></td>
+                    <td><code class="route-example">/api/users/1</code></td>
+                    <td><code>User.query.get(id)</code></td>
+                </tr>
+                <tr>
+                    <td><span class="operation-badge update-badge">Update</span></td>
+                    <td><code class="http-method put">PUT</code></td>
+                    <td><code class="route-example">/api/users/1</code></td>
+                    <td><code>db.session.commit()</code></td>
+                </tr>
+                <tr>
+                    <td><span class="operation-badge update-badge">Update (Partial)</span></td>
+                    <td><code class="http-method patch">PATCH</code></td>
+                    <td><code class="route-example">/api/users/1</code></td>
+                    <td><code>db.session.commit()</code></td>
+                </tr>
+                <tr>
+                    <td><span class="operation-badge delete-badge">Delete</span></td>
+                    <td><code class="http-method delete">DELETE</code></td>
+                    <td><code class="route-example">/api/users/1</code></td>
+                    <td><code>db.session.delete()</code></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="crud-flask-example">
+    <h3 class="example-title">Flask Route Example</h3>
+    <div class="code-block">
+        <pre><code>@app.route('/api/users', methods=['GET'])
+def get_users():
+    users = User.query.all()
+    return jsonify([user.to_dict() for user in users]), 200
+
+@app.route('/api/users', methods=['POST'])
+def create_user():
+    data = request.get_json()
+    user = User(username=data['username'], email=data['email'])
+    db.session.add(user)
+    db.session.commit()
+    return jsonify(user.to_dict()), 201</code></pre>
+    </div>
+</div>
+{% endblock %}

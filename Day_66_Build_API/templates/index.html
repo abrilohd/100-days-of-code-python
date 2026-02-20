@@ -1,0 +1,103 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="hero-section">
+    <h1 class="hero-title">Backend Foundations</h1>
+    <p class="hero-subtitle">Today's journey into the world of backend development with Flask and SQLAlchemy</p>
+    <div class="hero-divider"></div>
+</div>
+
+<div class="intro-card">
+    <p class="intro-text">
+        Today I dove deep into the fundamentals of backend development. I learned how Flask provides 
+        the foundation for web applications, while SQLAlchemy elegantly bridges Python objects with 
+        database tables. This journey through CRUD operations, REST APIs, and database modeling has 
+        given me a solid understanding of how modern web applications work behind the scenes.
+    </p>
+</div>
+
+<div class="cards-grid">
+    <div class="topic-card">
+        <div class="card-header flask">
+            <span class="card-icon">🌶️</span>
+            <h2 class="card-title">Flask</h2>
+        </div>
+        <div class="card-body">
+            <p>Micro web framework for Python that provides tools, libraries, and patterns for building web applications.</p>
+            <ul class="card-list">
+                <li>Lightweight and modular</li>
+                <li>Built-in development server</li>
+                <li>Jinja2 templating</li>
+                <li>RESTful request handling</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="topic-card">
+        <div class="card-header sqlalchemy">
+            <span class="card-icon">🗄️</span>
+            <h2 class="card-title">SQLAlchemy ORM</h2>
+        </div>
+        <div class="card-body">
+            <p>Object-Relational Mapping library that maps database tables to Python classes and objects.</p>
+            <ul class="card-list">
+                <li>Object-oriented database access</li>
+                <li>Session management</li>
+                <li>Query builder interface</li>
+                <li>Relationship mapping</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="topic-card">
+        <div class="card-header crud">
+            <span class="card-icon">🔄</span>
+            <h2 class="card-title">CRUD Operations</h2>
+        </div>
+        <div class="card-body">
+            <p>The four basic operations for persistent data storage in databases and APIs.</p>
+            <ul class="card-list">
+                <li>Create: Add new records</li>
+                <li>Read: Query/Retrieve data</li>
+                <li>Update: Modify existing data</li>
+                <li>Delete: Remove records</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="topic-card">
+        <div class="card-header api">
+            <span class="card-icon">🌐</span>
+            <h2 class="card-title">REST API</h2>
+        </div>
+        <div class="card-body">
+            <p>Architectural style for designing networked applications with standard HTTP methods.</p>
+            <ul class="card-list">
+                <li>Stateless communication</li>
+                <li>Resource-based endpoints</li>
+                <li>HTTP methods as actions</li>
+                <li>JSON/XML responses</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="topic-card">
+        <div class="card-header postman">
+            <span class="card-icon">📮</span>
+            <h2 class="card-title">Postman</h2>
+        </div>
+        <div class="card-body">
+            <p>API development and testing tool for creating, testing, and documenting APIs.</p>
+            <ul class="card-list">
+                <li>Request building and sending</li>
+                <li>Environment variables</li>
+                <li>Test automation</li>
+                <li>Collection management</li>
+            </ul>
+        </div>
+    </div>
+</div>
+    {% include "api.html" %}
+    {% include "crud.html" %}
+    {% include "database.html" %}
+{% endblock %}

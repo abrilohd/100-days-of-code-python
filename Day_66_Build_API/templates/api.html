@@ -1,0 +1,201 @@
+
+{% block content %}
+<div class="page-header">
+    <h1 class="page-title">REST APIs</h1>
+    <p class="page-description">Representational State Transfer - Architectural style for distributed systems</p>
+</div>
+
+<div class="api-intro">
+    <div class="api-definition">
+        <h2 class="api-section-title">🌐 What is a REST API?</h2>
+        <p class="api-text">
+            REST (Representational State Transfer) is an architectural style for designing networked applications. 
+            REST APIs use HTTP requests to perform CRUD operations on resources, which are represented as JSON or XML. 
+            The key principles include statelessness, client-server separation, and uniform interfaces.
+        </p>
+    </div>
+</div>
+
+<div class="http-methods-section">
+    <h2 class="section-title">HTTP Methods in REST</h2>
+    <div class="methods-grid">
+        <div class="method-card get">
+            <div class="method-header">
+                <span class="method-badge get">GET</span>
+            </div>
+            <div class="method-body">
+                <p>Retrieve data from the server. Safe and idempotent operations that don't modify resources.</p>
+                <div class="method-example">
+                    <code>GET /api/users - Get all users</code>
+                    <code>GET /api/users/1 - Get user with ID 1</code>
+                </div>
+            </div>
+        </div>
+
+        <div class="method-card post">
+            <div class="method-header">
+                <span class="method-badge post">POST</span>
+            </div>
+            <div class="method-body">
+                <p>Create a new resource on the server. Not idempotent - multiple requests create multiple resources.</p>
+                <div class="method-example">
+                    <code>POST /api/users - Create new user</code>
+                    <code>POST /api/posts - Create new post</code>
+                </div>
+            </div>
+        </div>
+
+        <div class="method-card put">
+            <div class="method-header">
+                <span class="method-badge put">PUT</span>
+            </div>
+            <div class="method-body">
+                <p>Update or replace an existing resource. Idempotent - same request produces same result.</p>
+                <div class="method-example">
+                    <code>PUT /api/users/1 - Replace user data</code>
+                    <code>PUT /api/posts/5 - Update entire post</code>
+                </div>
+            </div>
+        </div>
+
+        <div class="method-card patch">
+            <div class="method-header">
+                <span class="method-badge patch">PATCH</span>
+            </div>
+            <div class="method-body">
+                <p>Partially update an existing resource. Only modify specified fields.</p>
+                <div class="method-example">
+                    <code>PATCH /api/users/1 - Update email only</code>
+                    <code>PATCH /api/posts/5 - Update title</code>
+                </div>
+            </div>
+        </div>
+
+        <div class="method-card delete">
+            <div class="method-header">
+                <span class="method-badge delete">DELETE</span>
+            </div>
+            <div class="method-body">
+                <p>Remove a resource from the server. Idempotent - repeated calls have same effect.</p>
+                <div class="method-example">
+                    <code>DELETE /api/users/1 - Remove user</code>
+                    <code>DELETE /api/posts/5 - Delete post</code>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="status-codes-section">
+    <h2 class="section-title">HTTP Status Codes</h2>
+    <div class="status-codes-grid">
+        <div class="status-card success">
+            <div class="status-code">200</div>
+            <div class="status-info">
+                <h3>OK</h3>
+                <p>Successful GET, PUT, PATCH, or DELETE operations</p>
+            </div>
+        </div>
+        <div class="status-card success">
+            <div class="status-code">201</div>
+            <div class="status-info">
+                <h3>Created</h3>
+                <p>Successful POST request creating a new resource</p>
+            </div>
+        </div>
+        <div class="status-card error">
+            <div class="status-code">400</div>
+            <div class="status-info">
+                <h3>Bad Request</h3>
+                <p>Invalid request format or parameters</p>
+            </div>
+        </div>
+        <div class="status-card error">
+            <div class="status-code">403</div>
+            <div class="status-info">
+                <h3>Forbidden</h3>
+                <p>Authentication succeeded but action not allowed</p>
+            </div>
+        </div>
+        <div class="status-card error">
+            <div class="status-code">404</div>
+            <div class="status-info">
+                <h3>Not Found</h3>
+                <p>Requested resource doesn't exist</p>
+            </div>
+        </div>
+        <div class="status-card error">
+            <div class="status-code">500</div>
+            <div class="status-info">
+                <h3>Server Error</h3>
+                <p>Internal server error occurred</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="json-example-section">
+    <h2 class="section-title">JSON Response Example</h2>
+    <div class="code-block">
+        <pre><code class="json">{
+    "status": "success",
+    "data": {
+        "users": [
+            {
+                "id": 1,
+                "username": "johndoe",
+                "email": "john@example.com",
+                "created_at": "2024-01-15T10:30:00Z",
+                "posts": [
+                    {
+                        "id": 1,
+                        "title": "Learning REST APIs",
+                        "content": "Today I learned about REST..."
+                    }
+                ]
+            }
+        ]
+    },
+    "meta": {
+        "total_count": 1,
+        "page": 1,
+        "per_page": 10
+    }
+}</code></pre>
+    </div>
+    <p class="json-caption">Typical JSON response structure with metadata and nested relationships</p>
+</div>
+
+<div class="flask-api-example">
+    <h2 class="section-title">Flask REST API Example</h2>
+    <div class="code-block">
+        <pre><code>from flask import Flask, jsonify, request
+from flask_sqlalchemy import SQLAlchemy
+
+app = Flask(__name__)
+db = SQLAlchemy(app)
+
+class User(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    username = db.Column(db.String(80), unique=True, nullable=False)
+    
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'username': self.username
+        }
+
+@app.route('/api/users', methods=['GET'])
+def get_users():
+    users = User.query.all()
+    return jsonify([user.to_dict() for user in users]), 200
+
+@app.route('/api/users/&lt;int:id&gt;', methods=['GET'])
+def get_user(id):
+    user = User.query.get(id)
+    if user:
+        return jsonify(user.to_dict()), 200
+    return jsonify({'error': 'User not found'}), 404</code></pre>
+    </div>
+</div>
+{% endblock %}
