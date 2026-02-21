@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Tech Pulse</title>
+    {% block styles %}
+    <!-- Load Bootstrap-Flask CSS here -->
+    {{ bootstrap.load_css() }}
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="{{ url_for('static', filename='assets/favicon.ico') }}"
+    />
+    <!-- Font Awesome icons (free version)-->
+    <script
+      src="https://use.fontawesome.com/releases/v6.3.0/js/all.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Google fonts - Modern Inter font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link
+      href="{{ url_for('static', filename='css/styles.css') }}"
+      rel="stylesheet"
+    />
+    
+    <!-- Additional modern styles -->
+    <style>
+        :root {
+            --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --secondary-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            --accent-gradient: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            
+            /* Light mode variables */
+            --bg-primary: #ffffff;
+            --bg-secondary: #f8fafc;
+            --text-primary: #1a2634;
+            --text-secondary: #4a5568;
+            --text-muted: #718096;
+            --card-bg: rgba(255, 255, 255, 0.95);
+            --card-border: rgba(102, 126, 234, 0.1);
+            --navbar-bg: rgba(255, 255, 255, 0.95);
+            --footer-bg: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
+            --input-bg: #ffffff;
+            --input-border: #e2e8f0;
+            --shadow-color: rgba(0, 0, 0, 0.1);
+            --toggle-bg: #f3f4f6;
+            --toggle-color: #4b5563;
+            --badge-bg: rgba(102, 126, 234, 0.1);
+            --stat-color: #4a5568;
+            --border-color: #e2e8f0;
+            --action-bg: #f7fafc;
+            --hover-bg: rgba(102, 126, 234, 0.05);
+        }
+
+        /* Dark mode variables */
+        body.dark-mode {
+            --bg-primary: #0f1420;
+            --bg-secondary: #1a1f2e;
+            --text-primary: #e9edf5;
+            --text-secondary: #a0b3d9;
+            --text-muted: #8a9bb8;
+            --card-bg: rgba(26, 31, 46, 0.98);
+            --card-border: rgba(102, 126, 234, 0.25);
+            --navbar-bg: rgba(15, 20, 32, 0.98);
+            --footer-bg: linear-gradient(135deg, #0a0e1a 0%, #141a28 100%);
+            --input-bg: #232937;
+            --input-border: #3a4258;
+            --shadow-color: rgba(0, 0, 0, 0.5);
+            --toggle-bg: #2a3042;
+            --toggle-color: #a0b3d9;
+            --badge-bg: rgba(102, 126, 234, 0.2);
+            --stat-color: #a0b3d9;
+            --border-color: #2d3748;
+            --action-bg: #1a1f2e;
+            --hover-bg: rgba(102, 126, 234, 0.15);
+        }
+
+        /* Base styles */
+        body {
+            font-family: 'Inter', sans-serif;
+            background: url("{{ url_for('static', filename='assets/img/image.jpg') }}") no-repeat center center fixed;
+            background-size: cover;
+            min-height: 100vh;
+            position: relative;
+            background-color: var(--bg-secondary);
+            color: var(--text-primary);
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        
+        /* Overlay for background image */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(3px);
+            z-index: -1;
+            transition: background 0.3s ease;
+        }
+        
+        body.dark-mode::before {
+            background: rgba(10, 14, 23, 0.95);
+        }
+
+        /* Modern Navbar Styles */
+        .navbar-modern {
+            background: var(--navbar-bg) !important;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--card-border);
+            box-shadow: 0 4px 30px var(--shadow-color);
+            padding: 0.5rem 0;
+            transition: all 0.3s ease;
+        }
+        
+        .navbar-modern.scrolled {
+            padding: 0.3rem 0;
+            background: var(--navbar-bg) !important;
+            box-shadow: 0 4px 20px var(--shadow-color);
+        }
+        
+        .navbar-brand-modern {
+            font-weight: 800;
+            font-size: 1.8rem;
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: -0.5px;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .navbar-brand-modern i {
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 2rem;
+        }
+        
+        .navbar-brand-modern:hover {
+            transform: scale(1.05);
+        }
+        
+        .nav-link-modern {
+            font-weight: 500;
+            color: var(--text-secondary) !important;
+            padding: 0.5rem 1.2rem !important;
+            margin: 0 0.2rem;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            position: relative;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .nav-link-modern i {
+            font-size: 1rem;
+            color: inherit;
+        }
+        
+        .nav-link-modern:hover {
+            color: #667eea !important;
+            background: var(--hover-bg);
+            transform: translateY(-2px);
+        }
+        
+        .nav-link-modern.active {
+            background: var(--primary-gradient);
+            color: white !important;
+        }
+        
+        .nav-link-modern.active i {
+            color: white;
+        }
+        
+        .nav-link-modern.login-btn {
+            background: var(--secondary-gradient);
+            color: white !important;
+            box-shadow: 0 4px 15px rgba(240, 98, 146, 0.3);
+        }
+        
+        .nav-link-modern.register-btn {
+            background: var(--accent-gradient);
+            color: white !important;
+            box-shadow: 0 4px 15px rgba(79, 172, 254, 0.3);
+        }
+        
+        .nav-link-modern.logout-btn {
+            background: linear-gradient(135deg, #f43b47 0%, #453a94 100%);
+            color: white !important;
+            box-shadow: 0 4px 15px rgba(244, 59, 71, 0.3);
+        }
+
+        /* Theme Toggle Button */
+        .theme-toggle {
+            background: var(--toggle-bg);
+            border-radius: 50px;
+            padding: 0.3rem;
+            display: inline-flex;
+            align-items: center;
+            cursor: pointer;
+            border: 1px solid var(--card-border);
+            transition: all 0.3s ease;
+        }
+
+        .theme-toggle i {
+            font-size: 1.1rem;
+            padding: 0.5rem 0.8rem;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            color: var(--toggle-color);
+        }
+
+        .theme-toggle i.active {
+            background: var(--primary-gradient);
+            color: white;
+            box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3);
+        }
+
+        .theme-toggle i:not(.active):hover {
+            background: var(--hover-bg);
+            color: #667eea;
+        }
+        
+        /* Mobile menu styles */
+        @media (max-width: 991.98px) {
+            .navbar-collapse {
+                background: var(--navbar-bg);
+                backdrop-filter: blur(10px);
+                border-radius: 20px;
+                padding: 1rem;
+                margin-top: 1rem;
+                box-shadow: 0 10px 30px var(--shadow-color);
+                border: 1px solid var(--card-border);
+            }
+            
+            .nav-link-modern {
+                padding: 0.8rem 1.5rem !important;
+                margin: 0.3rem 0;
+                text-align: center;
+                justify-content: center;
+                color: var(--text-primary) !important;
+            }
+            
+            .navbar-toggler-modern {
+                border: none;
+                padding: 0.5rem;
+                background: var(--toggle-bg);
+                border-radius: 50px;
+                box-shadow: 0 2px 10px var(--shadow-color);
+            }
+            
+            .navbar-toggler-modern i {
+                color: #667eea !important;
+            }
+            
+            .navbar-toggler-modern:focus {
+                outline: none;
+                box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.3);
+            }
+        }
+        
+        /* Mobile-first adjustments */
+        @media (max-width: 576px) {
+            .navbar-brand-modern {
+                font-size: 1.5rem;
+            }
+            
+            .navbar-brand-modern i {
+                font-size: 1.5rem;
+            }
+            
+            .nav-link-modern {
+                font-size: 0.9rem;
+                padding: 0.4rem 1rem !important;
+            }
+        }
+
+        /* Enhanced Floating Animation */
+        @keyframes modernFloat {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                filter: drop-shadow(0 2px 2px rgba(0,0,0,0.1));
+                }
+            50% {
+            transform: translateY(-6px) rotate(1deg); /* Lifted higher with a tiny tilt */
+            filter: drop-shadow(0 10px 5px rgba(0,0,0,0.15)); /* Shadow grows as it lifts */
+            }
+            100% {
+            transform: translateY(0) rotate(0deg);
+            filter: drop-shadow(0 2px 2px rgba(0,0,0,0.1));
+            }
+            }
+
+        .navbar-brand-modern {
+            display: inline-block; /* Required for transform to work perfectly */
+            animation: modernFloat 5s ease-in-out infinite;
+            transition: animation-play-state 0.3s;
+            }
+
+        /* Interaction: Freeze and scale slightly when the user hovers */
+        .navbar-brand-modern:hover {
+            animation-play-state: paused;
+            cursor: pointer;
+            }
+        
+        /* Main content padding to account for fixed navbar */
+        main {
+            padding-top: 80px;
+        }
+        
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Card styles for dark mode */
+        .card, .post-card, .about-card, .login-card, .register-card, .post-form-card {
+            background: var(--card-bg) !important;
+            border: 1px solid var(--card-border) !important;
+            box-shadow: 0 20px 40px var(--shadow-color);
+        }
+
+        /* Text colors */
+        h1, h2, h3, h4, h5, h6, p, span, div:not(.badge-modern):not(.category-badge) {
+            color: var(--text-primary);
+        }
+
+        .text-muted, .text-secondary {
+            color: var(--text-muted) !important;
+        }
+
+        /* Form elements */
+        .form-control, .modern-input {
+            background: var(--input-bg) !important;
+            border: 2px solid var(--input-border) !important;
+            color: var(--text-primary) !important;
+        }
+
+        .form-control:focus {
+            border-color: #667eea !important;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.2) !important;
+        }
+
+        .form-control::placeholder {
+            color: var(--text-muted) !important;
+        }
+
+        /* Links */
+        a:not(.btn):not(.nav-link-modern):not(.social-link):not(.pager-btn):not(.read-more-btn) {
+            color: #8b9eff !important;
+            transition: color 0.3s ease;
+        }
+
+        a:hover:not(.btn):not(.nav-link-modern):not(.social-link):not(.pager-btn):not(.read-more-btn) {
+            color: #a5b6ff !important;
+        }
+
+        /* Badges */
+        .badge-modern {
+            background: rgba(255, 255, 255, 0.2) !important;
+            color: white !important;
+        }
+
+        .category-badge {
+            background: var(--badge-bg) !important;
+            color: #667eea !important;
+        }
+
+        .category-badge.culture-badge {
+            background: rgba(240, 98, 146, 0.15) !important;
+            color: #f06292 !important;
+        }
+
+        .category-badge.tech-badge {
+            background: rgba(79, 172, 254, 0.15) !important;
+            color: #4facfe !important;
+        }
+
+        /* Stats */
+        .stat, .post-stats span {
+            color: var(--stat-color) !important;
+        }
+
+        .stat:hover {
+            color: #667eea !important;
+        }
+
+        /* Action sections */
+        .action-section {
+            background: var(--action-bg) !important;
+            border: 1px solid var(--card-border);
+        }
+
+        .pager-btn {
+            background: var(--input-bg) !important;
+            color: var(--text-primary) !important;
+            border: 1px solid var(--input-border) !important;
+        }
+
+        .pager-btn:hover {
+            background: var(--primary-gradient) !important;
+            color: white !important;
+            border-color: transparent !important;
+        }
+
+        /* Footer */
+        .modern-footer {
+            background: var(--footer-bg) !important;
+        }
+
+        /* Hero sections */
+        .hero-section, .about-header, .contact-header, .login-header, .register-header, .make-post-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+        }
+
+        /* Comments */
+        .comment-card {
+            background: var(--bg-secondary) !important;
+            border: 1px solid var(--card-border);
+        }
+
+        .comment-author {
+            color: var(--text-primary) !important;
+        }
+
+        .comment-text {
+            color: var(--text-secondary) !important;
+        }
+
+        /* Benefits and tips sections */
+        .benefits-section, .writing-tips, .trust-section {
+            background: var(--bg-secondary) !important;
+            border: 1px solid var(--card-border);
+        }
+
+        /* Dividers and borders */
+        hr, .divider::before {
+            border-color: var(--border-color) !important;
+        }
+
+        /* Icons */
+        i {
+            color: var(--text-primary);
+        }
+
+        i.text-danger {
+            color: #ff6b6b !important;
+        }
+
+        /* Scroll indicator */
+        .mouse {
+            border-color: white !important;
+        }
+
+        .mouse::before {
+            background: white !important;
+        }
+    </style>
+    {% endblock %}
+  </head>
+  <body>
+    <!-- Modern Navigation-->
+    <nav class="navbar navbar-expand-lg fixed-top navbar-modern" id="mainNav">
+      <div class="container px-4 px-lg-5">
+        <a class="navbar-brand navbar-brand-modern" href="/">
+          <i class="fas fa-microchip"></i>
+          Tech Pulse
+        </a>
+        <button
+          class="navbar-toggler navbar-toggler-modern"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarResponsive"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <i class="fas fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ms-auto py-4 py-lg-0 align-items-center">
+            <!-- Theme Toggle Button -->
+            <li class="nav-item me-2">
+              <div class="theme-toggle" id="themeToggle">
+                <i class="fas fa-sun" id="lightIcon" title="Light mode"></i>
+                <i class="fas fa-moon" id="darkIcon" title="Dark mode"></i>
+              </div>
+            </li>
+            
+            <li class="nav-item">
+              <a
+                class="nav-link nav-link-modern"
+                href="{{ url_for('get_all_posts') }}"
+              >
+                <i class="fas fa-home"></i>
+                <span>Home</span>
+              </a>
+            </li>
+            <!-- Only show Login/Register if user is logged out. Otherwise show "Log Out" -->
+            {% if not current_user.is_authenticated: %}
+            <li class="nav-item">
+              <a
+                class="nav-link nav-link-modern login-btn"
+                href="{{ url_for('login') }}"
+              >
+                <i class="fas fa-sign-in-alt"></i>
+                <span>Login</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link nav-link-modern register-btn"
+                href="{{ url_for('register') }}"
+              >
+                <i class="fas fa-user-plus"></i>
+                <span>Register</span>
+              </a>
+            </li>
+            {% else: %}
+            <li class="nav-item">
+              <a
+                class="nav-link nav-link-modern logout-btn"
+                href="{{ url_for('logout') }}"
+              >
+                <i class="fas fa-sign-out-alt"></i>
+                <span>Log Out</span>
+              </a>
+            </li>
+            {% endif %}
+            <li class="nav-item">
+              <a
+                class="nav-link nav-link-modern"
+                href="{{ url_for('about') }}"
+              >
+                <i class="fas fa-info-circle"></i>
+                <span>About</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link nav-link-modern"
+                href="{{ url_for('contact') }}"
+              >
+                <i class="fas fa-envelope"></i>
+                <span>Contact</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main content block -->
+    <main>
+      {% block content %}{% endblock %}
+    </main>
+
+    <!-- JavaScript for navbar scroll effect -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const navbar = document.querySelector('.navbar-modern');
+            
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 50) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
+                }
+            });
+            
+            // Close mobile menu when clicking a link
+            const navLinks = document.querySelectorAll('.nav-link-modern');
+            const navbarCollapse = document.getElementById('navbarResponsive');
+            
+            if (navbarCollapse) {
+                const bsCollapse = new bootstrap.Collapse(navbarCollapse, {toggle: false});
+                
+                navLinks.forEach(link => {
+                    link.addEventListener('click', () => {
+                        if (window.innerWidth < 992) {
+                            bsCollapse.hide();
+                        }
+                    });
+                });
+            }
+        });
+    </script>
+    
+    <!-- Bootstrap JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Theme Toggle JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const themeToggle = document.getElementById('themeToggle');
+            const lightIcon = document.getElementById('lightIcon');
+            const darkIcon = document.getElementById('darkIcon');
+            
+            // Check for saved theme preference
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'dark') {
+                document.body.classList.add('dark-mode');
+                lightIcon.classList.remove('active');
+                darkIcon.classList.add('active');
+            } else {
+                lightIcon.classList.add('active');
+                darkIcon.classList.remove('active');
+            }
+            
+            // Toggle theme on click
+            themeToggle.addEventListener('click', function() {
+                if (document.body.classList.contains('dark-mode')) {
+                    // Switch to light mode
+                    document.body.classList.remove('dark-mode');
+                    localStorage.setItem('theme', 'light');
+                    lightIcon.classList.add('active');
+                    darkIcon.classList.remove('active');
+                } else {
+                    // Switch to dark mode
+                    document.body.classList.add('dark-mode');
+                    localStorage.setItem('theme', 'dark');
+                    lightIcon.classList.remove('active');
+                    darkIcon.classList.add('active');
+                }
+                
+                // Add animation effect
+                document.body.style.transition = 'background-color 0.3s ease, color 0.3s ease';
+                setTimeout(() => {
+                    document.body.style.transition = '';
+                }, 300);
+            });
+            
+            // Also respect system preference if no saved theme
+            if (!localStorage.getItem('theme')) {
+                if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                    document.body.classList.add('dark-mode');
+                    lightIcon.classList.remove('active');
+                    darkIcon.classList.add('active');
+                }
+            }
+            
+            // Listen for system theme changes
+            window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+                if (!localStorage.getItem('theme')) {
+                    if (e.matches) {
+                        document.body.classList.add('dark-mode');
+                        lightIcon.classList.remove('active');
+                        darkIcon.classList.add('active');
+                    } else {
+                        document.body.classList.remove('dark-mode');
+                        lightIcon.classList.add('active');
+                        darkIcon.classList.remove('active');
+                    }
+                }
+            });
+        });
+    </script>
+  </body>
+</html>

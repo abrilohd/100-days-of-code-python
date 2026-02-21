@@ -1,0 +1,434 @@
+{% include "header.html" %}
+
+<!-- Modern Contact Header -->
+<header class="contact-header position-relative overflow-hidden">
+    <div class="header-overlay"></div>
+    <div class="container position-relative px-4 px-lg-5 py-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class="col-lg-8 col-xl-7 text-center" data-aos="fade-up">
+                <div class="header-badge mb-4">
+                    <span class="badge-modern">
+                        <i class="fas fa-paper-plane me-2"></i>
+                        {% if msg_sent: %}
+                        Message Sent!
+                        {% else: %}
+                        Get In Touch
+                        {% endif %}
+                    </span>
+                </div>
+                
+                {% if msg_sent: %}
+                <h1 class="display-2 fw-bold gradient-text mb-4">Successfully Sent!</h1>
+                <p class="lead fs-3 text-light mb-5">I'll get back to you soon.</p>
+                {% else: %}
+                <h1 class="display-2 fw-bold gradient-text mb-4">Contact Me</h1>
+                <p class="lead fs-3 text-light mb-5">Have questions? I have answers.</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    
+    <!-- Decorative Elements -->
+    <div class="floating-shape shape-1"></div>
+    <div class="floating-shape shape-2"></div>
+    <div class="floating-shape shape-3"></div>
+</header>
+
+<!-- Main Content -->
+<main class="mb-5">
+    <div class="container px-4 px-lg-5 py-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class="col-lg-10 col-xl-8">
+                {% if not msg_sent: %}
+                <!-- Contact Info Cards -->
+                <div class="row g-4 mb-5" data-aos="fade-up">
+                    <div class="col-md-4">
+                        <div class="contact-info-card">
+                            <div class="info-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <h4>Email</h4>
+                            <p>techpulse@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="contact-info-card">
+                            <div class="info-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <h4>Phone</h4>
+                            <p>+251 912 345 678</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="contact-info-card">
+                            <div class="info-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <h4>Location</h4>
+                            <p>Ethiopia, AA</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Contact Form -->
+                <div class="contact-form-container" data-aos="fade-up" data-aos-delay="100">
+                    <div class="form-header">
+                        <h3>Send Me a Message</h3>
+                        <p>Fill out the form below and I'll get back to you as soon as possible!</p>
+                    </div>
+                    
+                    <form
+                        id="contactForm"
+                        name="sentMessage"
+                        action="{{ url_for('contact') }}"
+                        method="post"
+                        class="modern-form"
+                    >
+                        <div class="form-floating mb-4">
+                            <input
+                                class="form-control modern-input"
+                                id="name"
+                                name="name"
+                                type="text"
+                                placeholder="Enter your name..."
+                                required
+                            />
+                            <label for="name" class="modern-label">
+                                <i class="fas fa-user me-2"></i>Your Name
+                            </label>
+                        </div>
+                        
+                        <div class="form-floating mb-4">
+                            <input
+                                class="form-control modern-input"
+                                id="email"
+                                name="email"
+                                type="email"
+                                placeholder="Enter your email..."
+                                required
+                            />
+                            <label for="email" class="modern-label">
+                                <i class="fas fa-envelope me-2"></i>Email Address
+                            </label>
+                        </div>
+                        
+                        <div class="form-floating mb-4">
+                            <input
+                                class="form-control modern-input"
+                                id="phone"
+                                name="phone"
+                                type="tel"
+                                placeholder="Enter your phone number..."
+                                required
+                            />
+                            <label for="phone" class="modern-label">
+                                <i class="fas fa-phone me-2"></i>Phone Number
+                            </label>
+                        </div>
+                        
+                        <div class="form-floating mb-4">
+                            <textarea
+                                class="form-control modern-input"
+                                id="message"
+                                name="message"
+                                placeholder="Enter your message here..."
+                                required
+                                style="height: 150px"
+                            ></textarea>
+                            <label for="message" class="modern-label">
+                                <i class="fas fa-comment me-2"></i>Your Message
+                            </label>
+                        </div>
+                        
+                        <div class="text-center">
+                            <button
+                                class="submit-btn"
+                                id="submitButton"
+                                type="submit"
+                            >
+                                <i class="fas fa-paper-plane me-2"></i>
+                                Send Message
+                                <i class="fas fa-arrow-right ms-2"></i>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                {% else: %}
+                <!-- Success Message Animation -->
+                <div class="success-message text-center" data-aos="zoom-in">
+                    <div class="success-animation">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <h2 class="mt-4 mb-3">Thank You!</h2>
+                    <p class="text-muted mb-5">Your message has been sent successfully. I'll get back to you within 24-48 hours.</p>
+                    <a href="{{ url_for('get_all_posts') }}" class="back-home-btn">
+                        <i class="fas fa-home me-2"></i>
+                        Back to Home
+                    </a>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</main>
+
+<!-- Custom Styles for Contact Page -->
+<style>
+    /* Contact Header */
+    .contact-header {
+        min-height: 50vh;
+        display: flex;
+        align-items: center;
+        position: relative;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        margin-top: -76px;
+        padding-top: 76px;
+        overflow: hidden;
+    }
+    
+    .header-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url("{{ url_for('static', filename='assets/img/contact-bg.jpg') }}") center/cover;
+        opacity: 0.2;
+        mix-blend-mode: overlay;
+    }
+    
+    /* Contact Info Cards */
+    .contact-info-card {
+        background: white;
+        border-radius: 20px;
+        padding: 2rem 1.5rem;
+        text-align: center;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        transition: all 0.3s ease;
+        border: 1px solid rgba(102, 126, 234, 0.1);
+    }
+    
+    .contact-info-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 20px 40px rgba(102, 126, 234, 0.15);
+    }
+    
+    .info-icon {
+        width: 70px;
+        height: 70px;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 1.5rem;
+        color: white;
+        font-size: 1.8rem;
+    }
+    
+    .contact-info-card h4 {
+        font-size: 1.2rem;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+        color: #2d3748;
+    }
+    
+    .contact-info-card p {
+        color: #718096;
+        margin: 0;
+    }
+    
+    /* Contact Form */
+    .contact-form-container {
+        background: white;
+        border-radius: 30px;
+        padding: 3rem;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+        border: 1px solid rgba(102, 126, 234, 0.1);
+    }
+    
+    .form-header {
+        text-align: center;
+        margin-bottom: 2.5rem;
+    }
+    
+    .form-header h3 {
+        font-size: 1.8rem;
+        font-weight: 600;
+        color: #2d3748;
+        margin-bottom: 0.5rem;
+    }
+    
+    .form-header p {
+        color: #718096;
+    }
+    
+    /* Modern Form Inputs */
+    .modern-input {
+        border: 2px solid #e2e8f0;
+        border-radius: 15px;
+        padding: 1rem 1.5rem;
+        height: auto;
+        font-size: 1rem;
+        transition: all 0.3s ease;
+        background: #f8fafc;
+    }
+    
+    .modern-input:focus {
+        border-color: #667eea;
+        box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        background: white;
+    }
+    
+    .modern-label {
+        color: #718096;
+        font-size: 0.95rem;
+        padding-left: 1.5rem;
+    }
+    
+    .modern-label i {
+        color: #667eea;
+    }
+    
+    /* Submit Button */
+    .submit-btn {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        border: none;
+        padding: 1rem 3rem;
+        border-radius: 50px;
+        font-size: 1.1rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .submit-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+    }
+    
+    /* Success Message */
+    .success-message {
+        background: white;
+        border-radius: 30px;
+        padding: 4rem 2rem;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+    }
+    
+    .success-animation i {
+        font-size: 5rem;
+        color: #48bb78;
+        animation: successPop 0.5s ease;
+    }
+    
+    @keyframes successPop {
+        0% { transform: scale(0); }
+        50% { transform: scale(1.2); }
+        100% { transform: scale(1); }
+    }
+    
+    .back-home-btn {
+        display: inline-flex;
+        align-items: center;
+        padding: 1rem 2rem;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        text-decoration: none;
+        border-radius: 50px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+    }
+    
+    .back-home-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+        color: white;
+    }
+    
+    /* Mobile Responsive */
+    @media (max-width: 768px) {
+        .contact-form-container {
+            padding: 1.5rem;
+        }
+        
+        .contact-header h1 {
+            font-size: 2.5rem;
+        }
+        
+        .contact-info-card {
+            margin-bottom: 1rem;
+        }
+        
+        .form-header h3 {
+            font-size: 1.5rem;
+        }
+    }
+    
+    @media (max-width: 576px) {
+        .submit-btn {
+            width: 100%;
+            padding: 1rem;
+        }
+    }
+    
+    /* Floating Shapes */
+    .floating-shape {
+        position: absolute;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.1);
+        animation: float 20s infinite;
+    }
+    
+    .shape-1 {
+        width: 300px;
+        height: 300px;
+        top: -150px;
+        right: -150px;
+    }
+    
+    .shape-2 {
+        width: 200px;
+        height: 200px;
+        bottom: -100px;
+        left: -100px;
+        animation-delay: -5s;
+    }
+    
+    .shape-3 {
+        width: 150px;
+        height: 150px;
+        bottom: 50%;
+        right: 10%;
+        animation-delay: -10s;
+    }
+    
+    @keyframes float {
+        0%, 100% { transform: translate(0, 0) rotate(0deg); }
+        33% { transform: translate(30px, -30px) rotate(120deg); }
+        66% { transform: translate(-20px, 20px) rotate(240deg); }
+    }
+</style>
+
+<!-- AOS Animation Library -->
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+<!-- Initialize Animations -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 100
+        });
+    });
+</script>
+
+{% include "footer.html" %}

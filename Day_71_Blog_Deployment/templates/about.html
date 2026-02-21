@@ -1,0 +1,366 @@
+{% include "header.html" %}
+
+<!-- Modern About Header -->
+<header class="about-header position-relative overflow-hidden">
+    <div class="header-overlay"></div>
+    <div class="container position-relative px-4 px-lg-5 py-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class="col-lg-8 col-xl-7 text-center" data-aos="fade-up">
+                <div class="header-badge mb-4">
+                    <span class="badge-modern">
+                        <i class="fas fa-user-astronaut me-2"></i>About Me
+                    </span>
+                </div>
+                <h1 class="display-2 fw-bold gradient-text mb-4">About Me</h1>
+                <p class="lead fs-3 text-light mb-5">This is what I do.</p>
+                
+                <!-- Stats Section -->
+                <div class="about-stats d-flex justify-content-center gap-5">
+                    <div class="stat-item">
+                        <span class="stat-number" data-target="5">0</span>
+                        <span class="stat-label">Years Experience</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-target="50">0</span>
+                        <span class="stat-label">Articles Written</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-target="10k">0</span>
+                        <span class="stat-label">Readers</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Decorative Elements -->
+    <div class="floating-shape shape-1"></div>
+    <div class="floating-shape shape-2"></div>
+    <div class="floating-shape shape-3"></div>
+</header>
+
+<!-- Main Content -->
+<main class="mb-5">
+    <div class="container px-4 px-lg-5 py-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class="col-lg-10 col-xl-8">
+                <!-- About Cards -->
+                <div class="about-content">
+                    <!-- Card 1 -->
+                    <div class="about-card" data-aos="fade-up">
+                        <div class="card-icon">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <div class="card-content">
+                            <h3>The Tech Evolution</h3>
+                            <p>
+                                Technology is evolving faster than ever, reshaping the way we live, work, and connect with the world. From artificial intelligence transforming industries to cloud computing powering global businesses, innovation is no longer optional — it's essential. At Tech Pulse, we explore the trends that define today and shape tomorrow.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- Card 2 -->
+                    <div class="about-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="card-icon">
+                            <i class="fas fa-microchip"></i>
+                        </div>
+                        <div class="card-content">
+                            <h3>The Digital Frontier</h3>
+                            <p>
+                                Startups and tech giants alike are racing to build smarter systems, more secure platforms, and seamless digital experiences. Whether it's the rise of automation, breakthroughs in cybersecurity, or the expansion of scalable web applications, the digital landscape continues to expand at an incredible pace. Staying informed is the key to staying competitive.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- Card 3 -->
+                    <div class="about-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="card-icon">
+                            <i class="fas fa-bullseye"></i>
+                        </div>
+                        <div class="card-content">
+                            <h3>Our Mission</h3>
+                            <p>
+                                Our mission is to simplify complex technologies and make them accessible to everyone — developers, entrepreneurs, and curious minds alike. Through deep insights, practical tutorials, and forward-thinking analysis, Tech Pulse keeps you at the center of innovation, where ideas turn into impact.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Personal Quote -->
+                <div class="quote-section text-center mt-5 pt-5" data-aos="fade-up">
+                    <blockquote class="blockquote">
+                        <i class="fas fa-quote-left quote-icon"></i>
+                        <p class="quote-text">
+                            Technology is best when it brings people together and makes the impossible possible.
+                        </p>
+                        <footer class="quote-author">— Tech Pulse Founder</footer>
+                    </blockquote>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<!-- Custom Styles for About Page -->
+<style>
+    /* About Header */
+    .about-header {
+        min-height: 60vh;
+        display: flex;
+        align-items: center;
+        position: relative;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        margin-top: -76px;
+        padding-top: 76px;
+        overflow: hidden;
+    }
+    
+    .header-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url("{{ url_for('static', filename='assets/img/about-bg.jpg') }}") center/cover;
+        opacity: 0.2;
+        mix-blend-mode: overlay;
+    }
+    
+    .header-badge .badge-modern {
+        padding: 0.5rem 1.5rem;
+        background: rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(10px);
+        border-radius: 50px;
+        color: white;
+        font-weight: 500;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+    
+    .gradient-text {
+        background: linear-gradient(135deg, #fff 0%, #f0f0f0 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+    
+    .about-stats .stat-number {
+        font-size: 2rem;
+        font-weight: 700;
+        color: white;
+        display: block;
+    }
+    
+    .about-stats .stat-label {
+        font-size: 0.9rem;
+        color: rgba(255, 255, 255, 0.8);
+    }
+    
+    /* Floating Shapes */
+    .floating-shape {
+        position: absolute;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.1);
+        animation: float 20s infinite;
+    }
+    
+    .shape-1 {
+        width: 300px;
+        height: 300px;
+        top: -150px;
+        right: -150px;
+    }
+    
+    .shape-2 {
+        width: 200px;
+        height: 200px;
+        bottom: -100px;
+        left: -100px;
+        animation-delay: -5s;
+    }
+    
+    .shape-3 {
+        width: 150px;
+        height: 150px;
+        bottom: 50%;
+        right: 10%;
+        animation-delay: -10s;
+    }
+    
+    /* About Cards */
+    .about-content {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+    
+    .about-card {
+        background: white;
+        border-radius: 30px;
+        padding: 2.5rem;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+        transition: all 0.3s ease;
+        display: flex;
+        gap: 2rem;
+        align-items: flex-start;
+        border: 1px solid rgba(102, 126, 234, 0.1);
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .about-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    }
+    
+    .about-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 30px 60px rgba(102, 126, 234, 0.15);
+    }
+    
+    .card-icon {
+        width: 70px;
+        height: 70px;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        border-radius: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2rem;
+        color: white;
+        flex-shrink: 0;
+    }
+    
+    .card-content h3 {
+        font-size: 1.5rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+        color: #764ba2;
+    }
+    
+    .card-content p {
+        color: #667eea;
+        line-height: 1.8;
+        margin: 0;
+    }
+    
+    /* Quote Section */
+    .quote-section {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        border-radius: 30px;
+        padding: 4rem 2rem;
+        color: white;
+    }
+    
+    .quote-icon {
+        font-size: 3rem;
+        opacity: 0.3;
+        margin-bottom: 1rem;
+    }
+    
+    .quote-text {
+        font-size: 1.5rem;
+        font-style: italic;
+        max-width: 800px;
+        margin: 0 auto 1rem;
+        line-height: 1.6;
+    }
+    
+    .quote-author {
+        font-size: 1.1rem;
+        opacity: 0.8;
+    }
+    
+    /* Mobile Responsive */
+    @media (max-width: 768px) {
+        .about-card {
+            flex-direction: column;
+            padding: 1.5rem;
+        }
+        
+        .card-icon {
+            width: 50px;
+            height: 50px;
+            font-size: 1.5rem;
+        }
+        
+        .about-stats {
+            flex-wrap: wrap;
+            gap: 1rem !important;
+        }
+        
+        .quote-text {
+            font-size: 1.2rem;
+        }
+    }
+    
+    @media (max-width: 576px) {
+        .about-header h1 {
+            font-size: 2.5rem;
+        }
+        
+        .about-stats .stat-number {
+            font-size: 1.5rem;
+        }
+        
+        .about-stats .stat-label {
+            font-size: 0.8rem;
+        }
+    }
+    
+    @keyframes float {
+        0%, 100% { transform: translate(0, 0) rotate(0deg); }
+        33% { transform: translate(30px, -30px) rotate(120deg); }
+        66% { transform: translate(-20px, 20px) rotate(240deg); }
+    }
+</style>
+
+<!-- AOS Animation Library -->
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+<!-- Initialize Animations -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 100
+        });
+        
+        // Animate statistics counters
+        const stats = document.querySelectorAll('.stat-number');
+        stats.forEach(stat => {
+            const target = stat.getAttribute('data-target');
+            let targetNum = parseFloat(target);
+            if (target.includes('k')) {
+                targetNum = parseFloat(target) * 1000;
+            }
+            
+            let current = 0;
+            const increment = targetNum / 50;
+            
+            const updateCounter = () => {
+                if (current < targetNum) {
+                    current += increment;
+                    if (target.includes('k')) {
+                        stat.textContent = (current / 1000).toFixed(1) + 'k';
+                    } else {
+                        stat.textContent = Math.ceil(current);
+                    }
+                    requestAnimationFrame(updateCounter);
+                } else {
+                    stat.textContent = target;
+                }
+            };
+            
+            updateCounter();
+        });
+    });
+</script>
+
+{% include "footer.html" %}

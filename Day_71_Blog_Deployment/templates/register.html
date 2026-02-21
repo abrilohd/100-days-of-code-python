@@ -1,0 +1,324 @@
+{% from "bootstrap5/form.html" import render_form %} 
+{% block content %} 
+{% include "header.html" %}
+
+<!-- Modern Register Header -->
+<header class="register-header position-relative overflow-hidden">
+    <div class="header-overlay"></div>
+    <div class="container position-relative px-4 px-lg-5 py-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class="col-lg-8 col-xl-7 text-center" data-aos="fade-up">
+                <div class="header-badge mb-4">
+                    <span class="badge-modern">
+                        <i class="fas fa-user-plus me-2"></i>Join Us
+                    </span>
+                </div>
+                
+                <h1 class="display-2 fw-bold gradient-text mb-4">Register</h1>
+                <p class="lead fs-3 text-light mb-5">Start Contributing to the Blog!</p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Decorative Elements -->
+    <div class="floating-shape shape-1"></div>
+    <div class="floating-shape shape-2"></div>
+    <div class="floating-shape shape-3"></div>
+</header>
+
+<!-- Main Content -->
+<main class="mb-5">
+    <div class="container px-4 px-lg-5 py-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-8 col-xl-6">
+                <!-- Register Form Card -->
+                <div class="register-card" data-aos="fade-up">
+                    <div class="card-header-gradient">
+                        <div class="header-icon">
+                            <i class="fas fa-user-circle"></i>
+                        </div>
+                        <h3>Create Your Account</h3>
+                        <p>Join the Tech Pulse community today</p>
+                    </div>
+                    
+                    <div class="card-body-form">
+                        {{render_form(form, novalidate=True, button_map={"submit": "primary"}) }}
+                    </div>
+                    
+                    <div class="card-footer-alt">
+                        <p style="color: #000000;">Already have an account? 
+                            <a href="{{ url_for('login') }}" class="login-link">
+                                Sign in here <i class="fas fa-arrow-right ms-1"></i>
+                            </a>
+                        </p>
+                    </div>
+                    
+                    <!-- Benefits List -->
+                    <div class="benefits-section">
+                        <h5><i class="fas fa-gem me-2"></i>Member Benefits</h5>
+                        <ul>
+                            <li><i class="fas fa-pen me-2"></i>Write and publish your own posts</li>
+                            <li><i class="fas fa-comment me-2"></i>Comment on articles</li>
+                            <li><i class="fas fa-bookmark me-2"></i>Save favorite posts</li>
+                            <li><i class="fas fa-bell me-2"></i>Get notified about new content</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<!-- Custom Styles for Register Page -->
+<style>
+    /* Register Header */
+    .register-header {
+        min-height: 50vh;
+        display: flex;
+        align-items: center;
+        position: relative;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        margin-top: -76px;
+        padding-top: 76px;
+        overflow: hidden;
+    }
+    
+    .header-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url("{{ url_for('static', filename='assets/img/register-bg.jpg') }}") center/cover;
+        opacity: 0.2;
+        mix-blend-mode: overlay;
+    }
+    
+    .header-badge .badge-modern {
+        padding: 0.5rem 1.5rem;
+        background: rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(10px);
+        border-radius: 50px;
+        color: white;
+        font-weight: 500;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+    
+    .gradient-text {
+        background: linear-gradient(135deg, #fff 0%, #f0f0f0 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+    
+    /* Register Card */
+    .register-card {
+        background: white;
+        border-radius: 30px;
+        overflow: hidden;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+        border: 1px solid rgba(102, 126, 234, 0.1);
+    }
+    
+    .card-header-gradient {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        padding: 2.5rem 2rem;
+        text-align: center;
+        color: white;
+    }
+    
+    .header-icon {
+        font-size: 4rem;
+        margin-bottom: 1rem;
+        animation: float 3s ease-in-out infinite;
+    }
+    
+    @keyframes float {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-10px); }
+    }
+    
+    .card-header-gradient h3 {
+        font-size: 1.8rem;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+    }
+    
+    .card-header-gradient p {
+        opacity: 0.9;
+        margin: 0;
+    }
+    
+    .card-body-form {
+        padding: 2rem;
+    }
+    
+    /* Form Styling */
+    .form-control {
+        border: 2px solid #e2e8f0;
+        border-radius: 15px;
+        padding: 0.75rem 1rem;
+        transition: all 0.3s ease;
+    }
+    
+    .form-control:focus {
+        border-color: #667eea;
+        box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+    }
+    
+    .btn-primary {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        border: none;
+        padding: 1rem;
+        border-radius: 15px;
+        font-weight: 600;
+        font-size: 1.1rem;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+        width: 100%;
+    }
+    
+    .btn-primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+    }
+    
+    .card-footer-alt {
+        padding: 1.5rem 2rem;
+        text-align: center;
+        background: #f8fafc;
+        border-top: 1px solid #e2e8f0;
+    }
+    
+    .login-link {
+        color: #667eea;
+        text-decoration: none;
+        font-weight: 600;
+        transition: all 0.3s ease;
+    }
+    
+    .login-link:hover {
+        color: #764ba2;
+        text-decoration: underline;
+    }
+    
+    /* Benefits Section */
+    .benefits-section {
+        padding: 2rem;
+        background: #f8fafc;
+    }
+    
+    .benefits-section h5 {
+        color: #2d3748;
+        font-weight: 600;
+        margin-bottom: 1rem;
+    }
+    
+    .benefits-section ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.8rem;
+    }
+    
+    .benefits-section li {
+        color: #4a5568;
+        font-size: 0.95rem;
+        display: flex;
+        align-items: center;
+    }
+    
+    .benefits-section li i {
+        color: #667eea;
+    }
+    
+    /* Floating Shapes */
+    .floating-shape {
+        position: absolute;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.1);
+        animation: float 20s infinite;
+    }
+    
+    .shape-1 {
+        width: 300px;
+        height: 300px;
+        top: -150px;
+        right: -150px;
+    }
+    
+    .shape-2 {
+        width: 200px;
+        height: 200px;
+        bottom: -100px;
+        left: -100px;
+        animation-delay: -5s;
+    }
+    
+    .shape-3 {
+        width: 150px;
+        height: 150px;
+        bottom: 50%;
+        right: 10%;
+        animation-delay: -10s;
+    }
+    
+    /* Mobile Responsive */
+    @media (max-width: 768px) {
+        .register-header h1 {
+            font-size: 2.5rem;
+        }
+        
+        .benefits-section ul {
+            grid-template-columns: 1fr;
+        }
+        
+        .card-header-gradient {
+            padding: 1.5rem;
+        }
+        
+        .card-header-gradient h3 {
+            font-size: 1.5rem;
+        }
+        
+        .header-icon {
+            font-size: 3rem;
+        }
+    }
+    
+    @media (max-width: 576px) {
+        .register-header h1 {
+            font-size: 2rem;
+        }
+        
+        .card-body-form {
+            padding: 1rem;
+        }
+    }
+    
+    @keyframes floatShape {
+        0%, 100% { transform: translate(0, 0) rotate(0deg); }
+        33% { transform: translate(30px, -30px) rotate(120deg); }
+        66% { transform: translate(-20px, 20px) rotate(240deg); }
+    }
+</style>
+
+<!-- AOS Animation Library -->
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+<!-- Initialize Animations -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 100
+        });
+    });
+</script>
+
+{% include "footer.html" %} 
+{% endblock %}

@@ -1,0 +1,576 @@
+{% from "bootstrap5/form.html" import render_form %}
+{% block content %}
+{% include "header.html" %}
+
+<!-- Modern Login Header -->
+<header class="login-header position-relative overflow-hidden">
+    <div class="header-overlay"></div>
+    <div class="container position-relative px-4 px-lg-5 py-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class="col-lg-8 col-xl-7 text-center" data-aos="fade-up">
+                <div class="header-badge mb-4">
+                    <span class="badge-modern">
+                        <i class="fas fa-key me-2"></i>Welcome Back
+                    </span>
+                </div>
+                
+                <h1 class="display-2 fw-bold gradient-text mb-4">Login</h1>
+                <p class="lead fs-3 text-light mb-5">Access your account and continue your journey</p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Decorative Elements -->
+    <div class="floating-shape shape-1"></div>
+    <div class="floating-shape shape-2"></div>
+    <div class="floating-shape shape-3"></div>
+</header>
+
+<!-- Main Content -->
+<main class="mb-5">
+    <div class="container px-4 px-lg-5 py-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-8 col-xl-6">
+                <!-- Login Form Card -->
+                <div class="login-card" data-aos="fade-up">
+                    <div class="card-header-gradient">
+                        <div class="header-icon">
+                            <i class="fas fa-user-circle"></i>
+                        </div>
+                        <h3>Sign In to Tech Pulse</h3>
+                        <p>Access your personalized dashboard</p>
+                    </div>
+                    
+                    <div class="card-body-form">
+                        <!-- Flash Messages for Login Errors -->
+                        {% with messages = get_flashed_messages() %}
+                            {% if messages %}
+                                {% for message in messages %}
+                                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                        <i class="fas fa-exclamation-circle me-2"></i>
+                                        {{ message }}
+                                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                    </div>
+                                {% endfor %}
+                            {% endif %}
+                        {% endwith %}
+                        
+                        {{ render_form(form, novalidate=True, button_map={"submit": "primary"}) }}
+                        
+                        <!-- Social Login Options -->
+                        <div class="social-login">
+                            <div class="divider">
+                                <span>or continue with</span>
+                            </div>
+                            
+                            <div class="social-buttons">
+                                <button class="social-btn google">
+                                    <i class="fab fa-google"></i>
+                                    <span>Google</span>
+                                </button>
+                                <button class="social-btn github">
+                                    <i class="fab fa-github"></i>
+                                    <span>GitHub</span>
+                                </button>
+                                <button class="social-btn twitter">
+                                    <i class="fab fa-twitter"></i>
+                                    <span>Twitter</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card-footer-alt">
+                        <p>Don't have an account? 
+                            <a href="{{ url_for('register') }}" class="register-link">
+                                Create one here <i class="fas fa-arrow-right ms-1"></i>
+                            </a>
+                        </p>
+                        
+                        <p class="mt-2">
+                            <a href="#" class="forgot-password">
+                                <i class="fas fa-lock me-1"></i> Forgot your password?
+                            </a>
+                        </p>
+                    </div>
+                    
+                    <!-- Trust Indicators -->
+                    <div class="trust-section">
+                        <div class="trust-item">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>Secure Login</span>
+                        </div>
+                        <div class="trust-item">
+                            <i class="fas fa-lock"></i>
+                            <span>Encrypted</span>
+                        </div>
+                        <div class="trust-item">
+                            <i class="fas fa-clock"></i>
+                            <span>24/7 Support</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonials -->
+                <div class="testimonials-section mt-5" data-aos="fade-up">
+                    <h4 class="text-center mb-4">What our members say</h4>
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <i class="fas fa-quote-left quote-icon"></i>
+                            <p>Tech Pulse has been an invaluable resource for staying updated with the latest in technology. The community is amazing!</p>
+                            <div class="testimonial-author">
+                                <img src="https://ui-avatars.com/api/?name=Sarah+Chen&background=667eea&color=fff&size=40" alt="Sarah">
+                                <div>
+                                    <strong>Sarah Chen</strong>
+                                    <span>Software Engineer</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<!-- Custom Styles for Login Page -->
+<style>
+    /* Login Header */
+    .login-header {
+        min-height: 40vh;
+        display: flex;
+        align-items: center;
+        position: relative;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        margin-top: -76px;
+        padding-top: 76px;
+        overflow: hidden;
+    }
+    
+    .header-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url("{{ url_for('static', filename='assets/img/login-bg.jpg') }}") center/cover;
+        opacity: 0.2;
+        mix-blend-mode: overlay;
+    }
+    
+    .header-badge .badge-modern {
+        padding: 0.5rem 1.5rem;
+        background: rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(10px);
+        border-radius: 50px;
+        color: white;
+        font-weight: 500;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+    
+    .gradient-text {
+        background: linear-gradient(135deg, #fff 0%, #f0f0f0 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+    
+    /* Login Card */
+    .login-card {
+        background: white;
+        border-radius: 30px;
+        overflow: hidden;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+        border: 1px solid rgba(102, 126, 234, 0.1);
+        position: relative;
+    }
+    
+    .card-header-gradient {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        padding: 2rem 2rem;
+        text-align: center;
+        color: white;
+    }
+    
+    .header-icon {
+        font-size: 4rem;
+        margin-bottom: 1rem;
+        animation: float 3s ease-in-out infinite;
+    }
+    
+    @keyframes float {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-10px); }
+    }
+    
+    .card-header-gradient h3 {
+        font-size: 1.8rem;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+    }
+    
+    .card-header-gradient p {
+        opacity: 0.9;
+        margin: 0;
+        font-size: 1rem;
+    }
+    
+    .card-body-form {
+        padding: 2rem;
+    }
+    
+    /* Form Styling */
+    .form-control {
+        border: 2px solid #e2e8f0;
+        border-radius: 15px;
+        padding: 0.75rem 1rem;
+        transition: all 0.3s ease;
+    }
+    
+    .form-control:focus {
+        border-color: #667eea;
+        box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+    }
+    
+    .btn-primary {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        border: none;
+        padding: 1rem;
+        border-radius: 15px;
+        font-weight: 600;
+        font-size: 1.1rem;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+        width: 100%;
+    }
+    
+    .btn-primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+    }
+    
+    /* Alert Styling */
+    .alert {
+        border-radius: 15px;
+        border: none;
+        padding: 1rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .alert-danger {
+        background: #fff5f5;
+        color: #c53030;
+        border-left: 4px solid #c53030;
+    }
+    
+    /* Social Login */
+    .social-login {
+        margin-top: 2rem;
+    }
+    
+    .divider {
+        position: relative;
+        text-align: center;
+        margin: 1.5rem 0;
+    }
+    
+    .divider::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 0;
+        right: 0;
+        height: 1px;
+        background: #e2e8f0;
+        z-index: 1;
+    }
+    
+    .divider span {
+        position: relative;
+        background: white;
+        padding: 0 1rem;
+        color: #718096;
+        font-size: 0.9rem;
+        z-index: 2;
+    }
+    
+    .social-buttons {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+    }
+    
+    .social-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        padding: 0.75rem;
+        border: 2px solid #e2e8f0;
+        border-radius: 15px;
+        background: white;
+        color: #4a5568;
+        font-weight: 500;
+        transition: all 0.3s ease;
+        cursor: pointer;
+    }
+    
+    .social-btn:hover {
+        transform: translateY(-2px);
+        border-color: #667eea;
+    }
+    
+    .social-btn.google:hover {
+        border-color: #DB4437;
+        color: #DB4437;
+    }
+    
+    .social-btn.github:hover {
+        border-color: #333;
+        color: #333;
+    }
+    
+    .social-btn.twitter:hover {
+        border-color: #1DA1F2;
+        color: #1DA1F2;
+    }
+    
+    .card-footer-alt {
+        padding: 1.5rem 2rem;
+        text-align: center;
+        background: #f8fafc;
+        border-top: 1px solid #e2e8f0;
+    }
+    
+    .register-link {
+        color: #667eea;
+        text-decoration: none;
+        font-weight: 600;
+        transition: all 0.3s ease;
+    }
+    
+    .register-link:hover {
+        color: #764ba2;
+        text-decoration: underline;
+    }
+    
+    .forgot-password {
+        color: #718096;
+        text-decoration: none;
+        font-size: 0.9rem;
+        transition: all 0.3s ease;
+    }
+    
+    .forgot-password:hover {
+        color: #667eea;
+    }
+    
+    /* Trust Section */
+    .trust-section {
+        display: flex;
+        justify-content: space-around;
+        padding: 1.5rem;
+        background: linear-gradient(135deg, #f8fafc, #eef2f6);
+    }
+    
+    .trust-item {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: #4a5568;
+        font-size: 0.9rem;
+    }
+    
+    .trust-item i {
+        color: #667eea;
+    }
+    
+    /* Testimonials */
+    .testimonials-section {
+        padding: 2rem 0;
+    }
+    
+    .testimonial-card {
+        background: white;
+        border-radius: 20px;
+        padding: 2rem;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        position: relative;
+    }
+    
+    .testimonial-content {
+        position: relative;
+        z-index: 1;
+    }
+    
+    .quote-icon {
+        color: #667eea;
+        opacity: 0.2;
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+    
+    .testimonial-content p {
+        color: #4a5568;
+        font-style: italic;
+        line-height: 1.6;
+        margin-bottom: 1.5rem;
+    }
+    
+    .testimonial-author {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+    
+    .testimonial-author img {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        border: 3px solid white;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    .testimonial-author strong {
+        display: block;
+        color: #2d3748;
+    }
+    
+    .testimonial-author span {
+        color: #718096;
+        font-size: 0.85rem;
+    }
+    
+    /* Floating Shapes */
+    .floating-shape {
+        position: absolute;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.1);
+        animation: floatShape 20s infinite;
+    }
+    
+    .shape-1 {
+        width: 300px;
+        height: 300px;
+        top: -150px;
+        right: -150px;
+    }
+    
+    .shape-2 {
+        width: 200px;
+        height: 200px;
+        bottom: -100px;
+        left: -100px;
+        animation-delay: -5s;
+    }
+    
+    .shape-3 {
+        width: 150px;
+        height: 150px;
+        bottom: 50%;
+        right: 10%;
+        animation-delay: -10s;
+    }
+    
+    @keyframes floatShape {
+        0%, 100% { transform: translate(0, 0) rotate(0deg); }
+        33% { transform: translate(30px, -30px) rotate(120deg); }
+        66% { transform: translate(-20px, 20px) rotate(240deg); }
+    }
+    
+    /* Mobile Responsive */
+    @media (max-width: 768px) {
+        .login-header h1 {
+            font-size: 2.5rem;
+        }
+        
+        .card-header-gradient {
+            padding: 1.5rem;
+        }
+        
+        .card-header-gradient h3 {
+            font-size: 1.5rem;
+        }
+        
+        .header-icon {
+            font-size: 3rem;
+        }
+        
+        .social-buttons {
+            grid-template-columns: 1fr;
+        }
+        
+        .trust-section {
+            flex-direction: column;
+            gap: 0.8rem;
+            align-items: center;
+        }
+        
+        .testimonial-author {
+            flex-direction: column;
+            text-align: center;
+        }
+    }
+    
+    @media (max-width: 576px) {
+        .login-header h1 {
+            font-size: 2rem;
+        }
+        
+        .card-body-form {
+            padding: 1rem;
+        }
+        
+        .card-footer-alt {
+            padding: 1rem;
+        }
+        
+        .testimonial-card {
+            padding: 1.5rem;
+        }
+    }
+    
+    /* Animation for form appearance */
+    .login-card {
+        animation: slideUp 0.5s ease;
+    }
+    
+    @keyframes slideUp {
+        from {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+</style>
+
+<!-- AOS Animation Library -->
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+<!-- Initialize Animations -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 100
+        });
+        
+        // Auto-hide alerts after 5 seconds
+        setTimeout(function() {
+            const alerts = document.querySelectorAll('.alert');
+            alerts.forEach(alert => {
+                alert.style.transition = 'opacity 0.5s ease';
+                alert.style.opacity = '0';
+                setTimeout(() => alert.remove(), 500);
+            });
+        }, 5000);
+    });
+</script>
+
+{% include "footer.html" %}
+{% endblock %}

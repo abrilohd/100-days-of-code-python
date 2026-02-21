@@ -1,0 +1,304 @@
+{% from "bootstrap5/form.html" import render_form %} 
+{% block content %} 
+{% include "header.html" %}
+
+<!-- Modern Page Header -->
+<header class="make-post-header position-relative overflow-hidden">
+    <div class="header-overlay"></div>
+    <div class="container position-relative px-4 px-lg-5 py-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class="col-lg-8 col-xl-7 text-center" data-aos="fade-up">
+                <div class="header-badge mb-4">
+                    <span class="badge-modern">
+                        <i class="fas fa-pen-fancy me-2"></i>
+                        {% if is_edit: %}
+                        Edit Post
+                        {% else: %}
+                        Create Post
+                        {% endif %}
+                    </span>
+                </div>
+                
+                {% if is_edit: %}
+                <h1 class="display-2 fw-bold gradient-text mb-4">Edit Post</h1>
+                <p class="lead fs-3 text-light mb-5">Refine your thoughts and share them with the world.</p>
+                {% else: %}
+                <h1 class="display-2 fw-bold gradient-text mb-4">New Post</h1>
+                <p class="lead fs-3 text-light mb-5">You're going to make a great blog post!</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    
+    <!-- Decorative Elements -->
+    <div class="floating-shape shape-1"></div>
+    <div class="floating-shape shape-2"></div>
+    <div class="floating-shape shape-3"></div>
+</header>
+
+<!-- Main Content -->
+<main class="mb-5">
+    <div class="container px-4 px-lg-5 py-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-10 col-xl-8">
+                <!-- Form Card -->
+                <div class="post-form-card" data-aos="fade-up">
+                    <div class="form-header">
+                        <h3>
+                            <i class="fas fa-feather-alt me-2"></i>
+                            {% if is_edit: %}
+                            Edit Your Story
+                            {% else: %}
+                            Write Your Story
+                            {% endif %}
+                        </h3>
+                        <p>Share your thoughts, insights, and experiences with the Tech Pulse community.</p>
+                    </div>
+                    
+                    <div class="form-body">
+                        {{ ckeditor.load() }}
+                        {{ ckeditor.config(name='body') }}
+                        {{ render_form(form, novalidate=True, button_map={"submit": "primary"}) }}
+                    </div>
+                    
+                    <!-- Writing Tips -->
+                    <div class="writing-tips">
+                        <h5><i class="fas fa-lightbulb me-2"></i>Writing Tips</h5>
+                        <ul>
+                            <li><i class="fas fa-check-circle me-2"></i>Use clear, engaging headlines</li>
+                            <li><i class="fas fa-check-circle me-2"></i>Break up text with subheadings</li>
+                            <li><i class="fas fa-check-circle me-2"></i>Include relevant examples</li>
+                            <li><i class="fas fa-check-circle me-2"></i>End with a thought-provoking conclusion</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<!-- Custom Styles for Make Post Page -->
+<style>
+    /* Make Post Header */
+    .make-post-header {
+        min-height: 50vh;
+        display: flex;
+        align-items: center;
+        position: relative;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        margin-top: -76px;
+        padding-top: 76px;
+        overflow: hidden;
+    }
+    
+    .header-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url("{{ url_for('static', filename='assets/img/edit-bg.jpg') }}") center/cover;
+        opacity: 0.2;
+        mix-blend-mode: overlay;
+    }
+    
+    .header-badge .badge-modern {
+        padding: 0.5rem 1.5rem;
+        background: rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(10px);
+        border-radius: 50px;
+        color: white;
+        font-weight: 500;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+    
+    .gradient-text {
+        background: linear-gradient(135deg, #fff 0%, #f0f0f0 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+    
+    /* Post Form Card */
+    .post-form-card {
+        background: white;
+        border-radius: 30px;
+        padding: 3rem;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+        border: 1px solid rgba(102, 126, 234, 0.1);
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .post-form-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    }
+    
+    .form-header {
+        text-align: center;
+        margin-bottom: 2.5rem;
+    }
+    
+    .form-header h3 {
+        font-size: 2rem;
+        font-weight: 600;
+        color: #2d3748;
+        margin-bottom: 0.5rem;
+    }
+    
+    .form-header p {
+        color: #718096;
+        font-size: 1.1rem;
+    }
+    
+    /* Form Styling */
+    .form-body {
+        margin-bottom: 2rem;
+    }
+    
+    /* Override Bootstrap Form Styles */
+    .form-control {
+        border: 2px solid #e2e8f0;
+        border-radius: 15px;
+        padding: 0.75rem 1rem;
+        transition: all 0.3s ease;
+    }
+    
+    .form-control:focus {
+        border-color: #667eea;
+        box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+    }
+    
+    .btn-primary {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        border: none;
+        padding: 0.8rem 2rem;
+        border-radius: 50px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+    }
+    
+    .btn-primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+    }
+    
+    /* Writing Tips */
+    .writing-tips {
+        background: #f8fafc;
+        border-radius: 20px;
+        padding: 1.5rem;
+        margin-top: 2rem;
+        border: 1px solid #e2e8f0;
+    }
+    
+    .writing-tips h5 {
+        color: #2d3748;
+        font-weight: 600;
+        margin-bottom: 1rem;
+    }
+    
+    .writing-tips ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+    
+    .writing-tips li {
+        color: #4a5568;
+        margin-bottom: 0.5rem;
+        display: flex;
+        align-items: center;
+    }
+    
+    .writing-tips li i {
+        color: #667eea;
+    }
+    
+    /* Floating Shapes */
+    .floating-shape {
+        position: absolute;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.1);
+        animation: float 20s infinite;
+    }
+    
+    .shape-1 {
+        width: 300px;
+        height: 300px;
+        top: -150px;
+        right: -150px;
+    }
+    
+    .shape-2 {
+        width: 200px;
+        height: 200px;
+        bottom: -100px;
+        left: -100px;
+        animation-delay: -5s;
+    }
+    
+    .shape-3 {
+        width: 150px;
+        height: 150px;
+        bottom: 50%;
+        right: 10%;
+        animation-delay: -10s;
+    }
+    
+    @keyframes float {
+        0%, 100% { transform: translate(0, 0) rotate(0deg); }
+        33% { transform: translate(30px, -30px) rotate(120deg); }
+        66% { transform: translate(-20px, 20px) rotate(240deg); }
+    }
+    
+    /* Mobile Responsive */
+    @media (max-width: 768px) {
+        .make-post-header h1 {
+            font-size: 2.5rem;
+        }
+        
+        .post-form-card {
+            padding: 1.5rem;
+        }
+        
+        .form-header h3 {
+            font-size: 1.5rem;
+        }
+    }
+    
+    @media (max-width: 576px) {
+        .make-post-header h1 {
+            font-size: 2rem;
+        }
+        
+        .post-form-card {
+            padding: 1rem;
+        }
+    }
+</style>
+
+<!-- AOS Animation Library -->
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+<!-- Initialize Animations -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 100
+        });
+    });
+</script>
+
+{% include "footer.html" %} 
+{% endblock %}

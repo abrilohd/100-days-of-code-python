@@ -1,0 +1,397 @@
+<!-- Modern Footer -->
+<footer class="modern-footer">
+    <div class="container px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class="col-md-10 col-lg-8 col-xl-7">
+                <!-- Footer Wave Animation -->
+                <div class="footer-wave">
+                    <svg viewBox="0 0 1440 100" preserveAspectRatio="none">
+                        <path d="M0,50 C300,100 600,0 1440,50 L1440,100 L0,100 Z" class="wave-path"></path>
+                    </svg>
+                </div>
+                
+                <!-- Social Icons with Modern Design -->
+                <div class="social-section">
+                    <h5 class="social-title">Connect With Us</h5>
+                    <ul class="social-list">
+                        <li class="social-item">
+                            <a href="https://x.com/abrsh067" class="social-link twitter" target="_blank">
+                                <i class="fab fa-twitter"></i>
+                                <span class="social-tooltip">Twitter</span>
+                            </a>
+                        </li>
+                        <li class="social-item">
+                            <a href="https://web.facebook.com/profile.php?id=61584795093268" class="social-link facebook" target="_blank">
+                                <i class="fab fa-facebook-f"></i>
+                                <span class="social-tooltip">Facebook</span>
+                            </a>
+                        </li>
+                        <li class="social-item">
+                            <a href="https://github.com/abrilohd" class="social-link github" target="_blank">
+                                <i class="fab fa-github"></i>
+                                <span class="social-tooltip">GitHub</span>
+                            </a>
+                        </li>
+                        <li class="social-item">
+                            <a href="https://www.linkedin.com/in/abrham-gebremedhin-962130360/" class="social-link linkedin" target="_blank">
+                                <i class="fab fa-linkedin-in"></i>
+                                <span class="social-tooltip">LinkedIn</span>
+                            </a>
+                        </li>
+                        <li class="social-item">
+                            <a href="https://www.instagram.com/deveops_of_abrio/" class="social-link instagram" target="_blank">
+                                <i class="fab fa-instagram"></i>
+                                <span class="social-tooltip">Instagram</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Footer Links -->
+                <div class="footer-links">
+                    <a href="{{ url_for('get_all_posts') }}" class="footer-link">Home</a>
+                    <span class="link-separator">•</span>
+                    <a href="{{ url_for('about') }}" class="footer-link">About</a>
+                    <span class="link-separator">•</span>
+                    <a href="{{ url_for('contact') }}" class="footer-link">Contact</a>
+                    <span class="link-separator">•</span>
+                    <a href="#!" class="footer-link">Privacy Policy</a>
+                </div>
+                
+                <!-- Copyright with Dynamic Year -->
+                <div class="copyright">
+                    <p class="copyright-text">
+                        <i class="far fa-copyright me-1"></i>
+                        <span id="currentYear"></span> Tech Pulse. All rights reserved.
+                    </p>
+                    <p class="made-with">
+                        Made with <i class="fas fa-heart text-danger"></i> for the tech community
+                    </p>
+                </div>
+                
+                <!-- Back to Top Button -->
+                <button onclick="scrollToTop()" class="back-to-top" id="backToTop">
+                    <i class="fas fa-arrow-up"></i>
+                    <span class="back-to-top-text">Back to Top</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Custom Styles for Footer -->
+<style>
+    /* Modern Footer Styles */
+    .modern-footer {
+        position: relative;
+        background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
+        color: white;
+        padding: 4rem 0 2rem;
+        margin-top: 4rem;
+        overflow: hidden;
+    }
+    
+    /* Wave Animation */
+    .footer-wave {
+        position: absolute;
+        top: -50px;
+        left: 0;
+        width: 100%;
+        height: 50px;
+        overflow: hidden;
+    }
+    
+    .wave-path {
+        fill: rgba(255, 255, 255, 0.05);
+        animation: wave 10s linear infinite;
+    }
+    
+    @keyframes wave {
+        0% { transform: translateX(0) translateZ(0) scaleY(1); }
+        50% { transform: translateX(-25%) translateZ(0) scaleY(0.8); }
+        100% { transform: translateX(-50%) translateZ(0) scaleY(1); }
+    }
+    
+    /* Social Section */
+    .social-section {
+        text-align: center;
+        margin-bottom: 2rem;
+        position: relative;
+        z-index: 2;
+    }
+    
+    .social-title {
+        font-size: 1.1rem;
+        font-weight: 500;
+        color: rgba(255, 255, 255, 0.7);
+        margin-bottom: 1.5rem;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+    }
+    
+    .social-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        flex-wrap: wrap;
+    }
+    
+    .social-item {
+        position: relative;
+    }
+    
+    .social-link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 50px;
+        height: 50px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 50%;
+        color: white;
+        font-size: 1.2rem;
+        transition: all 0.3s ease;
+        position: relative;
+        text-decoration: none;
+        backdrop-filter: blur(5px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .social-link:hover {
+        transform: translateY(-5px);
+    }
+    
+    .social-link.twitter:hover {
+        background: #1DA1F2;
+        box-shadow: 0 10px 20px rgba(29, 161, 242, 0.3);
+    }
+    
+    .social-link.facebook:hover {
+        background: #4267B2;
+        box-shadow: 0 10px 20px rgba(66, 103, 178, 0.3);
+    }
+    
+    .social-link.github:hover {
+        background: #333;
+        box-shadow: 0 10px 20px rgba(51, 51, 51, 0.3);
+    }
+    
+    .social-link.linkedin:hover {
+        background: #0077b5;
+        box-shadow: 0 10px 20px rgba(0, 119, 181, 0.3);
+    }
+    
+    .social-link.instagram:hover {
+        background: linear-gradient(45deg, #f09433, #d62976, #962fbf);
+        box-shadow: 0 10px 20px rgba(214, 41, 118, 0.3);
+    }
+    
+    .social-tooltip {
+        position: absolute;
+        top: -40px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: white;
+        color: #2d3748;
+        padding: 0.3rem 0.8rem;
+        border-radius: 20px;
+        font-size: 0.8rem;
+        font-weight: 500;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+        white-space: nowrap;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+    
+    .social-tooltip::before {
+        content: '';
+        position: absolute;
+        bottom: -5px;
+        left: 50%;
+        transform: translateX(-50%);
+        border-left: 5px solid transparent;
+        border-right: 5px solid transparent;
+        border-top: 5px solid white;
+    }
+    
+    .social-link:hover .social-tooltip {
+        opacity: 1;
+        visibility: visible;
+        top: -45px;
+    }
+    
+    /* Footer Links */
+    .footer-links {
+        text-align: center;
+        margin-bottom: 2rem;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+    
+    .footer-link {
+        color: rgba(255, 255, 255, 0.7);
+        text-decoration: none;
+        font-size: 0.95rem;
+        transition: all 0.3s ease;
+        padding: 0.3rem 0.8rem;
+        border-radius: 20px;
+    }
+    
+    .footer-link:hover {
+        color: white;
+        background: rgba(255, 255, 255, 0.1);
+        transform: translateY(-2px);
+    }
+    
+    .link-separator {
+        color: rgba(255, 255, 255, 0.3);
+    }
+    
+    /* Copyright Section */
+    .copyright {
+        text-align: center;
+    }
+    
+    .copyright-text {
+        color: rgba(255, 255, 255, 0.6);
+        font-size: 0.9rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .made-with {
+        color: rgba(255, 255, 255, 0.4);
+        font-size: 0.85rem;
+        margin: 0;
+    }
+    
+    .made-with i {
+        animation: heartbeat 1.5s ease infinite;
+    }
+    
+    @keyframes heartbeat {
+        0%, 100% { transform: scale(1); }
+        50% { transform: scale(1.1); }
+    }
+    
+    /* Back to Top Button */
+    .back-to-top {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        border: none;
+        border-radius: 50px;
+        padding: 1rem 1.5rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 0.9rem;
+        font-weight: 500;
+        cursor: pointer;
+        box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+        transition: all 0.3s ease;
+        opacity: 0;
+        visibility: hidden;
+        z-index: 1000;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    
+    .back-to-top.show {
+        opacity: 1;
+        visibility: visible;
+    }
+    
+    .back-to-top:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+    }
+    
+    .back-to-top i {
+        font-size: 1rem;
+    }
+    
+    .back-to-top-text {
+        display: inline;
+    }
+    
+    /* Mobile Responsive */
+    @media (max-width: 768px) {
+        .social-link {
+            width: 45px;
+            height: 45px;
+            font-size: 1.1rem;
+        }
+        
+        .footer-links {
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+        
+        .link-separator {
+            display: none;
+        }
+        
+        .back-to-top {
+            bottom: 20px;
+            right: 20px;
+            padding: 0.8rem 1.2rem;
+        }
+        
+        .back-to-top-text {
+            display: none;
+        }
+    }
+    
+    @media (max-width: 576px) {
+        .social-list {
+            gap: 0.5rem;
+        }
+        
+        .social-link {
+            width: 40px;
+            height: 40px;
+            font-size: 1rem;
+        }
+        
+        .social-tooltip {
+            display: none;
+        }
+    }
+</style>
+
+<!-- JavaScript for Footer -->
+<script>
+    // Update copyright year
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
+    
+    // Back to top button functionality
+    window.addEventListener('scroll', function() {
+        const backToTop = document.getElementById('backToTop');
+        if (window.scrollY > 300) {
+            backToTop.classList.add('show');
+        } else {
+            backToTop.classList.remove('show');
+        }
+    });
+    
+    function scrollToTop() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    }
+</script>
+
+<!-- Bootstrap core JS-->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Core theme JS-->
+<script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+</body>
+</html>

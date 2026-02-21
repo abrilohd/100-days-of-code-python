@@ -1,0 +1,14 @@
+Flask
+Flask-SQLAlchemy
+Flask-Login
+Flask-WTF
+Flask-CKEditor
+Bootstrap-Flask
+Flask-Gravatar
+SQLAlchemy
+psycopg2-binary
+python-dotenv
+gunicorn
+email-validator
+Werkzeug
+WTForms

@@ -1,0 +1,700 @@
+{% include "header.html" %}
+
+<!-- Modern Hero Section -->
+<header class="hero-section position-relative overflow-hidden">
+    <!-- Animated Background -->
+    <div class="hero-bg">
+        <div class="gradient-orb orb-1"></div>
+        <div class="gradient-orb orb-2"></div>
+        <div class="gradient-orb orb-3"></div>
+    </div>
+    
+    <div class="container position-relative px-4 px-lg-5 py-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class="col-lg-8 col-xl-7 text-center">
+                <div class="hero-content" data-aos="fade-up">
+                    <div class="badge-container mb-4">
+                        <span class="badge-modern tech-badge">
+                            <i class="fas fa-microchip me-2"></i>Tech
+                        </span>
+                        <span class="badge-modern innovation-badge">
+                            <i class="fas fa-rocket me-2"></i>Innovation
+                        </span>
+                        <span class="badge-modern future-badge">
+                            <i class="fas fa-robot me-2"></i>Future
+                        </span>
+                    </div>
+                    
+                    <h1 class="display-1 fw-bold gradient-text mb-4">
+                        Tech Pulse
+                    </h1>
+                    
+                    <p class="lead fs-2 text-primary mb-5">
+                        A collection of random musings.
+                    </p>
+                    
+                    <div class="hero-stats d-flex justify-content-center gap-4">
+                        <div class="stat-item">
+                            <span class="stat-number" data-target="{{ all_posts|length }}">0</span>
+                            <span class="stat-label">Articles</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number" data-target="5">0</span>
+                            <span class="stat-label">Topics</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number" data-target="1.5k">0</span>
+                            <span class="stat-label">Readers</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Scroll Indicator -->
+    <div class="scroll-indicator">
+        <div class="mouse"></div>
+        <p class="mt-2 text-muted">Scroll to explore</p>
+    </div>
+</header>
+
+<!-- Main Content - Modern Two-Card Layout -->
+<div class="container px-4 px-lg-5 py-5 my-5">
+    <div class="row g-5">
+        {% for post in all_posts %}
+        <!-- Blog Cards - Two per row on desktop, stacked on mobile -->
+        <div class="col-12 col-lg-6" data-aos="fade-up" data-aos-delay="{{ loop.index * 100 }}">
+            <article class="blog-card-modern h-100">
+                <div class="card-wrapper">
+                    <!-- Card Inner -->
+                    <div class="card-inner">
+                        <!-- Card Header with Meta -->
+                        <div class="card-header-modern">
+                            <div class="d-flex align-items-center gap-3">
+                                <div class="author-avatar">
+                                    {% if post.author == 'Admin' or post.author == '<User 1>' %}
+                                    <img src="https://ui-avatars.com/api/?name={{ post.author|replace(' ', '+') }}&background=667eea&color=fff&size=40" 
+                                         alt="author" class="rounded-circle">
+                                    {% else %}
+                                    <div class="avatar-placeholder">
+                                        <i class="fas fa-user-circle"></i>
+                                    </div>
+                                    {% endif %}
+                                </div>
+                                
+                                <div class="author-info">
+                                    <h6 class="mb-0 fw-semibold">{{ post.author }}</h6>
+                                    <small class="text-muted">
+                                        <i class="far fa-calendar-alt me-1"></i>{{ post.date }}
+                                    </small>
+                                </div>
+                                
+                                <!-- Category Badge -->
+                                <div class="ms-auto">
+                                    {% if loop.index is odd %}
+                                    <span class="category-badge culture-badge">
+                                        <i class="fas fa-heart me-1"></i>Culture
+                                    </span>
+                                    {% else %}
+                                    <span class="category-badge tech-badge">
+                                        <i class="fas fa-robot me-1"></i>AI & Tech
+                                    </span>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Card Body -->
+                        <div class="card-body-modern">
+                            <h2 class="post-title-modern">
+                                <a href="{{ url_for('show_post', post_id=post.id) }}" class="post-link">
+                                    {{ post.title }}
+                                </a>
+                            </h2>
+                            
+                            <h3 class="post-subtitle-modern">
+                                <i class="fas fa-quote-right me-2 opacity-50"></i>
+                                {{ post.subtitle }}
+                            </h3>
+                            
+                            <p class="post-excerpt">
+                                {% if loop.index is odd %}
+                                In a world quick to judge, choosing empathy becomes a revolutionary act. Explore how we can bridge divides and foster understanding in digital spaces.
+                                {% else %}
+                                From automation to advanced decision-making, artificial intelligence is redefining modern technology — neural interfaces, generative models, and the new ethics of autonomy.
+                                {% endif %}
+                            </p>
+                            
+                            <!-- Interactive Stats -->
+                            <div class="post-stats">
+                                <span class="stat">
+                                    <i class="far fa-heart"></i>
+                                    <span class="count">{{ 1500 + loop.index * 200 }}</span>
+                                </span>
+                                <span class="stat">
+                                    <i class="far fa-comment"></i>
+                                    <span class="count">{{ 45 + loop.index * 12 }}</span>
+                                </span>
+                                <span class="stat">
+                                    <i class="far fa-bookmark"></i>
+                                    <span class="count">Save</span>
+                                </span>
+                                <span class="stat">
+                                    <i class="far fa-clock"></i>
+                                    <span class="count">{{ 5 + loop.index }} min read</span>
+                                </span>
+                            </div>
+                        </div>
+                        
+                        <!-- Card Footer -->
+                        <div class="card-footer-modern">
+                            <div class="d-flex align-items-center justify-content-between">
+                                <a href="{{ url_for('show_post', post_id=post.id) }}" class="read-more-btn">
+                                    <span>Read full article</span>
+                                    <i class="fas fa-arrow-right ms-2"></i>
+                                </a>
+                                
+                                <!-- TODO: Only show delete button if user id is 1 (admin user) -->
+                                {% if current_user.is_authenticated and current_user.id == 1 %}
+                                <a href="{{ url_for('delete_post', post_id=post.id) }}" 
+                                   class="delete-btn"
+                                   onclick="return confirm('Delete this post?')">
+                                    <i class="fas fa-trash-alt"></i>
+                                </a>
+                                {% else %}
+                                <span class="delete-placeholder"></span>
+                                {% endif %}
+                            </div>
+                        </div>
+                        
+                        <!-- Decorative Elements -->
+                        <div class="card-accent"></div>
+                    </div>
+                </div>
+            </article>
+        </div>
+        {% endfor %}
+    </div>
+    
+    <!-- Action Buttons Section -->
+    <div class="row mt-5 pt-5">
+        <div class="col-12">
+            <div class="action-section">
+                <!-- TODO: Only show Create Post button if user id is 1 (admin user) -->
+                {% if current_user.is_authenticated and current_user.id == 1 %}
+                <div class="admin-actions">
+                    <a href="{{ url_for('add_new_post') }}" class="action-btn primary-btn">
+                        <i class="fas fa-plus-circle me-2"></i>
+                        <span>Create New Post</span>
+                    </a>
+                </div>
+                {% endif %}
+                
+                <div class="pager-section">
+    {% if newer_post %}
+    <a href="{{ url_for('show_post', post_id=newer_post.id) }}" class="pager-btn">
+        <i class="fas fa-arrow-left me-2"></i>
+        <span>Newer Posts</span>
+    </a>
+    {% endif %}
+
+    {% if older_post %}
+    <a href="{{ url_for('show_post', post_id=older_post.id) }}" class="pager-btn">
+        <span>Older Posts</span>
+        <i class="fas fa-arrow-right ms-2"></i>
+    </a>
+    {% endif %}
+</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Custom Styles for Index Page -->
+<style>
+    /* Modern Hero Section */
+    .hero-section {
+        min-height: 80vh;
+        display: flex;
+        align-items: center;
+        position: relative;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        margin-top: -76px; /* Offset for fixed navbar */
+        padding-top: 76px;
+    }
+    
+    .hero-bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        overflow: hidden;
+    }
+    
+    .gradient-orb {
+        position: absolute;
+        border-radius: 50%;
+        filter: blur(60px);
+        opacity: 0.4;
+    }
+    
+    .orb-1 {
+        top: -100px;
+        right: -100px;
+        width: 500px;
+        height: 500px;
+        background: linear-gradient(135deg, #ff6b6b 0%, #feca57 100%);
+        animation: float 20s ease-in-out infinite;
+    }
+    
+    .orb-2 {
+        bottom: -100px;
+        left: -100px;
+        width: 600px;
+        height: 600px;
+        background: linear-gradient(135deg, #48dbfb 0%, #1dd1a1 100%);
+        animation: float 25s ease-in-out infinite reverse;
+    }
+    
+    .orb-3 {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 400px;
+        height: 400px;
+        background: linear-gradient(135deg, #f368e0 0%, #ff9f43 100%);
+        animation: float 15s ease-in-out infinite;
+    }
+    
+    .hero-content {
+        position: relative;
+        z-index: 10;
+        color: white;
+    }
+    
+    .badge-container {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    
+    .badge-modern {
+        padding: 0.5rem 1.5rem;
+        border-radius: 50px;
+        font-weight: 500;
+        font-size: 0.9rem;
+        background: rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(10px);
+        color: white;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+    
+    .gradient-text {
+        background: linear-gradient(135deg, #fff 0%, #f0f0f0 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+    
+    /* Modern Blog Cards */
+    .blog-card-modern {
+        perspective: 1500px;
+    }
+    
+    .card-wrapper {
+        background: rgba(255, 255, 255, 0.9);
+        backdrop-filter: blur(10px);
+        border-radius: 30px;
+        padding: 2px;
+        height: 100%;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+        border: 1px solid rgba(255, 255, 255, 0.5);
+    }
+    
+    .card-wrapper:hover {
+        transform: translateY(-10px) scale(1.02);
+        box-shadow: 0 30px 60px rgba(102, 126, 234, 0.3);
+    }
+    
+    .card-inner {
+        background: white;
+        border-radius: 28px;
+        padding: 2rem;
+        height: 100%;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    /* Different accent colors for each card */
+    .blog-card-modern:nth-child(odd) .card-accent {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    }
+    
+    .blog-card-modern:nth-child(even) .card-accent {
+        background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    }
+    
+    .card-accent {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 6px;
+    }
+    
+    .author-avatar {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        overflow: hidden;
+    }
+    
+    .avatar-placeholder {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        font-size: 2rem;
+    }
+    
+    .category-badge {
+        padding: 0.4rem 1rem;
+        border-radius: 50px;
+        font-size: 0.8rem;
+        font-weight: 600;
+        background: rgba(102, 126, 234, 0.1);
+        color: #667eea;
+    }
+    
+    .category-badge.culture-badge {
+        background: rgba(240, 98, 146, 0.1);
+        color: #f06292;
+    }
+    
+    .category-badge.tech-badge {
+        background: rgba(79, 172, 254, 0.1);
+        color: #4facfe;
+    }
+    
+    .post-title-modern {
+        font-size: 1.8rem;
+        font-weight: 700;
+        margin: 1.5rem 0 1rem;
+        line-height: 1.3;
+    }
+    
+    .post-link {
+        text-decoration: none;
+        color: #2d3748;
+        transition: all 0.3s ease;
+        background: linear-gradient(135deg, #2d3748 0%, #4a5568 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+    
+    .blog-card-modern:nth-child(odd) .post-link:hover {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+    
+    .blog-card-modern:nth-child(even) .post-link:hover {
+        background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+    
+    .post-subtitle-modern {
+        font-size: 1.1rem;
+        color: #718096;
+        margin-bottom: 1rem;
+        font-weight: 400;
+        border-left: 3px solid;
+        padding-left: 1rem;
+    }
+    
+    .blog-card-modern:nth-child(odd) .post-subtitle-modern {
+        border-color: #667eea;
+    }
+    
+    .blog-card-modern:nth-child(even) .post-subtitle-modern {
+        border-color: #f093fb;
+    }
+    
+    .post-excerpt {
+        color: #4a5568;
+        line-height: 1.8;
+        margin: 1.5rem 0;
+    }
+    
+    .post-stats {
+        display: flex;
+        gap: 1.5rem;
+        margin: 1.5rem 0;
+        color: #a0aec0;
+    }
+    
+    .stat {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 0.9rem;
+        cursor: default;
+        transition: all 0.3s ease;
+    }
+    
+    .stat:hover {
+        color: #667eea;
+    }
+    
+    .read-more-btn {
+        display: inline-flex;
+        align-items: center;
+        padding: 0.8rem 1.5rem;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        text-decoration: none;
+        border-radius: 50px;
+        font-weight: 500;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+    }
+    
+    .read-more-btn:hover {
+        transform: translateX(5px);
+        box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+        color: white;
+    }
+    
+    .delete-btn {
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #fff5f5;
+        color: #f56565;
+        border-radius: 50%;
+        transition: all 0.3s ease;
+        text-decoration: none;
+    }
+    
+    .delete-btn:hover {
+        background: #f56565;
+        color: white;
+        transform: rotate(90deg);
+    }
+    
+    /* Action Section */
+    .action-section {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 1rem;
+        padding: 2rem;
+        background: white;
+        border-radius: 20px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    }
+    
+    .action-btn {
+        display: inline-flex;
+        align-items: center;
+        padding: 1rem 2rem;
+        border-radius: 50px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: all 0.3s ease;
+    }
+    
+    .primary-btn {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+    }
+    
+    .primary-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+        color: white;
+    }
+    
+    .pager-section {
+        display: flex;
+        gap: 1rem;
+    }
+    
+    .pager-btn {
+        display: inline-flex;
+        align-items: center;
+        padding: 0.8rem 1.5rem;
+        background: #f7fafc;
+        color: #4a5568;
+        text-decoration: none;
+        border-radius: 50px;
+        transition: all 0.3s ease;
+        border: 1px solid #e2e8f0;
+    }
+    
+    .pager-btn:hover {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        border-color: transparent;
+    }
+    
+    /* Mobile First Adjustments */
+    @media (max-width: 768px) {
+        .hero-section {
+            min-height: 60vh;
+        }
+        
+        .post-title-modern {
+            font-size: 1.5rem;
+        }
+        
+        .post-stats {
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        
+        .action-section {
+            flex-direction: column;
+            text-align: center;
+        }
+        
+        .pager-section {
+            width: 100%;
+            justify-content: center;
+        }
+    }
+    
+    @media (max-width: 576px) {
+        .badge-container {
+            gap: 0.5rem;
+        }
+        
+        .badge-modern {
+            padding: 0.3rem 1rem;
+            font-size: 0.8rem;
+        }
+        
+        .hero-content h1 {
+            font-size: 2.5rem;
+        }
+        
+        .card-inner {
+            padding: 1.5rem;
+        }
+    }
+    
+    /* Animations */
+    @keyframes float {
+        0%, 100% { transform: translate(0, 0) rotate(0deg); }
+        33% { transform: translate(30px, -30px) rotate(120deg); }
+        66% { transform: translate(-20px, 20px) rotate(240deg); }
+    }
+    
+    /* Scroll Indicator */
+    .scroll-indicator {
+        position: absolute;
+        bottom: 30px;
+        left: 50%;
+        transform: translateX(-50%);
+        text-align: center;
+        z-index: 10;
+        animation: bounce 2s infinite;
+    }
+    
+    .mouse {
+        width: 26px;
+        height: 40px;
+        border: 2px solid white;
+        border-radius: 20px;
+        margin: 0 auto;
+        position: relative;
+    }
+    
+    .mouse::before {
+        content: '';
+        position: absolute;
+        top: 8px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 4px;
+        height: 8px;
+        background: white;
+        border-radius: 2px;
+        animation: scroll 2s infinite;
+    }
+    
+    @keyframes scroll {
+        0% { opacity: 1; transform: translateX(-50%) translateY(0); }
+        100% { opacity: 0; transform: translateX(-50%) translateY(20px); }
+    }
+    
+    @keyframes bounce {
+        0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+        40% { transform: translateX(-50%) translateY(-10px); }
+        60% { transform: translateX(-50%) translateY(-5px); }
+    }
+    
+    /* Stat Counter Animation */
+    .stat-number {
+        font-size: 1.5rem;
+        font-weight: 700;
+        display: block;
+        color: white;
+    }
+    
+    .stat-label {
+        font-size: 0.9rem;
+        opacity: 0.8;
+    }
+</style>
+
+<!-- AOS Animation Library -->
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+<!-- Initialize Animations -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 100
+        });
+        
+        // Animate statistics counters
+        const stats = document.querySelectorAll('.stat-number');
+        stats.forEach(stat => {
+            const target = parseInt(stat.getAttribute('data-target'));
+            let current = 0;
+            const increment = target / 50; // Smooth increment
+            
+            const updateCounter = () => {
+                if (current < target) {
+                    current += increment;
+                    stat.textContent = Math.ceil(current);
+                    requestAnimationFrame(updateCounter);
+                } else {
+                    stat.textContent = target;
+                }
+            };
+            
+            updateCounter();
+        });
+    });
+</script>
+
+{% include "footer.html" %}

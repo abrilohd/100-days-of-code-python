@@ -1,0 +1,621 @@
+{% include "header.html" %}
+
+<!-- Modern Post Header -->
+<header class="post-header position-relative overflow-hidden" style="background-image: url('{{post.img_url}}')">
+    <div class="header-overlay"></div>
+    <div class="container position-relative px-4 px-lg-5 py-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class="col-lg-10 col-xl-8 text-center" data-aos="fade-up">
+                <div class="header-badge mb-4">
+                    <span class="badge-modern">
+                        <i class="fas fa-newspaper me-2"></i>Blog Post
+                    </span>
+                </div>
+                
+                <h1 class="display-3 fw-bold text-white mb-4">{{ post.title }}</h1>
+                <h2 class="subheading-modern fs-3 text-white mb-4">{{ post.subtitle }}</h2>
+                
+                <div class="post-meta-header">
+                    <span class="meta-item">
+                        <i class="fas fa-user-circle me-2"></i>
+                        <a href="#" class="text-white">{{ post.author }}</a>
+                    </span>
+                    <span class="meta-item">
+                        <i class="fas fa-calendar-alt me-2"></i>
+                        {{ post.date }}
+                    </span>
+                    <span class="meta-item">
+                        <i class="fas fa-clock me-2"></i>
+                        5 min read
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Scroll Indicator -->
+    <div class="scroll-indicator">
+        <div class="mouse"></div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article class="post-content">
+    <div class="container px-4 px-lg-5 py-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-10 col-xl-8">
+                <!-- Post Body -->
+                <div class="post-body" data-aos="fade-up">
+                    {{ post.body|safe }}
+                </div>
+                
+                <!-- Edit Post Button (Admin Only) -->
+                {% if current_user.is_authenticated and current_user.id == 1 %}
+                <div class="edit-section text-end mb-5" data-aos="fade-up">
+                    <a href="{{url_for('edit_post', post_id=post.id)}}" class="edit-btn">
+                        <i class="fas fa-edit me-2"></i>
+                        Edit Post
+                    </a>
+                </div>
+                {% endif %}
+                
+                <!-- Comments Section -->
+                <div class="comments-section" data-aos="fade-up">
+                    <h3 class="comments-title">
+                        <i class="fas fa-comments me-2"></i>
+                        Comments ({{ post.comments|length }})
+                    </h3>
+                    
+                    <!-- Comment Form -->
+                    <div class="comment-form-container">
+                        {{ ckeditor.load() }}
+                        {{ ckeditor.config(name='comment_text') }}
+                        {{ render_form(form, novalidate=True, button_map={"submit": "primary"}) }}
+                    </div>
+                    
+                    <!-- Comments List -->
+                    <div class="comments-list">
+                        {% for comment in post.comments: %}
+                        <div class="comment-card" data-aos="fade-up" data-aos-delay="{{ loop.index * 100 }}">
+                            <div class="comment-avatar">
+                                <img src="{{ comment.comment_author.email | gravatar }}" alt="avatar">
+                            </div>
+                            <div class="comment-content">
+                                <div class="comment-header">
+                                    <h5 class="comment-author">{{ comment.comment_author.name }}</h5>
+                                    <span class="comment-date">
+                                        <i class="far fa-clock me-1"></i>
+                                        {{ comment.date if comment.date else 'Just now' }}
+                                    </span>
+                                </div>
+                                <div class="comment-text">
+                                    {{ comment.text|safe }}
+                                </div>
+                                <div class="comment-actions">
+                                    <button class="comment-action like-btn">
+                                        <i class="far fa-heart"></i>
+                                        <span>Like</span>
+                                    </button>
+                                    <button class="comment-action reply-btn">
+                                        <i class="far fa-comment"></i>
+                                        <span>Reply</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</article>
+
+<!-- Custom Styles for Post Page -->
+<style>
+    /* Post Header */
+    .post-header {
+        min-height: 80vh;
+        display: flex;
+        align-items: flex-end;
+        position: relative;
+        background-size: cover;
+        background-position: center;
+        margin-top: -76px;
+        padding-top: 76px;
+        color: white;
+    }
+    
+    .post-header::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.8));
+    }
+    
+    .header-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.5);
+    }
+    
+    .header-badge .badge-modern {
+        padding: 0.5rem 1.5rem;
+        background: rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(10px);
+        border-radius: 50px;
+        color: white;
+        font-weight: 500;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+    
+    .subheading-modern {
+        font-weight: 400;
+        opacity: 0.9;
+        font-style: italic;
+    }
+    
+    .post-meta-header {
+        display: flex;
+        gap: 2rem;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-top: 2rem;
+    }
+    
+    .meta-item {
+        display: flex;
+        align-items: center;
+        color: rgba(255, 255, 255, 0.9);
+    }
+    
+    .meta-item a {
+        color: white;
+        text-decoration: none;
+        font-weight: 600;
+    }
+    
+    .meta-item a:hover {
+        text-decoration: underline;
+    }
+    
+    /* Post Content */
+    .post-content {
+        background: var(--bg-secondary);
+        padding: 3rem 0;
+        min-height: 60vh;
+    }
+    
+    /* Post Body Styling - This is the key part */
+    .post-body {
+        background: var(--card-bg);
+        border-radius: 30px;
+        padding: 3rem;
+        box-shadow: 0 20px 40px var(--shadow-color);
+        margin-bottom: 3rem;
+        line-height: 1.8;
+        font-size: 1.1rem;
+        color: var(--text-primary);
+        border: 1px solid var(--card-border);
+    }
+    
+    /* Post body content styling */
+    .post-body h1 {
+        font-size: 2.2rem;
+        font-weight: 700;
+        margin: 2rem 0 1rem;
+        color: var(--text-primary);
+        border-bottom: 2px solid var(--border-color);
+        padding-bottom: 0.5rem;
+    }
+    
+    .post-body h2 {
+        font-size: 1.8rem;
+        font-weight: 600;
+        margin: 1.8rem 0 1rem;
+        color: var(--text-primary);
+    }
+    
+    .post-body h3 {
+        font-size: 1.5rem;
+        font-weight: 600;
+        margin: 1.5rem 0 1rem;
+        color: var(--text-primary);
+    }
+    
+    .post-body h4 {
+        font-size: 1.3rem;
+        font-weight: 600;
+        margin: 1.3rem 0 0.8rem;
+        color: var(--text-primary);
+    }
+    
+    .post-body p {
+        margin-bottom: 1.5rem;
+        color: var(--text-secondary);
+        line-height: 1.8;
+    }
+    
+    .post-body strong {
+        color: var(--text-primary);
+        font-weight: 600;
+    }
+    
+    .post-body em {
+        font-style: italic;
+        color: var(--text-secondary);
+    }
+    
+    .post-body ul, .post-body ol {
+        margin: 1.5rem 0;
+        padding-left: 2rem;
+        color: var(--text-secondary);
+    }
+    
+    .post-body li {
+        margin-bottom: 0.5rem;
+        color: var(--text-secondary);
+    }
+    
+    .post-body li strong {
+        color: var(--text-primary);
+    }
+    
+    .post-body a {
+        color: #667eea;
+        text-decoration: none;
+        border-bottom: 1px dashed #667eea;
+    }
+    
+    .post-body a:hover {
+        color: #764ba2;
+        border-bottom: 1px solid #764ba2;
+    }
+    
+    .post-body blockquote {
+        border-left: 4px solid #667eea;
+        background: var(--bg-secondary);
+        padding: 1.5rem 2rem;
+        margin: 1.5rem 0;
+        border-radius: 0 20px 20px 0;
+        font-style: italic;
+        color: var(--text-secondary);
+    }
+    
+    .post-body blockquote p {
+        margin-bottom: 0;
+        color: var(--text-secondary);
+    }
+    
+    .post-body code {
+        background: var(--bg-secondary);
+        color: #e83e8c;
+        padding: 0.2rem 0.4rem;
+        border-radius: 6px;
+        font-family: 'Courier New', monospace;
+        font-size: 0.9rem;
+        border: 1px solid var(--border-color);
+    }
+    
+    .post-body pre {
+        background: var(--bg-secondary);
+        color: var(--text-primary);
+        padding: 1.5rem;
+        border-radius: 15px;
+        overflow-x: auto;
+        margin: 1.5rem 0;
+        border: 1px solid var(--border-color);
+    }
+    
+    .post-body pre code {
+        background: none;
+        color: inherit;
+        padding: 0;
+        border: none;
+    }
+    
+    .post-body hr {
+        margin: 2rem 0;
+        border: 0;
+        height: 1px;
+        background: linear-gradient(to right, transparent, var(--border-color), transparent);
+    }
+    
+    .post-body img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 15px;
+        margin: 2rem 0;
+        box-shadow: 0 10px 30px var(--shadow-color);
+    }
+    
+    .post-body table {
+        width: 100%;
+        margin: 1.5rem 0;
+        border-collapse: collapse;
+        color: var(--text-secondary);
+    }
+    
+    .post-body th {
+        background: var(--bg-secondary);
+        color: var(--text-primary);
+        font-weight: 600;
+        padding: 0.75rem;
+        border: 1px solid var(--border-color);
+    }
+    
+    .post-body td {
+        padding: 0.75rem;
+        border: 1px solid var(--border-color);
+    }
+    
+    /* Edit Button */
+    .edit-btn {
+        display: inline-flex;
+        align-items: center;
+        padding: 0.8rem 2rem;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        text-decoration: none;
+        border-radius: 50px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+    }
+    
+    .edit-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+        color: white;
+    }
+    
+    /* Comments Section */
+    .comments-section {
+        background: var(--card-bg);
+        border-radius: 30px;
+        padding: 2rem;
+        box-shadow: 0 20px 40px var(--shadow-color);
+        border: 1px solid var(--card-border);
+    }
+    
+    .comments-title {
+        font-size: 1.8rem;
+        font-weight: 600;
+        color: var(--text-primary);
+        margin-bottom: 2rem;
+        padding-bottom: 1rem;
+        border-bottom: 2px solid var(--border-color);
+    }
+    
+    .comment-form-container {
+        margin-bottom: 3rem;
+        padding: 1.5rem;
+        background: var(--bg-secondary);
+        border-radius: 20px;
+        border: 1px solid var(--border-color);
+    }
+    
+    .comments-list {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+    
+    .comment-card {
+        display: flex;
+        gap: 1.5rem;
+        padding: 1.5rem;
+        background: var(--bg-secondary);
+        border-radius: 20px;
+        transition: all 0.3s ease;
+        border: 1px solid var(--border-color);
+    }
+    
+    .comment-card:hover {
+        transform: translateX(5px);
+        box-shadow: 0 5px 15px var(--shadow-color);
+    }
+    
+    .comment-avatar {
+        flex-shrink: 0;
+    }
+    
+    .comment-avatar img {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        border: 3px solid var(--card-bg);
+        box-shadow: 0 3px 10px var(--shadow-color);
+    }
+    
+    .comment-content {
+        flex: 1;
+    }
+    
+    .comment-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 0.5rem;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+    
+    .comment-author {
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: var(--text-primary);
+        margin: 0;
+    }
+    
+    .comment-date {
+        font-size: 0.85rem;
+        color: var(--text-muted);
+    }
+    
+    .comment-text {
+        color: var(--text-secondary);
+        line-height: 1.6;
+        margin-bottom: 1rem;
+    }
+    
+    .comment-text p {
+        color: var(--text-secondary);
+        margin-bottom: 0.5rem;
+    }
+    
+    .comment-actions {
+        display: flex;
+        gap: 1rem;
+    }
+    
+    .comment-action {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        background: none;
+        border: none;
+        color: var(--text-muted);
+        font-size: 0.9rem;
+        padding: 0.3rem 0.8rem;
+        border-radius: 20px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+    
+    .comment-action:hover {
+        background: var(--hover-bg);
+        color: #667eea;
+    }
+    
+    .comment-action.like-btn:hover {
+        color: #f56565;
+    }
+    
+    /* Scroll Indicator */
+    .scroll-indicator {
+        position: absolute;
+        bottom: 30px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 10;
+        animation: bounce 2s infinite;
+    }
+    
+    .mouse {
+        width: 26px;
+        height: 40px;
+        border: 2px solid white;
+        border-radius: 20px;
+        position: relative;
+    }
+    
+    .mouse::before {
+        content: '';
+        position: absolute;
+        top: 8px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 4px;
+        height: 8px;
+        background: white;
+        border-radius: 2px;
+        animation: scroll 2s infinite;
+    }
+    
+    @keyframes scroll {
+        0% { opacity: 1; transform: translateX(-50%) translateY(0); }
+        100% { opacity: 0; transform: translateX(-50%) translateY(20px); }
+    }
+    
+    @keyframes bounce {
+        0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+        40% { transform: translateX(-50%) translateY(-10px); }
+        60% { transform: translateX(-50%) translateY(-5px); }
+    }
+    
+    /* Mobile Responsive */
+    @media (max-width: 768px) {
+        .post-header h1 {
+            font-size: 2.5rem;
+        }
+        
+        .post-header h2 {
+            font-size: 1.5rem;
+        }
+        
+        .post-meta-header {
+            gap: 1rem;
+        }
+        
+        .post-body {
+            padding: 1.5rem;
+            font-size: 1rem;
+        }
+        
+        .post-body h1 {
+            font-size: 1.8rem;
+        }
+        
+        .post-body h2 {
+            font-size: 1.5rem;
+        }
+        
+        .post-body h3 {
+            font-size: 1.3rem;
+        }
+        
+        .comment-card {
+            flex-direction: column;
+            gap: 1rem;
+        }
+        
+        .comment-avatar img {
+            width: 40px;
+            height: 40px;
+        }
+    }
+    
+    @media (max-width: 576px) {
+        .post-header h1 {
+            font-size: 2rem;
+        }
+        
+        .post-body {
+            padding: 1rem;
+            border-radius: 20px;
+        }
+        
+        .comments-section {
+            padding: 1rem;
+        }
+        
+        .comment-header {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+    }
+</style>
+
+<!-- AOS Animation Library -->
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+<!-- Initialize Animations -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 100
+        });
+    });
+</script>
+
+{% include "footer.html" %}
