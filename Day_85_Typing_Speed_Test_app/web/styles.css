@@ -1,0 +1,199 @@
+/* Carbon palette + minimalist glass UI */
+:root{
+  --bg:#323437;
+  --text:#646669;
+  --active:#d1d0c5;
+  --error:#ca4754;
+  --glass: rgba(255,255,255,0.06);
+  --glass2: rgba(255,255,255,0.04);
+  --br: rgba(255,255,255,0.10);
+  --shadow: 0 24px 90px rgba(0,0,0,0.35);
+  --ghost: rgba(209,208,197,0.55);
+}
+
+html, body {
+  height: 100%;
+  background: var(--bg);
+  color: var(--text);
+}
+
+body { overflow: hidden; }
+
+.mono { font-family: "JetBrains Mono", "Roboto Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; }
+
+.glass{
+  border: 1px solid var(--br);
+  border-radius: 22px;
+  padding: 22px;
+  background: linear-gradient(180deg, var(--glass), var(--glass2));
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: var(--shadow);
+}
+
+.badge{
+  height: 42px;
+  width: 42px;
+  border-radius: 14px;
+  border: 1px solid var(--br);
+  background: rgba(0,0,0,0.14);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color: var(--active);
+}
+
+.btn{
+  border: 1px solid var(--br);
+  border-radius: 14px;
+  padding: 10px 14px;
+  background: rgba(0,0,0,0.14);
+  color: var(--active);
+  transition: transform 120ms ease, background 120ms ease, border-color 120ms ease;
+}
+.btn:hover{ background: rgba(0,0,0,0.20); border-color: rgba(255,255,255,0.16); }
+.btn:active{ transform: translateY(1px); }
+
+.sourceBox{
+  border: 1px solid var(--br);
+  border-radius: 18px;
+  padding: 18px;
+  background: rgba(0,0,0,0.10);
+  max-height: 260px;
+  overflow: auto;
+}
+
+.inputBox{
+  width: 100%;
+  margin-top: 14px;
+  border: 1px solid var(--br);
+  border-radius: 18px;
+  padding: 16px 18px;
+  background: rgba(0,0,0,0.10);
+  color: var(--active);
+  outline: none;
+  resize: none;
+  height: 150px;
+}
+
+.inputBox::placeholder{ color: rgba(209,208,197,0.35); }
+.inputBox:focus{ border-color: rgba(209,208,197,0.26); }
+
+.char-untyped { color: var(--text); }
+.char-correct { color: var(--active); }
+.char-wrong { color: var(--error); }
+.char-wrong.shake { animation: shake 140ms ease-in-out 1; }
+
+@keyframes shake{
+  0% { transform: translateX(0); }
+  35% { transform: translateX(-1px); }
+  70% { transform: translateX(1px); }
+  100% { transform: translateX(0); }
+}
+
+.caretBar{
+  position: absolute;
+  width: 2px;
+  height: 1.35em;
+  background: var(--active);
+  opacity: 0.9;
+  border-radius: 1px;
+  transition: left 0.1s ease, top 0.1s ease;
+  animation: blink 1s steps(1, end) infinite;
+  pointer-events: none;
+}
+
+.ghostBar{
+  position: absolute;
+  width: 2px;
+  height: 1.35em;
+  background: var(--ghost);
+  border-radius: 1px;
+  transition: left 0.1s ease, top 0.1s ease;
+  pointer-events: none;
+}
+
+@keyframes blink{
+  0%, 45% { opacity: 0; }
+  46%, 100% { opacity: 1; }
+}
+
+.fade-swap{
+  transition: opacity 240ms ease, transform 240ms ease;
+}
+.fadeOut{
+  opacity: 0;
+  transform: translateY(8px);
+  pointer-events: none;
+}
+.fadeIn{
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.stat{
+  text-align:center;
+}
+.stat-label{
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.stat-value{
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--active);
+  transition: transform 140ms ease;
+}
+.stat.subtle .stat-value{ color: rgba(209,208,197,0.70); font-weight: 600; }
+.pulse{ animation: statPulse 170ms ease-out 1; }
+@keyframes statPulse{
+  0% { transform: scale(1); }
+  60% { transform: scale(1.06); }
+  100% { transform: scale(1); }
+}
+
+.dashGrid{
+  display:grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+}
+.dashCard{
+  border: 1px solid var(--br);
+  border-radius: 16px;
+  background: rgba(0,0,0,0.10);
+  padding: 12px 14px;
+}
+.dashLabel{
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.dashValue{
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--active);
+  margin-top: 2px;
+}
+.chartCard{
+  margin-top: 14px;
+  border: 1px solid var(--br);
+  border-radius: 18px;
+  background: rgba(0,0,0,0.10);
+  padding: 14px;
+}
+.weakBox{
+  border: 1px solid var(--br);
+  border-radius: 18px;
+  background: rgba(0,0,0,0.10);
+  padding: 12px 14px;
+  color: var(--active);
+  max-height: 160px;
+  overflow:auto;
+}
+
+@media (max-width: 860px){
+  body { overflow: auto; }
+  .dashGrid{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+

@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Typing Speed Test — Carbon</title>
+
+    <!-- Fonts (offline) -->
+    <link rel="stylesheet" href="libs/fonts.css" />
+
+    <!-- Tailwind (offline) -->
+    <script src="libs/tailwind.min.js"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              carbon: {
+                bg: "#323437",
+                text: "#646669",
+                active: "#d1d0c5",
+                error: "#ca4754"
+              }
+            }
+          }
+        }
+      }
+    </script>
+
+    <!-- Chart.js (offline) -->
+    <script src="libs/chart.umd.min.js"></script>
+
+    <!-- Lucide icons (offline) -->
+    <script src="libs/lucide.min.js"></script>
+
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+
+  <body class="bg-carbon-bg text-carbon-text">
+    <main class="min-h-screen flex items-center justify-center px-5 py-10">
+      <div class="glass w-full max-w-4xl">
+        <header class="flex items-center justify-between gap-4 mb-5">
+          <div class="flex items-center gap-3">
+            <div class="badge">
+              <i data-lucide="keyboard" class="h-5 w-5"></i>
+            </div>
+            <div>
+              <div class="mono text-lg font-semibold tracking-tight text-carbon-active">Typing Speed Test</div>
+              <div class="mono text-xs">Minimal Carbon • WPM/Accuracy live • dashboard endscreen</div>
+            </div>
+          </div>
+          <div class="flex items-center gap-3">
+            <label class="mono flex items-center gap-2 text-sm select-none">
+              <input id="toggleGhost" type="checkbox" class="accent-[#d1d0c5]" checked />
+              Ghost
+            </label>
+            <button id="btnRestart" class="btn">
+              Restart
+            </button>
+          </div>
+        </header>
+
+        <!-- LIVE VIEW -->
+        <section id="liveView" class="fade-swap">
+          <div class="flex items-center justify-center gap-10 mb-5">
+            <div class="stat">
+              <div class="stat-label">WPM</div>
+              <div id="statWpm" class="stat-value">0.0</div>
+            </div>
+            <div class="stat">
+              <div class="stat-label">ACC</div>
+              <div id="statAcc" class="stat-value">100.0%</div>
+            </div>
+            <div class="stat subtle">
+              <div class="stat-label">TIME</div>
+              <div id="statTime" class="stat-value">0.0s</div>
+            </div>
+            <div class="stat subtle">
+              <div class="stat-label">PB</div>
+              <div id="statPb" class="stat-value">0.0</div>
+            </div>
+          </div>
+
+          <div class="mono text-xs text-center mb-4">
+            <span id="progress">0 / 0</span>
+          </div>
+
+          <div id="sourceWrap" class="sourceBox relative mono text-[1.55rem] leading-relaxed">
+            <div id="caret" class="caretBar" style="left:0px; top:0px;"></div>
+            <div id="ghostCaret" class="ghostBar" style="left:0px; top:0px;"></div>
+            <div id="sourceText" class="whitespace-pre-wrap"></div>
+          </div>
+
+          <textarea
+            id="input"
+            class="inputBox mono text-[1.1rem]"
+            placeholder="Start typing…"
+            spellcheck="false"
+          ></textarea>
+        </section>
+
+        <!-- DASHBOARD VIEW -->
+        <section id="dashView" class="fade-swap hidden">
+          <div class="mono text-center text-carbon-active text-xl font-bold mb-2">Performance Dashboard</div>
+          <div class="mono text-center text-sm mb-6">Consistency matters. Here's how your speed evolved.</div>
+
+          <div class="dashGrid">
+            <div class="dashCard">
+              <div class="dashLabel">Sustained WPM</div>
+              <div id="dashWpm" class="dashValue">0.0</div>
+            </div>
+            <div class="dashCard">
+              <div class="dashLabel">Burst (5s)</div>
+              <div id="dashBurst" class="dashValue">0.0</div>
+            </div>
+            <div class="dashCard">
+              <div class="dashLabel">Accuracy</div>
+              <div id="dashAcc" class="dashValue">100.0%</div>
+            </div>
+            <div class="dashCard">
+              <div class="dashLabel">Time</div>
+              <div id="dashTime" class="dashValue">0.0s</div>
+            </div>
+          </div>
+
+          <div class="chartCard">
+            <canvas id="chart" height="150"></canvas>
+          </div>
+
+          <div class="mono text-sm font-semibold text-carbon-active mt-5 mb-2">Accuracy heatmap (Top missed expected keys)</div>
+          <pre id="weaknesses" class="weakBox mono text-sm">No mistakes recorded.</pre>
+
+          <div class="flex justify-center mt-6">
+            <button id="btnRestartFromDash" class="btn">Restart</button>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <script src="./app.js"></script>
+    <script>
+      lucide.createIcons();
+    </script>
+  </body>
+</html>

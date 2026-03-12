@@ -1,0 +1,43 @@
+app:
+  title: "Typing Speed Test — Pro"
+  window:
+    width: 1100
+    height: 720
+
+theme:
+  appearance_mode: "dark"
+  ctk_theme_json: "themes/carbon.json"
+
+typing:
+  paragraphs:
+    - "In the quiet hours of the morning, progress is rarely loud. It shows up as small, deliberate choices: closing an extra tab, writing a clearer function name, or taking ten minutes to understand a bug before trying to fix it. Over time, those choices compound into reliability, and reliability becomes speed."
+    - "Great software is often the result of careful trade-offs. Clarity beats cleverness when maintenance is inevitable, tests beat hope when changes are frequent, and good defaults beat complex configuration when a tool is shared. The best systems feel simple not because they are easy, but because they are well shaped."
+    - "Typing is a skill built through consistency. Accuracy creates rhythm, rhythm creates flow, and flow makes speed sustainable. If you slow down enough to avoid mistakes, your hands learn the correct patterns, and faster typing becomes a side effect of precision rather than stress."
+    - "The most valuable improvements are not always dramatic. A faster feedback loop, a calmer interface, and a routine that removes friction can turn an occasional effort into a daily habit. When the process is smooth, you can focus on the work instead of fighting the tools."
+
+colors:
+  source_bg: "#0b0f14"
+  input_bg: "#060a0f"
+  border: "#1f2937"
+  text_dim: "#6b7280"
+  text_untyped: "#94a3b8"
+  text_correct: "#22c55e"
+  text_incorrect: "#ef4444"
+  caret_a: "#243244"
+  caret_b: "#1b2533"
+  ghost: "#38bdf8"
+
+sound:
+  enabled: true
+  mode: "beep"     # "beep" (built-in), or "off"
+  beep_hz: 1200
+  beep_ms: 12
+
+analytics:
+  graph_enabled: true
+  sample_hz: 4          # how often WPM samples are recorded
+  burst_window_s: 5.0
+
+persistence:
+  sqlite_path: "data/typing_stats.db"
+
