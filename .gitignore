@@ -6,6 +6,12 @@ __pycache__/
 env/
 venv/
 .venv/
+build/
+dist/
+*.log
+*.spec
+*.pyc
+
 git_status.txt
 # dotenv
 .env
