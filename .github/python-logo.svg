@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-labelledby="title">
+  <title id="title">Python-style round logo</title>
+  <defs>
+    <linearGradient id="blueGrad" x1="0%" x2="100%" y1="0%" y2="100%">
+      <stop offset="0%" stop-color="#2b6ea3"/>
+      <stop offset="100%" stop-color="#3aa0d8"/>
+    </linearGradient>
+    <linearGradient id="yellowGrad" x1="0%" x2="100%" y1="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffd24a"/>
+      <stop offset="100%" stop-color="#ffcf2f"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="8" stdDeviation="16" flood-color="#000" flood-opacity="0.18"/>
+    </filter>
+  </defs>
+
+  <!-- background circle -->
+  <g filter="url(#shadow)">
+    <circle cx="256" cy="256" r="220" fill="#174a68"/>
+  </g>
+
+  <!-- blue snake shape -->
+  <path d="M150 120c40-40 140-40 190 0 30 25 30 70 0 95-40 30-90 30-140 10-30-12-50-35-50-60 0-18 6-36 0-45z"
+        fill="url(#blueGrad)" stroke="#0f2e44" stroke-width="4"/>
+  <!-- blue eye -->
+  <circle cx="230" cy="170" r="12" fill="#ffffff"/>
+
+  <!-- yellow snake shape -->
+  <path d="M362 380c-40 40-140 40-190 0-30-25-30-70 0-95 40-30 90-30 140-10 30 12 50 35 50 60 0 18-6 36 0 45z"
+        fill="url(#yellowGrad)" stroke="#8a5b00" stroke-width="4"/>
+  <!-- yellow eye -->
+  <circle cx="282" cy="340" r="12" fill="#ffffff"/>
+
+  <!-- inner highlight circle -->
+  <circle cx="256" cy="256" r="140" fill="none" stroke="#ffffff" opacity="0.06" stroke-width="60"/>
+
+</svg>
