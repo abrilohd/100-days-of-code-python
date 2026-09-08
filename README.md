@@ -1,8 +1,4 @@
-# 🐍 100 Days of Code – Python
-
-<p align="center">
-  <img src="./.github/python-logo.svg" alt="Python" />
-</p>
+# ≥ 100 Days of Code – Python
 
 > **A documented learning journey: Building strong Python fundamentals through daily practice & real projects**
 
@@ -12,20 +8,20 @@
 
 ---
 
-## 🎯 Challenge Overview
+# 🤺 Challenge Overview
 
 This repository documents my **100 Days of Code** challenge, where I practice Python daily and build real mini-projects to solidify fundamentals.
 
-### Goals
-- ✅ Build strong Python fundamentals
-- ✅ Practice consistently every day
-- ✅ Create real, functional mini-projects
-- ✅ Learn best practices through projects
-- ✅ Document learning progress
+## Goals <img width="32" height="32" alt="image" src="https://github.com/user-attachments/assets/a16c86d1-d4d2-45e8-b657-82a659d49f24" />
+-  Build strong Python fundamentals
+-  Practice consistently every day
+-  Create real, functional mini-projects
+-  Learn best practices through projects
+-  Document learning progress
 
 ---
 
-## 📚 Learning Path
+## 👣 Learning Path
 
 ### Phase 1: Fundamentals (Days 1-20)
 - Print statements & string manipulation
@@ -94,7 +90,7 @@ This repository documents my **100 Days of Code** challenge, where I practice Py
 
 ---
 
-## 📁 Directory Structure
+# 🧬 Directory Structure
 
 ```
 100-days-of-code-python/
@@ -124,7 +120,7 @@ This repository documents my **100 Days of Code** challenge, where I practice Py
 
 ---
 
-## 🚀 Getting Started
+# ▶️ Getting Started
 
 ### Prerequisites
 - Python 3.8+
@@ -170,7 +166,7 @@ pytest tests/
 
 ---
 
-## 💡 Key Learnings
+## <img width="5%" height="5%" alt="image" src="https://github.com/user-attachments/assets/039dfe3a-a729-471c-b7ba-9b636b17a1d2" /> Key Learnings
 
 ### Python Fundamentals
 ```python
@@ -265,9 +261,9 @@ python main.py
 
 | Phase | Days | Status | Focus |
 |-------|------|--------|-------|
-| Fundamentals | 1-20 | ✅ Complete | Basics & IO |
-| Functions | 21-40 | ✅ Complete | Functions & Scope |
-| Data Structures | 41-60 | ✅ Complete | Collections & Files |
+| Fundamentals | 1-20 | 🗸 Complete | Basics & IO |
+| Functions | 21-40 | 🗸 Complete | Functions & Scope |
+| Data Structures | 41-60 | 🗸 Complete | Collections & Files |
 | OOP | 61-80 | ⏳ In Progress | Classes & Inheritance |
 | Advanced | 81-100 | 🔜 Coming | APIs & Best Practices |
 
@@ -276,11 +272,11 @@ python main.py
 ## 🎓 Best Practices Learned
 
 ### Code Quality
-- ✅ Use meaningful variable names
-- ✅ Add comments for complex logic
-- ✅ Keep functions small & focused
-- ✅ DRY (Don't Repeat Yourself)
-- ✅ Handle exceptions gracefully
+- 🗸 Use meaningful variable names
+- 🗸 Add comments for complex logic
+- 🗸 Keep functions small & focused
+- 🗸 DRY (Don't Repeat Yourself)
+- 🗸 Handle exceptions gracefully
 
 ### Python Style (PEP 8)
 ```python
@@ -338,7 +334,7 @@ Want to add improvements or fix issues?
 ## 💬 Questions & Discussion
 
 - 🐛 **Report Issues:** Open an issue on GitHub
-- 💡 **Share Ideas:** Start a discussion
+- <img width="5%" height="5%" alt="image" src="https://github.com/user-attachments/assets/8fdbb8f1-53ba-4638-88a5-0fd9b6a48561" />**Share Ideas:** Start a discussion
 - 📧 **Contact:** abrsh067@gmail.com
 
 ---
@@ -367,7 +363,7 @@ This project is open source and available under the MIT License.
 
 ---
 
-## 🎯 Next Steps
+## ⏭️ Next Steps
 
 - [ ] Complete days 81-100
 - [ ] Build capstone project
