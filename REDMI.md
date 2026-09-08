@@ -1,6 +1,6 @@
 ![≥ 100 Days of Code – Python Blog](./.github/images/h1-heading.svg)
 
-> **Share your learning journey: Document your Python progress and inspire others through consistent daily practice**
+> **<span style="color: #C0C0C0;">Share your learning journey: Document your Python progress and inspire others through consistent daily practice</span>**
 
 ![Days](https://img.shields.io/badge/Content-Blog-silver?style=for-the-badge)
 ![Language](https://img.shields.io/badge/Language-Python-3776AB?style=for-the-badge&logo=python)
@@ -8,94 +8,95 @@
 
 ---
 
-# 📚 Blog Project Overview
+# <span style="color: #FFD700;">📚 Blog Project Overview</span>
 
 This is a companion blog platform for the **100 Days of Code Python Challenge**, where I document daily learnings, code snippets, mini-projects, and insights from my programming journey.
 
 ![Blog Features](./.github/images/h2-heading.svg) <img width="32" height="32" alt="image" src="https://github.com/user-attachments/assets/a16c86d1-d4d2-45e8-b657-82a659d49f24" />
-- Share daily learning notes and discoveries
-- Showcase mini-projects and code examples
-- Document progress through 100 days
-- Create an inspiring resource for others
-- Build a portfolio of your learning journey
+
+<span style="color: #FF6B6B;">- <span style="color: #4ECDC4;">Share daily learning notes and discoveries</span></span>  
+<span style="color: #FF6B6B;">- <span style="color: #4ECDC4;">Showcase mini-projects and code examples</span></span>  
+<span style="color: #FF6B6B;">- <span style="color: #4ECDC4;">Document progress through 100 days</span></span>  
+<span style="color: #FF6B6B;">- <span style="color: #4ECDC4;">Create an inspiring resource for others</span></span>  
+<span style="color: #FF6B6B;">- <span style="color: #4ECDC4;">Build a portfolio of your learning journey</span></span>  
 
 ---
 
-## 🎯 Blog Structure
+## <span style="color: #FF1493;">🎯 Blog Structure</span>
 
-### Blog Posts by Phase
+### <span style="color: #00CED1;">Blog Posts by Phase</span>
 
 ![Phase 1: Fundamentals Posts](./.github/images/h3-heading.svg)
 
-#### Phase 1: Fundamentals (Days 1-20)
-**Blog Topics:**
-- Getting Started with Python Print & Input
-- Understanding Data Types in Python
-- Mastering Conditional Statements
-- Loop Essentials: For & While Loops
-- Introduction to Lists & Dictionaries
+#### <span style="color: #9370DB;">Phase 1: Fundamentals (Days 1-20)</span>
+**<span style="color: #FF69B4;">Blog Topics:</span>**
+- <span style="color: #20B2AA;">Getting Started with Python Print & Input</span>
+- <span style="color: #20B2AA;">Understanding Data Types in Python</span>
+- <span style="color: #20B2AA;">Mastering Conditional Statements</span>
+- <span style="color: #20B2AA;">Loop Essentials: For & While Loops</span>
+- <span style="color: #20B2AA;">Introduction to Lists & Dictionaries</span>
 
-**Featured Posts:**
-- [Day 1: Hello & Inputs](./posts/day-01-hello-inputs.md)
-- [Day 2: BMI Calculator Walkthrough](./posts/day-02-bmi-calculator.md)
-- [Day 3: Control Flow Basics](./posts/day-03-control-flow.md)
+**<span style="color: #FF69B4;">Featured Posts:</span>**
+- <span style="color: #1E90FF;">[Day 1: Hello & Inputs](./posts/day-01-hello-inputs.md)</span>
+- <span style="color: #1E90FF;">[Day 2: BMI Calculator Walkthrough](./posts/day-02-bmi-calculator.md)</span>
+- <span style="color: #1E90FF;">[Day 3: Control Flow Basics](./posts/day-03-control-flow.md)</span>
 
-#### Phase 2: Functions & Scope (Days 21-40)
-**Blog Topics:**
-- Function Definition & Best Practices
-- Understanding Variable Scope
-- Recursion Explained Simply
-- Lambda Functions & When to Use Them
-- List Comprehensions for Cleaner Code
+#### <span style="color: #9370DB;">Phase 2: Functions & Scope (Days 21-40)</span>
+**<span style="color: #FF69B4;">Blog Topics:</span>**
+- <span style="color: #20B2AA;">Function Definition & Best Practices</span>
+- <span style="color: #20B2AA;">Understanding Variable Scope</span>
+- <span style="color: #20B2AA;">Recursion Explained Simply</span>
+- <span style="color: #20B2AA;">Lambda Functions & When to Use Them</span>
+- <span style="color: #20B2AA;">List Comprehensions for Cleaner Code</span>
 
-**Featured Projects:**
-- Password Generator Tutorial
-- Number Guessing Game Breakdown
-- Caesar Cipher Implementation
+**<span style="color: #FF69B4;">Featured Projects:</span>**
+- <span style="color: #1E90FF;">Password Generator Tutorial</span>
+- <span style="color: #1E90FF;">Number Guessing Game Breakdown</span>
+- <span style="color: #1E90FF;">Caesar Cipher Implementation</span>
 
-#### Phase 3: Data Structures (Days 41-60)
-**Blog Topics:**
-- Advanced List Operations
-- Dictionaries & Nested Data
-- File I/O Fundamentals
-- Working with JSON in Python
-- Tuple vs List: When to Use Each
+#### <span style="color: #9370DB;">Phase 3: Data Structures (Days 41-60)</span>
+**<span style="color: #FF69B4;">Blog Topics:</span>**
+- <span style="color: #20B2AA;">Advanced List Operations</span>
+- <span style="color: #20B2AA;">Dictionaries & Nested Data</span>
+- <span style="color: #20B2AA;">File I/O Fundamentals</span>
+- <span style="color: #20B2AA;">Working with JSON in Python</span>
+- <span style="color: #20B2AA;">Tuple vs List: When to Use Each</span>
 
-**Real-World Applications:**
-- Building a File-based Task Manager
-- Data Analysis with Python
-- Creating a Contact Book
+**<span style="color: #FF69B4;">Real-World Applications:</span>**
+- <span style="color: #1E90FF;">Building a File-based Task Manager</span>
+- <span style="color: #1E90FF;">Data Analysis with Python</span>
+- <span style="color: #1E90FF;">Creating a Contact Book</span>
 
-#### Phase 4: OOP Concepts (Days 61-80)
-**Blog Topics:**
-- Object-Oriented Programming Basics
-- Classes & Objects Explained
-- Inheritance & Polymorphism
-- Encapsulation Best Practices
-- Decorators in Python
+#### <span style="color: #9370DB;">Phase 4: OOP Concepts (Days 61-80)</span>
+**<span style="color: #FF69B4;">Blog Topics:</span>**
+- <span style="color: #20B2AA;">Object-Oriented Programming Basics</span>
+- <span style="color: #20B2AA;">Classes & Objects Explained</span>
+- <span style="color: #20B2AA;">Inheritance & Polymorphism</span>
+- <span style="color: #20B2AA;">Encapsulation Best Practices</span>
+- <span style="color: #20B2AA;">Decorators in Python</span>
 
-**Project Deep-Dives:**
-- Bank System Architecture
-- Game Development with Classes
-- Todo App with OOP
+**<span style="color: #FF69B4;">Project Deep-Dives:</span>**
+- <span style="color: #1E90FF;">Bank System Architecture</span>
+- <span style="color: #1E90FF;">Game Development with Classes</span>
+- <span style="color: #1E90FF;">Todo App with OOP</span>
 
-#### Phase 5: Advanced Topics (Days 81-100)
-**Blog Topics:**
-- Exception Handling Strategies
-- Creating Modules & Packages
-- Working with APIs & Requests
-- Testing Your Code
-- Performance Optimization Tips
-- Python Best Practices Summary
+#### <span style="color: #9370DB;">Phase 5: Advanced Topics (Days 81-100)</span>
+**<span style="color: #FF69B4;">Blog Topics:</span>**
+- <span style="color: #20B2AA;">Exception Handling Strategies</span>
+- <span style="color: #20B2AA;">Creating Modules & Packages</span>
+- <span style="color: #20B2AA;">Working with APIs & Requests</span>
+- <span style="color: #20B2AA;">Testing Your Code</span>
+- <span style="color: #20B2AA;">Performance Optimization Tips</span>
+- <span style="color: #20B2AA;">Python Best Practices Summary</span>
 
-**Capstone Projects:**
-- Building a Weather App
-- Web Scraping Tutorial
-- Creating a ChatBot
+**<span style="color: #FF69B4;">Capstone Projects:</span>**
+- <span style="color: #1E90FF;">Building a Weather App</span>
+- <span style="color: #1E90FF;">Web Scraping Tutorial</span>
+- <span style="color: #1E90FF;">Creating a ChatBot</span>
 
 ---
 
-## 📁 Blog Directory Structure
+## <span style="color: #FFD700;">📁 Blog Directory Structure</span>
 
 ```
 blog/
@@ -131,53 +132,53 @@ blog/
 
 ---
 
-## ✍️ How to Read This Blog
+## <span style="color: #FF1493;">✍️ How to Read This Blog</span>
 
-### For Beginners
-1. Start with **Phase 1: Fundamentals** posts
-2. Follow daily posts in order
-3. Try the code examples yourself
-4. Explore the mini-projects
+### <span style="color: #00CED1;">For Beginners</span>
+<span style="color: #FF6347;">1. Start with **Phase 1: Fundamentals** posts</span>  
+<span style="color: #FF6347;">2. Follow daily posts in order</span>  
+<span style="color: #FF6347;">3. Try the code examples yourself</span>  
+<span style="color: #FF6347;">4. Explore the mini-projects</span>  
 
-### For Intermediate Learners
-1. Jump to **Phase 3 or 4** based on your level
-2. Deep-dive into tutorials
-3. Study code snippets for patterns
-4. Build along with capstone projects
+### <span style="color: #00CED1;">For Intermediate Learners</span>
+<span style="color: #FF6347;">1. Jump to **Phase 3 or 4** based on your level</span>  
+<span style="color: #FF6347;">2. Deep-dive into tutorials</span>  
+<span style="color: #FF6347;">3. Study code snippets for patterns</span>  
+<span style="color: #FF6347;">4. Build along with capstone projects</span>  
 
-### For Advanced Learners
-1. Read Phase 5 advanced topics
-2. Explore optimization techniques
-3. Contribute improvements
-4. Share your own projects
-
----
-
-## 🌟 Featured Blog Posts
-
-### Most Popular
-- **[Python Fundamentals Every Developer Should Know](./posts/python-fundamentals.md)**
-  - 15 min read • 2,000+ views
-  - Essential concepts explained simply
-
-- **[From Zero to Hero: 100 Days Learning Path](./posts/100-days-journey.md)**
-  - 20 min read • 1,500+ views
-  - Complete roadmap & resources
-
-- **[OOP in Python: A Practical Guide](./posts/oop-practical-guide.md)**
-  - 25 min read • 1,200+ views
-  - Real-world examples & best practices
-
-### Recently Published
-- [Day 95: Building REST APIs](./posts/day-95-rest-apis.md)
-- [Week 14 Review: Major Breakthroughs](./posts/week-14-review.md)
-- [How I Stayed Consistent for 80+ Days](./posts/consistency-tips.md)
+### <span style="color: #00CED1;">For Advanced Learners</span>
+<span style="color: #FF6347;">1. Read Phase 5 advanced topics</span>  
+<span style="color: #FF6347;">2. Explore optimization techniques</span>  
+<span style="color: #FF6347;">3. Contribute improvements</span>  
+<span style="color: #FF6347;">4. Share your own projects</span>  
 
 ---
 
-## 💡 Blog Highlights
+## <span style="color: #FFD700;">🌟 Featured Blog Posts</span>
 
-### Code Snippet Example
+### <span style="color: #FF1493;">Most Popular</span>
+- **<span style="color: #00CED1;">[Python Fundamentals Every Developer Should Know](./posts/python-fundamentals.md)</span>**
+  - <span style="color: #20B2AA;">15 min read • 2,000+ views</span>
+  - <span style="color: #20B2AA;">Essential concepts explained simply</span>
+
+- **<span style="color: #00CED1;">[From Zero to Hero: 100 Days Learning Path](./posts/100-days-journey.md)</span>**
+  - <span style="color: #20B2AA;">20 min read • 1,500+ views</span>
+  - <span style="color: #20B2AA;">Complete roadmap & resources</span>
+
+- **<span style="color: #00CED1;">[OOP in Python: A Practical Guide](./posts/oop-practical-guide.md)</span>**
+  - <span style="color: #20B2AA;">25 min read • 1,200+ views</span>
+  - <span style="color: #20B2AA;">Real-world examples & best practices</span>
+
+### <span style="color: #FF1493;">Recently Published</span>
+- <span style="color: #1E90FF;">[Day 95: Building REST APIs](./posts/day-95-rest-apis.md)</span>
+- <span style="color: #1E90FF;">[Week 14 Review: Major Breakthroughs](./posts/week-14-review.md)</span>
+- <span style="color: #1E90FF;">[How I Stayed Consistent for 80+ Days](./posts/consistency-tips.md)</span>
+
+---
+
+## <span style="color: #FF1493;">💡 Blog Highlights</span>
+
+### <span style="color: #00CED1;">Code Snippet Example</span>
 ```python
 # From: "Understanding List Comprehensions"
 # Create a list of squares for numbers 0-9
@@ -190,177 +191,177 @@ even_numbers = [x for x in range(20) if x % 2 == 0]
 matrix = [[i*j for j in range(3)] for i in range(3)]
 ```
 
-### Learning Journey Timeline
+### <span style="color: #00CED1;">Learning Journey Timeline</span>
 ```
-Day 1    ████░��░░░░░░░░░░░░░░ 5%   Basics
-Day 20   ████████░░░░░░░░░░░░ 20%  Phase 1 Complete
-Day 40   ████████████░░░░░░░░ 40%  Functions Mastered
-Day 60   ████████████████░░░░ 60%  Data Structures Done
-Day 80   ████████████████████ 80%  OOP Concepts
-Day 100  ████████████████████ 100% Python Ready!
+Day 1    ████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ 5%   Basics
+Day 20   ████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ 20%  Phase 1 Complete
+Day 40   ████████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ 40%  Functions Mastered
+Day 60   ████████████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ 60%  Data Structures Done
+Day 80   ████████████████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ 80%  OOP Concepts
+Day 100  ████████████████████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░���░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ 100% Python Ready!
 ```
 
 ---
 
-## 📊 Blog Statistics
+## <span style="color: #FF1493;">📊 Blog Statistics</span>
 
-| Metric | Count |
-|--------|-------|
-| Total Posts | 50+ |
-| Lines of Code Shared | 5,000+ |
-| Tutorials | 8+ |
-| Code Snippets | 100+ |
-| Community Comments | 200+ |
-| Average Post Length | 8 min read |
-
----
-
-## 🎓 What You'll Learn
-
-### Python Concepts
-✓ Variables, data types, and operations
-✓ Control flow (if/else, loops)
-✓ Functions and scoping
-✓ Data structures (lists, dicts, tuples)
-✓ Object-Oriented Programming
-✓ File I/O and JSON handling
-✓ Exception handling
-✓ APIs and web requests
-
-### Best Practices
-✓ Clean code principles
-✓ PEP 8 style guidelines
-✓ Code organization
-✓ Testing strategies
-✓ Performance optimization
-✓ Documentation standards
-
-### Soft Skills
-✓ Problem-solving approach
-✓ Debugging techniques
-✓ Project planning
-✓ Learning consistency
-✓ Community contribution
+| <span style="color: #00CED1;">Metric</span> | <span style="color: #FF69B4;">Count</span> |
+|--------|--------|
+| <span style="color: #20B2AA;">Total Posts</span> | <span style="color: #FFD700;">50+</span> |
+| <span style="color: #20B2AA;">Lines of Code Shared</span> | <span style="color: #FFD700;">5,000+</span> |
+| <span style="color: #20B2AA;">Tutorials</span> | <span style="color: #FFD700;">8+</span> |
+| <span style="color: #20B2AA;">Code Snippets</span> | <span style="color: #FFD700;">100+</span> |
+| <span style="color: #20B2AA;">Community Comments</span> | <span style="color: #FFD700;">200+</span> |
+| <span style="color: #20B2AA;">Average Post Length</span> | <span style="color: #FFD700;">8 min read</span> |
 
 ---
 
-## 🔍 Search & Navigation
+## <span style="color: #FF1493;">🎓 What You'll Learn</span>
 
-### By Topic
-- [All Python Basics Posts](./posts/category/basics.md)
-- [All OOP Posts](./posts/category/oop.md)
-- [All Web Development Posts](./posts/category/web.md)
-- [All Project Tutorials](./posts/category/projects.md)
+### <span style="color: #00CED1;">Python Concepts</span>
+<span style="color: #20B2AA;">✓ Variables, data types, and operations</span>  
+<span style="color: #20B2AA;">✓ Control flow (if/else, loops)</span>  
+<span style="color: #20B2AA;">✓ Functions and scoping</span>  
+<span style="color: #20B2AA;">✓ Data structures (lists, dicts, tuples)</span>  
+<span style="color: #20B2AA;">✓ Object-Oriented Programming</span>  
+<span style="color: #20B2AA;">✓ File I/O and JSON handling</span>  
+<span style="color: #20B2AA;">✓ Exception handling</span>  
+<span style="color: #20B2AA;">✓ APIs and web requests</span>  
 
-### By Difficulty
-- [Beginner Posts](./posts/level/beginner.md)
-- [Intermediate Posts](./posts/level/intermediate.md)
-- [Advanced Posts](./posts/level/advanced.md)
+### <span style="color: #00CED1;">Best Practices</span>
+<span style="color: #20B2AA;">✓ Clean code principles</span>  
+<span style="color: #20B2AA;">✓ PEP 8 style guidelines</span>  
+<span style="color: #20B2AA;">✓ Code organization</span>  
+<span style="color: #20B2AA;">✓ Testing strategies</span>  
+<span style="color: #20B2AA;">✓ Performance optimization</span>  
+<span style="color: #20B2AA;">✓ Documentation standards</span>  
 
-### By Day/Phase
-- [Phase 1 Posts](./posts/phase/1.md) (Days 1-20)
-- [Phase 2 Posts](./posts/phase/2.md) (Days 21-40)
-- [Phase 3 Posts](./posts/phase/3.md) (Days 41-60)
-- [Phase 4 Posts](./posts/phase/4.md) (Days 61-80)
-- [Phase 5 Posts](./posts/phase/5.md) (Days 81-100)
-
----
-
-## 💬 Engage With the Blog
-
-### Reader Features
-- 💭 **Comments:** Share your thoughts on posts
-- ❓ **Questions:** Ask clarifications in discussion
-- ⭐ **Bookmarks:** Save posts for later
-- 🔔 **Notifications:** Get updates on new posts
-
-### Ways to Contribute
-- 🐛 **Report Issues:** Found an error in code?
-- 💡 **Suggest Topics:** What should I write about?
-- 📝 **Guest Posts:** Share your own learning journey
-- 🌟 **Share:** Tell others about the blog
+### <span style="color: #00CED1;">Soft Skills</span>
+<span style="color: #20B2AA;">✓ Problem-solving approach</span>  
+<span style="color: #20B2AA;">✓ Debugging techniques</span>  
+<span style="color: #20B2AA;">✓ Project planning</span>  
+<span style="color: #20B2AA;">✓ Learning consistency</span>  
+<span style="color: #20B2AA;">✓ Community contribution</span>  
 
 ---
 
-## 📧 Newsletter & Updates
+## <span style="color: #FFD700;">🔍 Search & Navigation</span>
 
-### Subscribe to Get:
-- 📬 Weekly digest of new posts
-- 🎁 Free Python cheat sheets
-- 🚀 Early access to new tutorials
-- 💌 Exclusive community insights
+### <span style="color: #FF69B4;">By Topic</span>
+- <span style="color: #1E90FF;">[All Python Basics Posts](./posts/category/basics.md)</span>
+- <span style="color: #1E90FF;">[All OOP Posts](./posts/category/oop.md)</span>
+- <span style="color: #1E90FF;">[All Web Development Posts](./posts/category/web.md)</span>
+- <span style="color: #1E90FF;">[All Project Tutorials](./posts/category/projects.md)</span>
 
-**[Subscribe Now](./subscribe.md)**
+### <span style="color: #FF69B4;">By Difficulty</span>
+- <span style="color: #1E90FF;">[Beginner Posts](./posts/level/beginner.md)</span>
+- <span style="color: #1E90FF;">[Intermediate Posts](./posts/level/intermediate.md)</span>
+- <span style="color: #1E90FF;">[Advanced Posts](./posts/level/advanced.md)</span>
 
----
-
-## 🤝 Community & Support
-
-### Connect With Others
-- 💬 **Discord Server:** [Join Our Community](link)
-- 👥 **GitHub Discussions:** Ask questions & share ideas
-- 🐦 **Twitter:** Follow for updates [@YourHandle]
-- 📧 **Email:** abrsh067@gmail.com
-
-### FAQ
-- [Common Questions](./faq.md)
-- [Troubleshooting Guide](./troubleshooting.md)
-- [Glossary of Terms](./glossary.md)
+### <span style="color: #FF69B4;">By Day/Phase</span>
+- <span style="color: #1E90FF;">[Phase 1 Posts](./posts/phase/1.md)</span> (Days 1-20)
+- <span style="color: #1E90FF;">[Phase 2 Posts](./posts/phase/2.md)</span> (Days 21-40)
+- <span style="color: #1E90FF;">[Phase 3 Posts](./posts/phase/3.md)</span> (Days 41-60)
+- <span style="color: #1E90FF;">[Phase 4 Posts](./posts/phase/4.md)</span> (Days 61-80)
+- <span style="color: #1E90FF;">[Phase 5 Posts](./posts/phase/5.md)</span> (Days 81-100)
 
 ---
 
-## 📚 Related Resources
+## <span style="color: #FF1493;">💬 Engage With the Blog</span>
 
-### Official Documentation
-- [Python Docs](https://docs.python.org/3/)
-- [PEP 8 Style Guide](https://www.python.org/dev/peps/pep-0008/)
+### <span style="color: #00CED1;">Reader Features</span>
+- <span style="color: #FFD700;">💭 **Comments:** Share your thoughts on posts</span>
+- <span style="color: #FFD700;">❓ **Questions:** Ask clarifications in discussion</span>
+- <span style="color: #FFD700;">⭐ **Bookmarks:** Save posts for later</span>
+- <span style="color: #FFD700;">🔔 **Notifications:** Get updates on new posts</span>
 
-### Recommended Reads
-- [Real Python](https://realpython.com/)
-- [Automate the Boring Stuff](https://automatetheboringstuff.com/)
-- [Python Crash Course](https://nostarch.com/pythoncrashcourse2e)
-
-### Tools & Libraries
-- [Visual Studio Code](https://code.visualstudio.com/)
-- [Jupyter Notebooks](https://jupyter.org/)
-- [pytest](https://pytest.org/)
+### <span style="color: #00CED1;">Ways to Contribute</span>
+- <span style="color: #FFD700;">🐛 **Report Issues:** Found an error in code?</span>
+- <span style="color: #FFD700;">💡 **Suggest Topics:** What should I write about?</span>
+- <span style="color: #FFD700;">📝 **Guest Posts:** Share your own learning journey</span>
+- <span style="color: #FFD700;">🌟 **Share:** Tell others about the blog</span>
 
 ---
 
-## 📄 License & Usage
+## <span style="color: #FF1493;">📧 Newsletter & Updates</span>
+
+### <span style="color: #00CED1;">Subscribe to Get:</span>
+- <span style="color: #20B2AA;">📬 Weekly digest of new posts</span>
+- <span style="color: #20B2AA;">🎁 Free Python cheat sheets</span>
+- <span style="color: #20B2AA;">🚀 Early access to new tutorials</span>
+- <span style="color: #20B2AA;">💌 Exclusive community insights</span>
+
+**<span style="color: #FF69B4;">[Subscribe Now](./subscribe.md)</span>**
+
+---
+
+## <span style="color: #FF1493;">🤝 Community & Support</span>
+
+### <span style="color: #00CED1;">Connect With Others</span>
+- <span style="color: #20B2AA;">💬 **Discord Server:** [Join Our Community](link)</span>
+- <span style="color: #20B2AA;">👥 **GitHub Discussions:** Ask questions & share ideas</span>
+- <span style="color: #20B2AA;">🐦 **Twitter:** Follow for updates [@YourHandle]</span>
+- <span style="color: #20B2AA;">📧 **Email:** abrsh067@gmail.com</span>
+
+### <span style="color: #00CED1;">FAQ</span>
+- <span style="color: #1E90FF;">[Common Questions](./faq.md)</span>
+- <span style="color: #1E90FF;">[Troubleshooting Guide](./troubleshooting.md)</span>
+- <span style="color: #1E90FF;">[Glossary of Terms](./glossary.md)</span>
+
+---
+
+## <span style="color: #FF1493;">📚 Related Resources</span>
+
+### <span style="color: #00CED1;">Official Documentation</span>
+- <span style="color: #1E90FF;">[Python Docs](https://docs.python.org/3/)</span>
+- <span style="color: #1E90FF;">[PEP 8 Style Guide](https://www.python.org/dev/peps/pep-0008/)</span>
+
+### <span style="color: #00CED1;">Recommended Reads</span>
+- <span style="color: #1E90FF;">[Real Python](https://realpython.com/)</span>
+- <span style="color: #1E90FF;">[Automate the Boring Stuff](https://automatetheboringstuff.com/)</span>
+- <span style="color: #1E90FF;">[Python Crash Course](https://nostarch.com/pythoncrashcourse2e)</span>
+
+### <span style="color: #00CED1;">Tools & Libraries</span>
+- <span style="color: #1E90FF;">[Visual Studio Code](https://code.visualstudio.com/)</span>
+- <span style="color: #1E90FF;">[Jupyter Notebooks](https://jupyter.org/)</span>
+- <span style="color: #1E90FF;">[pytest](https://pytest.org/)</span>
+
+---
+
+## <span style="color: #FF1493;">📄 License & Usage</span>
 
 This blog content is open source and available under the MIT License. Feel free to:
-- ✓ Read and learn from posts
-- ✓ Share posts with others
-- ✓ Use code snippets (with attribution)
-- ✓ Contribute improvements
+- <span style="color: #20B2AA;">✓ Read and learn from posts</span>
+- <span style="color: #20B2AA;">✓ Share posts with others</span>
+- <span style="color: #20B2AA;">✓ Use code snippets (with attribution)</span>
+- <span style="color: #20B2AA;">✓ Contribute improvements</span>
 
 ---
 
-## 🙏 Acknowledgments
+## <span style="color: #FF1493;">🙏 Acknowledgments</span>
 
 Thank you to:
-- Python community for amazing docs
-- Online mentors & educators
-- Blog readers for feedback & support
-- 100 Days of Code community
-- Everyone who shared their learning journey
+- <span style="color: #20B2AA;">Python community for amazing docs</span>
+- <span style="color: #20B2AA;">Online mentors & educators</span>
+- <span style="color: #20B2AA;">Blog readers for feedback & support</span>
+- <span style="color: #20B2AA;">100 Days of Code community</span>
+- <span style="color: #20B2AA;">Everyone who shared their learning journey</span>
 
 ---
 
-## 🚀 Coming Soon
+## <span style="color: #FFD700;">🚀 Coming Soon</span>
 
-- [ ] Video tutorials for visual learners
-- [ ] Interactive code editor in blog
-- [ ] Mobile app for offline reading
-- [ ] Spanish & other language translations
-- [ ] Print-ready PDF versions
-- [ ] Course certification
-- [ ] Mentorship program
+- <span style="color: #FF69B4;">[ ] Video tutorials for visual learners</span>
+- <span style="color: #FF69B4;">[ ] Interactive code editor in blog</span>
+- <span style="color: #FF69B4;">[ ] Mobile app for offline reading</span>
+- <span style="color: #FF69B4;">[ ] Spanish & other language translations</span>
+- <span style="color: #FF69B4;">[ ] Print-ready PDF versions</span>
+- <span style="color: #FF69B4;">[ ] Course certification</span>
+- <span style="color: #FF69B4;">[ ] Mentorship program</span>
 
 ---
 
-## 📈 Blog Journey
+## <span style="color: #FF1493;">📈 Blog Journey</span>
 
 ```
 Week 1   → Launched with Phase 1 posts
@@ -373,10 +374,10 @@ Week 20  → Phase 5 advanced posts live
 
 ---
 
-**Start reading today and accelerate your Python learning journey!**
+**<span style="color: #FFD700; font-size: 18px;">Start reading today and accelerate your Python learning journey!</span>**
 
-📖 One blog post at a time.
+<span style="color: #00CED1;">📖 One blog post at a time.</span>
 
-🌱 Growing through shared knowledge.
+<span style="color: #00CED1;">🌱 Growing through shared knowledge.</span>
 
-Built with ❤️ by a passionate Python learner.
+<span style="color: #FF69B4;">Built with ❤️ by a passionate Python learner.</span>
