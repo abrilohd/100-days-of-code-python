@@ -1,7 +1,7 @@
 # 🐍 100 Days of Code – Python
 
 <p align="center">
-  <img src="./.github/python-logo.svg" alt="Python" width="140" />
+  <img src="./.github/python-logo.svg" alt="Python" />
 </p>
 
 > **A documented learning journey: Building strong Python fundamentals through daily practice & real projects**
