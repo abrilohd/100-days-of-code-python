@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="56" viewBox="0 0 600 56">
+  <style>
+    .title { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial; font-size:24px; font-weight:700; }
+  </style>
+  <text x="0" y="36" class="title" fill="#FFD43B">Goals</text>
+</svg>

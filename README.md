@@ -1,4 +1,4 @@
-# ≥ 100 Days of Code – Python
+![≥ 100 Days of Code – Python](./.github/images/h1-heading.svg)
 
 > **A documented learning journey: Building strong Python fundamentals through daily practice & real projects**
 
@@ -12,7 +12,7 @@
 
 This repository documents my **100 Days of Code** challenge, where I practice Python daily and build real mini-projects to solidify fundamentals.
 
-## Goals <img width="32" height="32" alt="image" src="https://github.com/user-attachments/assets/a16c86d1-d4d2-45e8-b657-82a659d49f24" />
+![Goals](./.github/images/h2-heading.svg) <img width="32" height="32" alt="image" src="https://github.com/user-attachments/assets/a16c86d1-d4d2-45e8-b657-82a659d49f24" />
 -  Build strong Python fundamentals
 -  Practice consistently every day
 -  Create real, functional mini-projects
@@ -22,6 +22,8 @@ This repository documents my **100 Days of Code** challenge, where I practice Py
 ---
 
 ## 👣 Learning Path
+
+![Phase 1: Fundamentals (Days 1-20)](./.github/images/h3-heading.svg)
 
 ### Phase 1: Fundamentals (Days 1-20)
 - Print statements & string manipulation
