@@ -8,6 +8,39 @@
 
 ---
 
+100 Days of Code — Python (at a glance)
+
+- ![icon](./.github/gpt-icon.svg) Beginning — Start coding  
+  Learned Python fundamentals: syntax, I/O, control flow, and core data structures.
+
+- ![icon](./.github/gpt-icon.svg) Then — Bigger projects  
+  Built progressively larger projects that culminate in a deployable blog capstone.
+
+- ![icon](./.github/gpt-icon.svg) Games  
+  Created small games like Hangman, Blackjack, and Snake to practice logic and OOP.
+
+- ![icon](./.github/gpt-icon.svg) Automation & Web Scraping  
+  Worked with BeautifulSoup and Selenium for browser automation and data extraction.
+
+- ![icon](./.github/gpt-icon.svg) Data Analysis & Visualization  
+  Used pandas, NumPy, matplotlib and seaborn for data cleaning, exploration, and charts.
+
+- ![icon](./.github/gpt-icon.svg) Machine Learning (intro)  
+  Explored linear regression and the Boston housing example as an entry to ML.
+
+- ![icon](./.github/gpt-icon.svg) Python Executable / GUI Apps  
+  Built desktop/GUI examples and learned how to package Python apps.
+
+- ![icon](./.github/gpt-icon.svg) Full Web Apps with Flask  
+  Implemented templating (Jinja), authentication, REST APIs, and deployment for real web projects.
+
+- ![icon](./.github/gpt-icon.svg) AI Integrations  
+  Added simple API/chatbot integrations to demonstrate basic AI usage.
+
+Explore the repo: https://github.com/abrilohd/100-days-of-code-python
+
+---
+
 ## 🎯 Challenge Overview
 
 This repository documents my **100 Days of Code** challenge, where I practice Python daily and build real mini-projects to solidify fundamentals.
